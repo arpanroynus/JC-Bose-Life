@@ -11,12 +11,14 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;  /* no scroll */
+      overflow: hidden;
       font-family: Helvetica, Arial, sans-serif;
     }
     #map {
       width: 100vw;
       height: 100vh;
+      position: relative;
+      z-index: 1;              /* map base layer */
     }
     /* overlay text box */
     #info-box {
@@ -30,11 +32,12 @@
       padding: 10px 16px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       text-align: center;
+      z-index: 1000;           /* ALWAYS above map */
     }
     #event-title {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #b30000; /* deep red */
+      color: #b30000;
       margin-bottom: 6px;
     }
     #event-details {
@@ -49,6 +52,7 @@
       transform: translateX(-50%);
       display: flex;
       gap: 10px;
+      z-index: 1000;          /* ALWAYS above map */
     }
     .btn {
       padding: 8px 14px;
@@ -190,13 +194,15 @@ var events = [
 var currentIndex = 0;
 var animating = false;
 
-var map = L.map('map').setView([events[0].lat, events[0].lon], 6);
+var map = L.map('map', {
+  zoomAnimation: false,       // keep overlays stable
+  scrollWheelZoom: false      // avoid accidental zoom
+}).setView([events[0].lat, events[0].lon], 6);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap"
 }).addTo(map);
 
-// red circle marker
 var marker = L.circleMarker([events[0].lat, events[0].lon], {
   radius: 6,
   color: "#b30000",
@@ -205,7 +211,6 @@ var marker = L.circleMarker([events[0].lat, events[0].lon], {
   fillOpacity: 1
 }).addTo(map);
 
-// animated path line
 var pathLine = null;
 
 // ---- UI UPDATE ----
@@ -214,13 +219,11 @@ function updateText() {
   document.getElementById("event-title").innerHTML = e.title;
   document.getElementById("event-details").innerHTML = e.details;
 
-  // disable buttons at ends
   var prevBtn = document.getElementById("prevBtn");
   var nextBtn = document.getElementById("nextBtn");
   prevBtn.classList.toggle("disabled", currentIndex === 0);
   nextBtn.classList.toggle("disabled", currentIndex === events.length - 1);
 }
-
 updateText();
 
 // ---- ANIMATION ----
@@ -233,10 +236,9 @@ function animateTo(targetIndex) {
   var start = events[currentIndex];
   var end   = events[targetIndex];
 
-  var steps = 80;      // more steps = smoother / slower
-  var delay = 40;      // ms between frames
+  var steps = 80;
+  var delay = 40;
 
-  // precompute interpolated points
   var coords = [];
   for (var i = 0; i <= steps; i++) {
     var t = i / steps;
@@ -245,18 +247,15 @@ function animateTo(targetIndex) {
     coords.push([lat, lon]);
   }
 
-  if (pathLine) {
-    map.removeLayer(pathLine);
-  }
+  if (pathLine) map.removeLayer(pathLine);
   pathLine = L.polyline([], {
     color: "#b30000",
     weight: 3,
-    dashArray: "6,8",    // dotted line
+    dashArray: "6,8",
     opacity: 0.9
   }).addTo(map);
 
   var iStep = 0;
-
   var interval = setInterval(function() {
     pathLine.setLatLngs(coords.slice(0, iStep + 1));
     marker.setLatLng(coords[iStep]);
@@ -277,12 +276,10 @@ function nextEvent() {
   if (currentIndex >= events.length - 1) return;
   animateTo(currentIndex + 1);
 }
-
 function prevEvent() {
   if (currentIndex <= 0) return;
   animateTo(currentIndex - 1);
 }
-
 </script>
 </body>
 </html>
