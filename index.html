@@ -7,202 +7,284 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <style>
-    body { margin:0; font-family: Helvetica, Arial; }
-    #container { display:flex; height:100vh; }
-    #sidebar {
-      width: 35%;
-      padding: 20px;
-      box-shadow: inset -1px 0px 4px rgba(0,0,0,0.2);
-      overflow-y: auto;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;  /* no scroll */
+      font-family: Helvetica, Arial, sans-serif;
     }
     #map {
-      flex-grow:1;
-      height:100vh;
+      width: 100vw;
+      height: 100vh;
     }
-    .title {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #0b2c6d;
+    /* overlay text box */
+    #info-box {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 80vw;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 10px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    #event-title {
+      font-size: 1.2rem;
       font-weight: bold;
+      color: #b30000; /* deep red */
+      margin-bottom: 6px;
     }
-    .details {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      color:#333;
+    #event-details {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    /* controls */
+    #controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
     }
     .btn {
-      padding: 10px 15px;
-      background: #0b2c6d;
+      padding: 8px 14px;
+      background: #b30000;
       color: white;
-      border-radius: 5px;
-      cursor:pointer;
-      display:inline-block;
-      margin-right:10px;
-      user-select:none;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-    .btn:active { opacity:0.7; }
+    .btn:active { opacity: 0.75; }
+    .btn.disabled {
+      opacity: 0.4;
+      cursor: default;
+      box-shadow: none;
+    }
   </style>
 </head>
 
 <body>
 
-<div id="container">
-  <div id="sidebar">
-    <div class="title" id="event-title">Loading…</div>
-    <div class="details" id="event-details"></div>
+<div id="map"></div>
 
-    <div>
-      <span class="btn" onclick="prevEvent()">◀ Previous</span>
-      <span class="btn" onclick="nextEvent()">Next ▶</span>
-    </div>
-  </div>
+<div id="info-box">
+  <div id="event-title">Loading…</div>
+  <div id="event-details"></div>
+</div>
 
-  <div id="map"></div>
+<div id="controls">
+  <div class="btn" id="prevBtn" onclick="prevEvent()">◀ Previous</div>
+  <div class="btn" id="nextBtn" onclick="nextEvent()">Next ▶</div>
 </div>
 
 <script>
-
+// ---- DATA ----
 var events = [
   {
     "id": 1,
     "lat": 24.7564,
     "lon": 90.4065,
-    "title": "1858-11-30 \u2014 Birthplace area (Mymensingh)",
+    "title": "1858-11-30 — Birthplace area (Mymensingh)",
     "details": "Jagadish Chandra Bose was born on 30 November 1858 in Mymensingh, then in the Bengal Presidency, British India (now in Bangladesh)"
   },
   {
     "id": 2,
     "lat": 23.5216,
     "lon": 90.2383,
-    "title": "1860s (childhood) \u2014 Rarikhal village, Bikrampur",
+    "title": "1860s (childhood) — Rarikhal village, Bikrampur",
     "details": "His family was originally from the village of Rarikhal in Bikrampur (now in Munshiganj district). Early years here, with Bengali-medium village schooling, strongly shaped his cultural and nationalist outlook"
   },
   {
     "id": 3,
     "lat": 24.00222,
     "lon": 89.23333,
-    "title": "1860s\u20131870s \u2014 Pabna Zilla School",
+    "title": "1860s–1870s — Pabna Zilla School",
     "details": "One of his early schools was Pabna Zilla School, a major district school where he began formal education before moving to higher-level institutions"
   },
   {
     "id": 4,
     "lat": 23.707728,
     "lon": 90.410757,
-    "title": "1870s \u2014 Dhaka Collegiate School",
-    "details": "He continued his education at Dhaka Collegiate School, a prominent government boys\u2019 high school that prepared him for university entrance"
+    "title": "1870s — Dhaka Collegiate School",
+    "details": "He continued his education at Dhaka Collegiate School, a prominent government boys’ high school that prepared him for university entrance"
   },
   {
     "id": 5,
     "lat": 22.54639,
     "lon": 88.35722,
-    "title": "1875\u20131877 \u2014 St. Xavier's College, Park Street",
-    "details": "From 1875 he studied at St. Xavier\u2019s College, Calcutta, completing a BA in 1877. Here Jesuit Father Eugene Lafont stimulated his interest in experimental physical science"
+    "title": "1875–1877 — St. Xavier's College, Park Street",
+    "details": "From 1875 he studied at St. Xavier’s College, Calcutta, completing a BA in 1877. Here Jesuit Father Eugene Lafont stimulated his interest in experimental physical science"
   },
   {
     "id": 6,
     "lat": 51.5245592,
     "lon": -0.1340401,
-    "title": "1880 \u2014 University College London (main campus)",
+    "title": "1880 — University College London (main campus)",
     "details": "In 1880 he went to England and initially enrolled in medicine at the University of London (UCL). Health problems forced him to abandon medical studies, but this exposed him to advanced European laboratories"
   },
   {
     "id": 7,
     "lat": 52.2061776,
     "lon": 0.12270618,
-    "title": "1881\u20131884 \u2014 Christ's College, Cambridge",
-    "details": "He then studied Natural Sciences at Christ\u2019s College, Cambridge, earning a BA (Natural Sciences Tripos) in 1884, alongside a BSc from the University of London\u2014his formal training in physics"
+    "title": "1881–1884 — Christ's College, Cambridge",
+    "details": "He then studied Natural Sciences at Christ’s College, Cambridge, earning a BA (Natural Sciences Tripos) in 1884, alongside a BSc from the University of London—his formal training in physics"
   },
   {
     "id": 8,
     "lat": 22.576925,
     "lon": 88.363346,
-    "title": "1885 \u2014 Presidency College (now Presidency University)",
-    "details": "In January 1885 he became professor of physics at Presidency College, the first Indian to hold such a post. Because his salary was set to one-third of a European\u2019s, he famously refused pay for three years in protest"
+    "title": "1885 — Presidency College (now Presidency University)",
+    "details": "In January 1885 he became professor of physics at Presidency College, the first Indian to hold such a post. Because his salary was set to one-third of a European’s, he famously refused pay for three years in protest"
   },
   {
     "id": 9,
     "lat": 22.576925,
     "lon": 88.363346,
-    "title": "1894\u20131895 \u2014 Presidency College laboratory",
-    "details": "Around 1894 in a tiny lab at Presidency College, he built apparatus to generate and detect millimetre-wave (microwave) radio, demonstrating reflection, refraction and polarisation of electric rays\u2014foundational work in radio science"
+    "title": "1894–1895 — Presidency College laboratory",
+    "details": "Around 1894 in a tiny lab at Presidency College, he built apparatus to generate and detect millimetre-wave (microwave) radio, demonstrating reflection, refraction and polarisation of electric rays—foundational work in radio science"
   },
   {
     "id": 10,
     "lat": 22.567836,
     "lon": 88.344857,
-    "title": "1895-11 \u2014 Kolkata Town Hall",
-    "details": "In a celebrated public lecture at Kolkata Town Hall in 1895, he sent millimetre-wave signals through intervening walls to ring a bell and ignite gunpowder\u2014an early wireless demonstration predating Marconi\u2019s famous work"
+    "title": "1895-11 — Kolkata Town Hall",
+    "details": "In a celebrated public lecture at Kolkata Town Hall in 1895, he sent millimetre-wave signals through intervening walls to ring a bell and ignite gunpowder—an early wireless demonstration predating Marconi’s famous work"
   },
   {
     "id": 11,
     "lat": 51.5099141,
     "lon": -0.1425058,
-    "title": "1897 \u2014 Royal Institution of Great Britain",
+    "title": "1897 — Royal Institution of Great Britain",
     "details": "In 1897 he lectured at the Royal Institution in London on his millimetre-wave experiments, receiving praise from leading physicists such as Lord Kelvin and further establishing his international reputation"
   },
   {
     "id": 12,
     "lat": 22.5797,
     "lon": 88.3731,
-    "title": "1917-11-30 onward \u2014 Bose Institute, APC Road campus",
-    "details": "On 30 November 1917 he founded Bose Institute (Basubigyan Mandir) in Calcutta, Asia\u2019s first modern interdisciplinary research centre. He served as its director from 1917 until his death in 1937, continuing his work on plant physiology and physics"
+    "title": "1917-11-30 onward — Bose Institute, APC Road campus",
+    "details": "On 30 November 1917 he founded Bose Institute (Basubigyan Mandir) in Calcutta, Asia’s first modern interdisciplinary research centre. He served as its director from 1917 until his death in 1937, continuing his work on plant physiology and physics"
   },
   {
     "id": 13,
     "lat": 48.8485,
     "lon": 2.3432,
-    "title": "1926-08 \u2014 Sorbonne (historic building)",
-    "details": "In 1926 he delivered a famous lecture at the Sorbonne demonstrating plant electrical responses\u2014using his crescograph to argue for a kind of \u2018nervous system\u2019 in plants\u2014before an audience of European scientists"
+    "title": "1926-08 — Sorbonne (historic building)",
+    "details": "In 1926 he delivered a famous lecture at the Sorbonne demonstrating plant electrical responses—using his crescograph to argue for a kind of ‘nervous system’ in plants—before an audience of European scientists"
   },
   {
     "id": 14,
     "lat": 24.184713,
     "lon": 86.302193,
-    "title": "1920s\u20131937, esp. 1937-11-23 \u2014 House near Jhanda Maidan",
+    "title": "1920s–1937, esp. 1937-11-23 — House near Jhanda Maidan",
     "details": "He spent his later years in Giridih, living in a house near Jhanda Maidan and continuing scientific and philosophical work. He died here on 23 November 1937; the house later became the Jagdish Chandra Bose Smriti Vigyan Bhavan"
   }
 ];
 
-  var currentIndex = 0;
+// ---- MAP SETUP ----
+var currentIndex = 0;
+var animating = false;
 
-  // Leaflet map
-  var map = L.map('map').setView([events[0].lat, events[0].lon], 7);
+var map = L.map('map').setView([events[0].lat, events[0].lon], 6);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap"
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "&copy; OpenStreetMap"
+}).addTo(map);
+
+// red circle marker
+var marker = L.circleMarker([events[0].lat, events[0].lon], {
+  radius: 6,
+  color: "#b30000",
+  weight: 2,
+  fillColor: "#b30000",
+  fillOpacity: 1
+}).addTo(map);
+
+// animated path line
+var pathLine = null;
+
+// ---- UI UPDATE ----
+function updateText() {
+  var e = events[currentIndex];
+  document.getElementById("event-title").innerHTML = e.title;
+  document.getElementById("event-details").innerHTML = e.details;
+
+  // disable buttons at ends
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  prevBtn.classList.toggle("disabled", currentIndex === 0);
+  nextBtn.classList.toggle("disabled", currentIndex === events.length - 1);
+}
+
+updateText();
+
+// ---- ANIMATION ----
+function animateTo(targetIndex) {
+  if (animating || targetIndex === currentIndex) return;
+  if (targetIndex < 0 || targetIndex >= events.length) return;
+
+  animating = true;
+
+  var start = events[currentIndex];
+  var end   = events[targetIndex];
+
+  var steps = 80;      // more steps = smoother / slower
+  var delay = 40;      // ms between frames
+
+  // precompute interpolated points
+  var coords = [];
+  for (var i = 0; i <= steps; i++) {
+    var t = i / steps;
+    var lat = start.lat + (end.lat - start.lat) * t;
+    var lon = start.lon + (end.lon - start.lon) * t;
+    coords.push([lat, lon]);
+  }
+
+  if (pathLine) {
+    map.removeLayer(pathLine);
+  }
+  pathLine = L.polyline([], {
+    color: "#b30000",
+    weight: 3,
+    dashArray: "6,8",    // dotted line
+    opacity: 0.9
   }).addTo(map);
 
-  var marker = null;
+  var iStep = 0;
 
-  function showEvent(i) {
-    currentIndex = i;
+  var interval = setInterval(function() {
+    pathLine.setLatLngs(coords.slice(0, iStep + 1));
+    marker.setLatLng(coords[iStep]);
+    map.panTo(coords[iStep], {animate: false});
 
-    var e = events[i];
-    document.getElementById("event-title").innerHTML = e.title;
-    document.getElementById("event-details").innerHTML = e.details;
+    iStep++;
+    if (iStep >= coords.length) {
+      clearInterval(interval);
+      currentIndex = targetIndex;
+      updateText();
+      animating = false;
+    }
+  }, delay);
+}
 
-    // Update marker on map
-    if (marker) map.removeLayer(marker);
+// ---- BUTTON HANDLERS ----
+function nextEvent() {
+  if (currentIndex >= events.length - 1) return;
+  animateTo(currentIndex + 1);
+}
 
-    marker = L.marker([e.lat, e.lon]).addTo(map);
-    map.setView([e.lat, e.lon], 7);
-  }
-
-  function nextEvent() {
-    if (currentIndex < events.length - 1)
-      showEvent(currentIndex + 1);
-  }
-
-  function prevEvent() {
-    if (currentIndex > 0)
-      showEvent(currentIndex - 1);
-  }
-
-  // Start at event 0
-  showEvent(0);
+function prevEvent() {
+  if (currentIndex <= 0) return;
+  animateTo(currentIndex - 1);
+}
 
 </script>
-
 </body>
 </html>
+
 
