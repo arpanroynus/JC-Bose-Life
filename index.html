@@ -1,785 +1,208 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_9d278bfb7d496f3273f4fa63bd865c98 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+  <meta charset="utf-8" />
+  <title>JC Bose — Interactive Life Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
-
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
-
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
-
-        
+  <style>
+    body { margin:0; font-family: Helvetica, Arial; }
+    #container { display:flex; height:100vh; }
+    #sidebar {
+      width: 35%;
+      padding: 20px;
+      box-shadow: inset -1px 0px 4px rgba(0,0,0,0.2);
+      overflow-y: auto;
+    }
+    #map {
+      flex-grow:1;
+      height:100vh;
+    }
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #0b2c6d;
+      font-weight: bold;
+    }
+    .details {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color:#333;
+    }
+    .btn {
+      padding: 10px 15px;
+      background: #0b2c6d;
+      color: white;
+      border-radius: 5px;
+      cursor:pointer;
+      display:inline-block;
+      margin-right:10px;
+      user-select:none;
+    }
+    .btn:active { opacity:0.7; }
+  </style>
 </head>
+
 <body>
-    
-    
-            <div class="folium-map" id="map_9d278bfb7d496f3273f4fa63bd865c98" ></div>
-        
-</body>
+
+<div id="container">
+  <div id="sidebar">
+    <div class="title" id="event-title">Loading…</div>
+    <div class="details" id="event-details"></div>
+
+    <div>
+      <span class="btn" onclick="prevEvent()">◀ Previous</span>
+      <span class="btn" onclick="nextEvent()">Next ▶</span>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
 <script>
-    
-    
-            var map_9d278bfb7d496f3273f4fa63bd865c98 = L.map(
-                "map_9d278bfb7d496f3273f4fa63bd865c98",
-                {
-                    center: [31.222113421428567, 63.61302209142857],
-                    crs: L.CRS.EPSG3857,
-                    ...{
-  "zoom": 4,
-  "zoomControl": true,
-  "preferCanvas": false,
-}
 
-                }
-            );
+var events = [
+  {
+    "id": 1,
+    "lat": 24.7564,
+    "lon": 90.4065,
+    "title": "1858-11-30 \u2014 Birthplace area (Mymensingh)",
+    "details": "Jagadish Chandra Bose was born on 30 November 1858 in Mymensingh, then in the Bengal Presidency, British India (now in Bangladesh)"
+  },
+  {
+    "id": 2,
+    "lat": 23.5216,
+    "lon": 90.2383,
+    "title": "1860s (childhood) \u2014 Rarikhal village, Bikrampur",
+    "details": "His family was originally from the village of Rarikhal in Bikrampur (now in Munshiganj district). Early years here, with Bengali-medium village schooling, strongly shaped his cultural and nationalist outlook"
+  },
+  {
+    "id": 3,
+    "lat": 24.00222,
+    "lon": 89.23333,
+    "title": "1860s\u20131870s \u2014 Pabna Zilla School",
+    "details": "One of his early schools was Pabna Zilla School, a major district school where he began formal education before moving to higher-level institutions"
+  },
+  {
+    "id": 4,
+    "lat": 23.707728,
+    "lon": 90.410757,
+    "title": "1870s \u2014 Dhaka Collegiate School",
+    "details": "He continued his education at Dhaka Collegiate School, a prominent government boys\u2019 high school that prepared him for university entrance"
+  },
+  {
+    "id": 5,
+    "lat": 22.54639,
+    "lon": 88.35722,
+    "title": "1875\u20131877 \u2014 St. Xavier's College, Park Street",
+    "details": "From 1875 he studied at St. Xavier\u2019s College, Calcutta, completing a BA in 1877. Here Jesuit Father Eugene Lafont stimulated his interest in experimental physical science"
+  },
+  {
+    "id": 6,
+    "lat": 51.5245592,
+    "lon": -0.1340401,
+    "title": "1880 \u2014 University College London (main campus)",
+    "details": "In 1880 he went to England and initially enrolled in medicine at the University of London (UCL). Health problems forced him to abandon medical studies, but this exposed him to advanced European laboratories"
+  },
+  {
+    "id": 7,
+    "lat": 52.2061776,
+    "lon": 0.12270618,
+    "title": "1881\u20131884 \u2014 Christ's College, Cambridge",
+    "details": "He then studied Natural Sciences at Christ\u2019s College, Cambridge, earning a BA (Natural Sciences Tripos) in 1884, alongside a BSc from the University of London\u2014his formal training in physics"
+  },
+  {
+    "id": 8,
+    "lat": 22.576925,
+    "lon": 88.363346,
+    "title": "1885 \u2014 Presidency College (now Presidency University)",
+    "details": "In January 1885 he became professor of physics at Presidency College, the first Indian to hold such a post. Because his salary was set to one-third of a European\u2019s, he famously refused pay for three years in protest"
+  },
+  {
+    "id": 9,
+    "lat": 22.576925,
+    "lon": 88.363346,
+    "title": "1894\u20131895 \u2014 Presidency College laboratory",
+    "details": "Around 1894 in a tiny lab at Presidency College, he built apparatus to generate and detect millimetre-wave (microwave) radio, demonstrating reflection, refraction and polarisation of electric rays\u2014foundational work in radio science"
+  },
+  {
+    "id": 10,
+    "lat": 22.567836,
+    "lon": 88.344857,
+    "title": "1895-11 \u2014 Kolkata Town Hall",
+    "details": "In a celebrated public lecture at Kolkata Town Hall in 1895, he sent millimetre-wave signals through intervening walls to ring a bell and ignite gunpowder\u2014an early wireless demonstration predating Marconi\u2019s famous work"
+  },
+  {
+    "id": 11,
+    "lat": 51.5099141,
+    "lon": -0.1425058,
+    "title": "1897 \u2014 Royal Institution of Great Britain",
+    "details": "In 1897 he lectured at the Royal Institution in London on his millimetre-wave experiments, receiving praise from leading physicists such as Lord Kelvin and further establishing his international reputation"
+  },
+  {
+    "id": 12,
+    "lat": 22.5797,
+    "lon": 88.3731,
+    "title": "1917-11-30 onward \u2014 Bose Institute, APC Road campus",
+    "details": "On 30 November 1917 he founded Bose Institute (Basubigyan Mandir) in Calcutta, Asia\u2019s first modern interdisciplinary research centre. He served as its director from 1917 until his death in 1937, continuing his work on plant physiology and physics"
+  },
+  {
+    "id": 13,
+    "lat": 48.8485,
+    "lon": 2.3432,
+    "title": "1926-08 \u2014 Sorbonne (historic building)",
+    "details": "In 1926 he delivered a famous lecture at the Sorbonne demonstrating plant electrical responses\u2014using his crescograph to argue for a kind of \u2018nervous system\u2019 in plants\u2014before an audience of European scientists"
+  },
+  {
+    "id": 14,
+    "lat": 24.184713,
+    "lon": 86.302193,
+    "title": "1920s\u20131937, esp. 1937-11-23 \u2014 House near Jhanda Maidan",
+    "details": "He spent his later years in Giridih, living in a house near Jhanda Maidan and continuing scientific and philosophical work. He died here on 23 November 1937; the house later became the Jagdish Chandra Bose Smriti Vigyan Bhavan"
+  }
+];
 
-            
+  var currentIndex = 0;
 
-        
-    
-            var tile_layer_948358b3832fa2cfb75d815dc090347c = L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-                {
-  "minZoom": 0,
-  "maxZoom": 20,
-  "maxNativeZoom": 20,
-  "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
-  "subdomains": "abcd",
-  "detectRetina": false,
-  "tms": false,
-  "opacity": 1,
-}
+  // Leaflet map
+  var map = L.map('map').setView([events[0].lat, events[0].lon], 7);
 
-            );
-        
-    
-            tile_layer_948358b3832fa2cfb75d815dc090347c.addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var marker_fe7e28755bb3bf488e3c2773d7045138 = L.marker(
-                [24.7564, 90.4065],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_5cddc0d7d88087d04b02cd2b1f518ab8 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_cc3530a1aa496336cd584d7772145037 = L.popup({
-  "maxWidth": 300,
-});
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap"
+  }).addTo(map);
 
-        
-            
-                var html_cceab907b1a2b9957b445662bee9d03f = $(`<div id="html_cceab907b1a2b9957b445662bee9d03f" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1858-11-30</h4>       <strong>Birthplace area (Mymensingh)</strong><br><br>       <span style="font-size: 90%;">Jagadish Chandra Bose was born on 30 November 1858 in Mymensingh, then in the Bengal Presidency, British India (now in Bangladesh)</span>     </div>     </div>`)[0];
-                popup_cc3530a1aa496336cd584d7772145037.setContent(html_cceab907b1a2b9957b445662bee9d03f);
-            
-        
+  var marker = null;
 
-        marker_fe7e28755bb3bf488e3c2773d7045138.bindPopup(popup_cc3530a1aa496336cd584d7772145037)
-        ;
+  function showEvent(i) {
+    currentIndex = i;
 
-        
-    
-    
-            marker_fe7e28755bb3bf488e3c2773d7045138.bindTooltip(
-                `<div>
-                     1858-11-30 — Birthplace area (Mymensingh)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_fe7e28755bb3bf488e3c2773d7045138.setIcon(icon_5cddc0d7d88087d04b02cd2b1f518ab8);
-            
-    
-            var marker_653186979d0cb3f9a761995c22b5e40c = L.marker(
-                [23.5216, 90.2383],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_bcf9016831662e6e7f6410e8e732b23e = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_cb568a54d8863d527f4c8e9bd19b6416 = L.popup({
-  "maxWidth": 300,
-});
+    var e = events[i];
+    document.getElementById("event-title").innerHTML = e.title;
+    document.getElementById("event-details").innerHTML = e.details;
 
-        
-            
-                var html_382617b3b90f85643d547ea45bae824a = $(`<div id="html_382617b3b90f85643d547ea45bae824a" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1860s (childhood)</h4>       <strong>Rarikhal village, Bikrampur</strong><br><br>       <span style="font-size: 90%;">His family was originally from the village of Rarikhal in Bikrampur (now in Munshiganj district). Early years here, with Bengali-medium village schooling, strongly shaped his cultural and nationalist outlook</span>     </div>     </div>`)[0];
-                popup_cb568a54d8863d527f4c8e9bd19b6416.setContent(html_382617b3b90f85643d547ea45bae824a);
-            
-        
+    // Update marker on map
+    if (marker) map.removeLayer(marker);
 
-        marker_653186979d0cb3f9a761995c22b5e40c.bindPopup(popup_cb568a54d8863d527f4c8e9bd19b6416)
-        ;
+    marker = L.marker([e.lat, e.lon]).addTo(map);
+    map.setView([e.lat, e.lon], 7);
+  }
 
-        
-    
-    
-            marker_653186979d0cb3f9a761995c22b5e40c.bindTooltip(
-                `<div>
-                     1860s (childhood) — Rarikhal village, Bikrampur
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_653186979d0cb3f9a761995c22b5e40c.setIcon(icon_bcf9016831662e6e7f6410e8e732b23e);
-            
-    
-            var marker_7d5c0341f7ce300c2d541c18fe3f582c = L.marker(
-                [24.00222, 89.23333],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_7cf311293cb228f5038024e6c4407d39 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_793161838389d28ddcd8bd9dee735100 = L.popup({
-  "maxWidth": 300,
-});
+  function nextEvent() {
+    if (currentIndex < events.length - 1)
+      showEvent(currentIndex + 1);
+  }
 
-        
-            
-                var html_b60f6a300289cff6744533660df124a3 = $(`<div id="html_b60f6a300289cff6744533660df124a3" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1860s–1870s</h4>       <strong>Pabna Zilla School</strong><br><br>       <span style="font-size: 90%;">One of his early schools was Pabna Zilla School, a major district school where he began formal education before moving to higher-level institutions</span>     </div>     </div>`)[0];
-                popup_793161838389d28ddcd8bd9dee735100.setContent(html_b60f6a300289cff6744533660df124a3);
-            
-        
+  function prevEvent() {
+    if (currentIndex > 0)
+      showEvent(currentIndex - 1);
+  }
 
-        marker_7d5c0341f7ce300c2d541c18fe3f582c.bindPopup(popup_793161838389d28ddcd8bd9dee735100)
-        ;
+  // Start at event 0
+  showEvent(0);
 
-        
-    
-    
-            marker_7d5c0341f7ce300c2d541c18fe3f582c.bindTooltip(
-                `<div>
-                     1860s–1870s — Pabna Zilla School
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_7d5c0341f7ce300c2d541c18fe3f582c.setIcon(icon_7cf311293cb228f5038024e6c4407d39);
-            
-    
-            var marker_eed7e8cdb307f9ff381d75282d16d06f = L.marker(
-                [23.707728, 90.410757],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_896c0f069983a5bf7b47efb962abe8b9 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_8a9bbd0bebf39da463fe9246654ab796 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_c34a8143f1df0761ee791d4f19adb914 = $(`<div id="html_c34a8143f1df0761ee791d4f19adb914" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1870s</h4>       <strong>Dhaka Collegiate School</strong><br><br>       <span style="font-size: 90%;">He continued his education at Dhaka Collegiate School, a prominent government boys’ high school that prepared him for university entrance</span>     </div>     </div>`)[0];
-                popup_8a9bbd0bebf39da463fe9246654ab796.setContent(html_c34a8143f1df0761ee791d4f19adb914);
-            
-        
-
-        marker_eed7e8cdb307f9ff381d75282d16d06f.bindPopup(popup_8a9bbd0bebf39da463fe9246654ab796)
-        ;
-
-        
-    
-    
-            marker_eed7e8cdb307f9ff381d75282d16d06f.bindTooltip(
-                `<div>
-                     1870s — Dhaka Collegiate School
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_eed7e8cdb307f9ff381d75282d16d06f.setIcon(icon_896c0f069983a5bf7b47efb962abe8b9);
-            
-    
-            var marker_de67d5c4c7c05d7e6982ac4a4f5e5342 = L.marker(
-                [22.54639, 88.35722],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_0a02aaaabbf6758e3443f8feb23634a8 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_4fd9e181a1d24d2107b13d6158a8bc8d = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_f9d98fc94c52e6e0d4bbf854bf1e5cbd = $(`<div id="html_f9d98fc94c52e6e0d4bbf854bf1e5cbd" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1875–1877</h4>       <strong>St. Xavier's College, Park Street</strong><br><br>       <span style="font-size: 90%;">From 1875 he studied at St. Xavier’s College, Calcutta, completing a BA in 1877. Here Jesuit Father Eugene Lafont stimulated his interest in experimental physical science</span>     </div>     </div>`)[0];
-                popup_4fd9e181a1d24d2107b13d6158a8bc8d.setContent(html_f9d98fc94c52e6e0d4bbf854bf1e5cbd);
-            
-        
-
-        marker_de67d5c4c7c05d7e6982ac4a4f5e5342.bindPopup(popup_4fd9e181a1d24d2107b13d6158a8bc8d)
-        ;
-
-        
-    
-    
-            marker_de67d5c4c7c05d7e6982ac4a4f5e5342.bindTooltip(
-                `<div>
-                     1875–1877 — St. Xavier's College, Park Street
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_de67d5c4c7c05d7e6982ac4a4f5e5342.setIcon(icon_0a02aaaabbf6758e3443f8feb23634a8);
-            
-    
-            var marker_1679c2b1a217aa968ef97ec03d7fbdfe = L.marker(
-                [51.5245592, -0.1340401],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_8fccf763eb2e542915428b1e7c78c77e = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_26da9a5be67305a2cb73be54bdfe68c8 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_6a97f6cebb0720ca3536a604f7fc1cab = $(`<div id="html_6a97f6cebb0720ca3536a604f7fc1cab" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1880</h4>       <strong>University College London (main campus)</strong><br><br>       <span style="font-size: 90%;">In 1880 he went to England and initially enrolled in medicine at the University of London (UCL). Health problems forced him to abandon medical studies, but this exposed him to advanced European laboratories</span>     </div>     </div>`)[0];
-                popup_26da9a5be67305a2cb73be54bdfe68c8.setContent(html_6a97f6cebb0720ca3536a604f7fc1cab);
-            
-        
-
-        marker_1679c2b1a217aa968ef97ec03d7fbdfe.bindPopup(popup_26da9a5be67305a2cb73be54bdfe68c8)
-        ;
-
-        
-    
-    
-            marker_1679c2b1a217aa968ef97ec03d7fbdfe.bindTooltip(
-                `<div>
-                     1880 — University College London (main campus)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_1679c2b1a217aa968ef97ec03d7fbdfe.setIcon(icon_8fccf763eb2e542915428b1e7c78c77e);
-            
-    
-            var marker_80cb1057a023280096f499a897b0f887 = L.marker(
-                [52.2061776, 0.12270618],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_abd2f4be14246be6fad75d1234fffdc6 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_ec6be4185f671a7f67efcb8ea8f46df9 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_5cac5c68c225d385225e315510e5cb87 = $(`<div id="html_5cac5c68c225d385225e315510e5cb87" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1881–1884</h4>       <strong>Christ's College, Cambridge</strong><br><br>       <span style="font-size: 90%;">He then studied Natural Sciences at Christ’s College, Cambridge, earning a BA (Natural Sciences Tripos) in 1884, alongside a BSc from the University of London—his formal training in physics</span>     </div>     </div>`)[0];
-                popup_ec6be4185f671a7f67efcb8ea8f46df9.setContent(html_5cac5c68c225d385225e315510e5cb87);
-            
-        
-
-        marker_80cb1057a023280096f499a897b0f887.bindPopup(popup_ec6be4185f671a7f67efcb8ea8f46df9)
-        ;
-
-        
-    
-    
-            marker_80cb1057a023280096f499a897b0f887.bindTooltip(
-                `<div>
-                     1881–1884 — Christ's College, Cambridge
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_80cb1057a023280096f499a897b0f887.setIcon(icon_abd2f4be14246be6fad75d1234fffdc6);
-            
-    
-            var marker_ab31a85b3d81c3445114cd7438fd04bf = L.marker(
-                [22.576925, 88.363346],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_4d77ce9ea4460000a840e717c9f5f6b9 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_f3aa6a6db32aef94d738e3dbd5355a6a = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_d94dd808d585c2668b867d80fce29e25 = $(`<div id="html_d94dd808d585c2668b867d80fce29e25" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1885</h4>       <strong>Presidency College (now Presidency University)</strong><br><br>       <span style="font-size: 90%;">In January 1885 he became professor of physics at Presidency College, the first Indian to hold such a post. Because his salary was set to one-third of a European’s, he famously refused pay for three years in protest</span>     </div>     </div>`)[0];
-                popup_f3aa6a6db32aef94d738e3dbd5355a6a.setContent(html_d94dd808d585c2668b867d80fce29e25);
-            
-        
-
-        marker_ab31a85b3d81c3445114cd7438fd04bf.bindPopup(popup_f3aa6a6db32aef94d738e3dbd5355a6a)
-        ;
-
-        
-    
-    
-            marker_ab31a85b3d81c3445114cd7438fd04bf.bindTooltip(
-                `<div>
-                     1885 — Presidency College (now Presidency University)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_ab31a85b3d81c3445114cd7438fd04bf.setIcon(icon_4d77ce9ea4460000a840e717c9f5f6b9);
-            
-    
-            var marker_277747fde45cac2851b18316f4801b26 = L.marker(
-                [22.576925, 88.363346],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_973949bd9a0a4efa3662b9c1f7ad86ec = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_1432bc083b116950e6be3f610f8656ac = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_b48b8089c67d5c50fe8b09e102c204fa = $(`<div id="html_b48b8089c67d5c50fe8b09e102c204fa" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1894–1895</h4>       <strong>Presidency College laboratory</strong><br><br>       <span style="font-size: 90%;">Around 1894 in a tiny lab at Presidency College, he built apparatus to generate and detect millimetre-wave (microwave) radio, demonstrating reflection, refraction and polarisation of electric rays—foundational work in radio science</span>     </div>     </div>`)[0];
-                popup_1432bc083b116950e6be3f610f8656ac.setContent(html_b48b8089c67d5c50fe8b09e102c204fa);
-            
-        
-
-        marker_277747fde45cac2851b18316f4801b26.bindPopup(popup_1432bc083b116950e6be3f610f8656ac)
-        ;
-
-        
-    
-    
-            marker_277747fde45cac2851b18316f4801b26.bindTooltip(
-                `<div>
-                     1894–1895 — Presidency College laboratory
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_277747fde45cac2851b18316f4801b26.setIcon(icon_973949bd9a0a4efa3662b9c1f7ad86ec);
-            
-    
-            var marker_7f30dc12aa68733cf2f0ea2eac3d76f4 = L.marker(
-                [22.567836, 88.344857],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_aefc0f2fea23d01c0a8b89db82b0f28b = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_fc60648edc27c7f68ce98081e83bdc2f = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_5a5c77566035c565749e08fc692075d9 = $(`<div id="html_5a5c77566035c565749e08fc692075d9" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1895-11</h4>       <strong>Kolkata Town Hall</strong><br><br>       <span style="font-size: 90%;">In a celebrated public lecture at Kolkata Town Hall in 1895, he sent millimetre-wave signals through intervening walls to ring a bell and ignite gunpowder—an early wireless demonstration predating Marconi’s famous work</span>     </div>     </div>`)[0];
-                popup_fc60648edc27c7f68ce98081e83bdc2f.setContent(html_5a5c77566035c565749e08fc692075d9);
-            
-        
-
-        marker_7f30dc12aa68733cf2f0ea2eac3d76f4.bindPopup(popup_fc60648edc27c7f68ce98081e83bdc2f)
-        ;
-
-        
-    
-    
-            marker_7f30dc12aa68733cf2f0ea2eac3d76f4.bindTooltip(
-                `<div>
-                     1895-11 — Kolkata Town Hall
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_7f30dc12aa68733cf2f0ea2eac3d76f4.setIcon(icon_aefc0f2fea23d01c0a8b89db82b0f28b);
-            
-    
-            var marker_6c8d721b05d3d001f7e08d6c89816bbc = L.marker(
-                [51.5099141, -0.1425058],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_91d2226b75e5bf6a2683fb276b6c0a5f = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_808f7e6194f24270d4bc4b737adad376 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_06154570596be6f59117d2865e869a3a = $(`<div id="html_06154570596be6f59117d2865e869a3a" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1897</h4>       <strong>Royal Institution of Great Britain</strong><br><br>       <span style="font-size: 90%;">In 1897 he lectured at the Royal Institution in London on his millimetre-wave experiments, receiving praise from leading physicists such as Lord Kelvin and further establishing his international reputation</span>     </div>     </div>`)[0];
-                popup_808f7e6194f24270d4bc4b737adad376.setContent(html_06154570596be6f59117d2865e869a3a);
-            
-        
-
-        marker_6c8d721b05d3d001f7e08d6c89816bbc.bindPopup(popup_808f7e6194f24270d4bc4b737adad376)
-        ;
-
-        
-    
-    
-            marker_6c8d721b05d3d001f7e08d6c89816bbc.bindTooltip(
-                `<div>
-                     1897 — Royal Institution of Great Britain
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_6c8d721b05d3d001f7e08d6c89816bbc.setIcon(icon_91d2226b75e5bf6a2683fb276b6c0a5f);
-            
-    
-            var marker_de46c60b4304146dd862bac14943fa53 = L.marker(
-                [22.5797, 88.3731],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_3f1edfb5747840c15e8f7f77759fdcc2 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_154d83b13f9da0d713944800c4ceb116 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_85f8ff4ca87c7e93c71ae349843b99a9 = $(`<div id="html_85f8ff4ca87c7e93c71ae349843b99a9" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1917-11-30 onward</h4>       <strong>Bose Institute, APC Road campus</strong><br><br>       <span style="font-size: 90%;">On 30 November 1917 he founded Bose Institute (Basubigyan Mandir) in Calcutta, Asia’s first modern interdisciplinary research centre. He served as its director from 1917 until his death in 1937, continuing his work on plant physiology and physics</span>     </div>     </div>`)[0];
-                popup_154d83b13f9da0d713944800c4ceb116.setContent(html_85f8ff4ca87c7e93c71ae349843b99a9);
-            
-        
-
-        marker_de46c60b4304146dd862bac14943fa53.bindPopup(popup_154d83b13f9da0d713944800c4ceb116)
-        ;
-
-        
-    
-    
-            marker_de46c60b4304146dd862bac14943fa53.bindTooltip(
-                `<div>
-                     1917-11-30 onward — Bose Institute, APC Road campus
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_de46c60b4304146dd862bac14943fa53.setIcon(icon_3f1edfb5747840c15e8f7f77759fdcc2);
-            
-    
-            var marker_286c6101807916c65dbc5f4236f39436 = L.marker(
-                [24.184713, 86.302193],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_ed4a1a4f7ce6240523d6a8dfdfe43965 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_2a48db88eebf615aa4e9698b2e93db8c = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_352e79f395b677fce71190e89b6dd6d3 = $(`<div id="html_352e79f395b677fce71190e89b6dd6d3" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1920s–1937, esp. 1937-11-23</h4>       <strong>House near Jhanda Maidan</strong><br><br>       <span style="font-size: 90%;">He spent his later years in Giridih, living in a house near Jhanda Maidan and continuing scientific and philosophical work. He died here on 23 November 1937; the house later became the Jagdish Chandra Bose Smriti Vigyan Bhavan</span>     </div>     </div>`)[0];
-                popup_2a48db88eebf615aa4e9698b2e93db8c.setContent(html_352e79f395b677fce71190e89b6dd6d3);
-            
-        
-
-        marker_286c6101807916c65dbc5f4236f39436.bindPopup(popup_2a48db88eebf615aa4e9698b2e93db8c)
-        ;
-
-        
-    
-    
-            marker_286c6101807916c65dbc5f4236f39436.bindTooltip(
-                `<div>
-                     1920s–1937, esp. 1937-11-23 — House near Jhanda Maidan
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_286c6101807916c65dbc5f4236f39436.setIcon(icon_ed4a1a4f7ce6240523d6a8dfdfe43965);
-            
-    
-            var marker_0374482a0476ac0669ccda42854a046f = L.marker(
-                [48.8485, 2.3432],
-                {
-}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            var icon_628b5f239cceca5bd4019dfd248263a3 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_5fbdec7a0762de854f3ad4787788f5cd = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_4b8144c759cdbba6fb79bddf5bef1b47 = $(`<div id="html_4b8144c759cdbba6fb79bddf5bef1b47" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">       <h4 style="margin-bottom:4px;">1926-08</h4>       <strong>Sorbonne (historic building)</strong><br><br>       <span style="font-size: 90%;">In 1926 he delivered a famous lecture at the Sorbonne demonstrating plant electrical responses—using his crescograph to argue for a kind of ‘nervous system’ in plants—before an audience of European scientists</span>     </div>     </div>`)[0];
-                popup_5fbdec7a0762de854f3ad4787788f5cd.setContent(html_4b8144c759cdbba6fb79bddf5bef1b47);
-            
-        
-
-        marker_0374482a0476ac0669ccda42854a046f.bindPopup(popup_5fbdec7a0762de854f3ad4787788f5cd)
-        ;
-
-        
-    
-    
-            marker_0374482a0476ac0669ccda42854a046f.bindTooltip(
-                `<div>
-                     1926-08 — Sorbonne (historic building)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_0374482a0476ac0669ccda42854a046f.setIcon(icon_628b5f239cceca5bd4019dfd248263a3);
-            
-    
-            var poly_line_fb0e3a859b1e3db8d6633d969f127d29 = L.polyline(
-                [[24.7564, 90.4065], [23.5216, 90.2383], [24.00222, 89.23333], [23.707728, 90.410757], [22.54639, 88.35722], [51.5245592, -0.1340401], [52.2061776, 0.12270618], [22.576925, 88.363346], [22.576925, 88.363346], [22.567836, 88.344857], [51.5099141, -0.1425058], [22.5797, 88.3731], [24.184713, 86.302193], [48.8485, 2.3432]],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
-            ).addTo(map_9d278bfb7d496f3273f4fa63bd865c98);
-        
-    
-            map_9d278bfb7d496f3273f4fa63bd865c98.fitBounds(
-                [[24.7564, 90.4065], [23.5216, 90.2383], [24.00222, 89.23333], [23.707728, 90.410757], [22.54639, 88.35722], [51.5245592, -0.1340401], [52.2061776, 0.12270618], [22.576925, 88.363346], [22.576925, 88.363346], [22.567836, 88.344857], [51.5099141, -0.1425058], [22.5797, 88.3731], [24.184713, 86.302193], [48.8485, 2.3432]],
-                {}
-            );
-        
 </script>
+
+</body>
 </html>
+
