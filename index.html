@@ -1,286 +1,362 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>JC Bose — Interactive Life Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD: The Executive Function Spectrum</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        // Vibrant Palette: "Energetic Focus"
+                        primary: '#4F46E5',   // Indigo (Focus/Structure)
+                        secondary: '#F59E0B', // Amber (Energy/Creativity)
+                        accent: '#10B981',    // Emerald (Growth/Coping)
+                        danger: '#F43F5E',    // Rose (Impulsivity/Emotion)
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: Helvetica, Arial, sans-serif;
-    }
-    #map {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-      z-index: 1;              /* map base layer */
-    }
-    /* overlay text box */
-    #info-box {
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 80vw;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 10px 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      text-align: center;
-      z-index: 1000;           /* ALWAYS above map */
-    }
-    #event-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #b30000;
-      margin-bottom: 6px;
-    }
-    #event-details {
-      font-size: 0.95rem;
-      color: #333;
-    }
-    /* controls */
-    #controls {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 1000;          /* ALWAYS above map */
-    }
-    .btn {
-      padding: 8px 14px;
-      background: #b30000;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      user-select: none;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .btn:active { opacity: 0.75; }
-    .btn.disabled {
-      opacity: 0.4;
-      cursor: default;
-      box-shadow: none;
-    }
-  </style>
+        .card-hover {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
 </head>
+<body class="bg-light text-slate-800 font-sans leading-relaxed">
 
-<body>
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-primary to-purple-600 text-white py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Inside the ADHD Brain</h1>
+            <p class="text-xl md:text-2xl opacity-90 font-light">Navigating Executive Function, Emotions, and Neurochemistry</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                <span class="bg-white/20 px-4 py-2 rounded-full">Based on "ADHD 2.0" & "How to ADHD"</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full">Neurodivergence</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full">Dopamine Dynamics</span>
+            </div>
+        </div>
+    </header>
 
-<div id="map"></div>
+    <!-- AI COACH SECTION (NEW) -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 mt-12">
+        <div class="bg-gradient-to-br from-indigo-900 to-primary rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 flex items-center gap-2">
+                        ✨ AI Executive Function Coach
+                    </h2>
+                    <p class="opacity-80 mb-6">Stuck on a task? Tell the AI what you're struggling with, and it will give you a quick, ADHD-friendly 3-step action plan using task-slicing and dopamine hacks.</p>
+                    <div class="space-y-4">
+                        <textarea id="aiPrompt" placeholder="e.g., 'I need to start my laundry but I'm overwhelmed' or 'I have to write a 5-page report...'" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-secondary min-h-[100px]"></textarea>
+                        <button onclick="generateStrategy()" id="generateBtn" class="bg-secondary hover:bg-amber-500 text-dark font-bold py-3 px-8 rounded-xl transition-all flex items-center gap-2 shadow-lg active:scale-95">
+                            Get Strategy ✨
+                        </button>
+                    </div>
+                </div>
+                <div id="aiResponseContainer" class="hidden">
+                    <div class="bg-white text-slate-800 p-6 rounded-2xl shadow-inner min-h-[200px] flex flex-col">
+                        <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
+                            <span>🚀</span> Your Action Plan
+                        </h3>
+                        <div id="aiResponseText" class="text-sm space-y-4 leading-relaxed">
+                            <!-- Response injected here -->
+                        </div>
+                    </div>
+                </div>
+                <div id="aiLoading" class="hidden flex flex-col gap-4">
+                    <div class="h-6 w-3/4 shimmer rounded"></div>
+                    <div class="h-20 w-full shimmer rounded"></div>
+                    <div class="h-6 w-1/2 shimmer rounded"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div id="info-box">
-  <div id="event-title">Loading…</div>
-  <div id="event-details"></div>
-</div>
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
-<div id="controls">
-  <div class="btn" id="prevBtn" onclick="prevEvent()">◀ Previous</div>
-  <div class="btn" id="nextBtn" onclick="nextEvent()">Next ▶</div>
-</div>
+        <!-- SECTION 1: ETIOLOGY (CAUSES) -->
+        <section class="col-span-1 md:col-span-2">
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border-t-4 border-primary">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                    <h2 class="text-3xl font-bold text-dark">1. Origins: It's Not Just "Bad Parenting"</h2>
+                    <button onclick="explainTopic('Neurotransmitters in ADHD')" class="mt-2 md:mt-0 text-xs font-semibold text-primary border border-primary/30 px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+                        Explain Science ✨
+                    </button>
+                </div>
+                <p class="text-gray-600 mb-6">
+                    Contrary to old myths, ADHD is highly heritable and rooted in neurobiology. Research indicates that genetics play a massive role, comparable to height. It involves the regulation of neurotransmitters like <strong>Dopamine</strong> and <strong>Norepinephrine</strong>.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="heritabilityChart"></canvas>
+                        </div>
+                        <p class="text-sm text-center text-gray-500 mt-2">Source: Faraone et al. (2005), Barkley (2015)</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 p-4 rounded-xl border-l-4 border-primary">
+                            <h3 class="font-bold text-lg text-primary">🧠 The Neurotransmitter Gap</h3>
+                            <p class="text-sm">ADHD brains often have a dysregulation in dopamine transporters. Think of it as having a "leaky" fuel line for motivation. The brain seeks stimulation to return to baseline levels.</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-secondary">
+                            <h3 class="font-bold text-lg text-secondary">📉 The 30% Rule</h3>
+                            <p class="text-sm">Dr. Russell Barkley suggests that children with ADHD generally display executive functions about <strong>30% behind</strong> their chronological age.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
-// ---- DATA ----
-var events = [
-  {
-    "id": 1,
-    "lat": 24.7564,
-    "lon": 90.4065,
-    "title": "1858-11-30 — Birthplace area (Mymensingh)",
-    "details": "Jagadish Chandra Bose was born on 30 November 1858 in Mymensingh, then in the Bengal Presidency, British India (now in Bangladesh)"
-  },
-  {
-    "id": 2,
-    "lat": 23.5216,
-    "lon": 90.2383,
-    "title": "1860s (childhood) — Rarikhal village, Bikrampur",
-    "details": "His family was originally from the village of Rarikhal in Bikrampur (now in Munshiganj district). Early years here, with Bengali-medium village schooling, strongly shaped his cultural and nationalist outlook"
-  },
-  {
-    "id": 3,
-    "lat": 24.00222,
-    "lon": 89.23333,
-    "title": "1860s–1870s — Pabna Zilla School",
-    "details": "One of his early schools was Pabna Zilla School, a major district school where he began formal education before moving to higher-level institutions"
-  },
-  {
-    "id": 4,
-    "lat": 23.707728,
-    "lon": 90.410757,
-    "title": "1870s — Dhaka Collegiate School",
-    "details": "He continued his education at Dhaka Collegiate School, a prominent government boys’ high school that prepared him for university entrance"
-  },
-  {
-    "id": 5,
-    "lat": 22.54639,
-    "lon": 88.35722,
-    "title": "1875–1877 — St. Xavier's College, Park Street",
-    "details": "From 1875 he studied at St. Xavier’s College, Calcutta, completing a BA in 1877. Here Jesuit Father Eugene Lafont stimulated his interest in experimental physical science"
-  },
-  {
-    "id": 6,
-    "lat": 51.5245592,
-    "lon": -0.1340401,
-    "title": "1880 — University College London (main campus)",
-    "details": "In 1880 he went to England and initially enrolled in medicine at the University of London (UCL). Health problems forced him to abandon medical studies, but this exposed him to advanced European laboratories"
-  },
-  {
-    "id": 7,
-    "lat": 52.2061776,
-    "lon": 0.12270618,
-    "title": "1881–1884 — Christ's College, Cambridge",
-    "details": "He then studied Natural Sciences at Christ’s College, Cambridge, earning a BA (Natural Sciences Tripos) in 1884, alongside a BSc from the University of London—his formal training in physics"
-  },
-  {
-    "id": 8,
-    "lat": 22.576925,
-    "lon": 88.363346,
-    "title": "1885 — Presidency College (now Presidency University)",
-    "details": "In January 1885 he became professor of physics at Presidency College, the first Indian to hold such a post. Because his salary was set to one-third of a European’s, he famously refused pay for three years in protest"
-  },
-  {
-    "id": 9,
-    "lat": 22.576925,
-    "lon": 88.363346,
-    "title": "1894–1895 — Presidency College laboratory",
-    "details": "Around 1894 in a tiny lab at Presidency College, he built apparatus to generate and detect millimetre-wave (microwave) radio, demonstrating reflection, refraction and polarisation of electric rays—foundational work in radio science"
-  },
-  {
-    "id": 10,
-    "lat": 22.567836,
-    "lon": 88.344857,
-    "title": "1895-11 — Kolkata Town Hall",
-    "details": "In a celebrated public lecture at Kolkata Town Hall in 1895, he sent millimetre-wave signals through intervening walls to ring a bell and ignite gunpowder—an early wireless demonstration predating Marconi’s famous work"
-  },
-  {
-    "id": 11,
-    "lat": 51.5099141,
-    "lon": -0.1425058,
-    "title": "1897 — Royal Institution of Great Britain",
-    "details": "In 1897 he lectured at the Royal Institution in London on his millimetre-wave experiments, receiving praise from leading physicists such as Lord Kelvin and further establishing his international reputation"
-  },
-  {
-    "id": 12,
-    "lat": 22.5797,
-    "lon": 88.3731,
-    "title": "1917-11-30 onward — Bose Institute, APC Road campus",
-    "details": "On 30 November 1917 he founded Bose Institute (Basubigyan Mandir) in Calcutta, Asia’s first modern interdisciplinary research centre. He served as its director from 1917 until his death in 1937, continuing his work on plant physiology and physics"
-  },
-  {
-    "id": 13,
-    "lat": 48.8485,
-    "lon": 2.3432,
-    "title": "1926-08 — Sorbonne (historic building)",
-    "details": "In 1926 he delivered a famous lecture at the Sorbonne demonstrating plant electrical responses—using his crescograph to argue for a kind of ‘nervous system’ in plants—before an audience of European scientists"
-  },
-  {
-    "id": 14,
-    "lat": 24.184713,
-    "lon": 86.302193,
-    "title": "1920s–1937, esp. 1937-11-23 — House near Jhanda Maidan",
-    "details": "He spent his later years in Giridih, living in a house near Jhanda Maidan and continuing scientific and philosophical work. He died here on 23 November 1937; the house later became the Jagdish Chandra Bose Smriti Vigyan Bhavan"
-  }
-];
+        <!-- SECTION 2: SYMPTOMS -->
+        <section class="col-span-1 bg-white rounded-2xl shadow-md p-6 border-t-4 border-secondary card-hover">
+            <h2 class="text-2xl font-bold text-dark mb-4">2. The Spectrum of Symptoms</h2>
+            <p class="text-gray-600 mb-4 text-sm">
+                ADHD is categorized into three presentations. This radar chart visualizes how the <strong>Combined Type</strong> compares to a neurotypical baseline across key executive domains.
+            </p>
+            <div class="chart-container">
+                <canvas id="symptomRadarChart"></canvas>
+            </div>
+        </section>
 
-// ---- MAP SETUP ----
-var currentIndex = 0;
-var animating = false;
+        <!-- SECTION 3: EMOTIONAL REGULATION -->
+        <section class="col-span-1 bg-white rounded-2xl shadow-md p-6 border-t-4 border-danger card-hover">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-dark">3. Emotional Regulation</h2>
+                <button onclick="explainTopic('Rejection Sensitive Dysphoria')" class="text-xs font-semibold text-danger border border-danger/30 px-3 py-1 rounded-full hover:bg-danger hover:text-white transition-colors">
+                    Explain RSD ✨
+                </button>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm">
+                Many with ADHD experience <strong>Rejection Sensitive Dysphoria (RSD)</strong>—intense emotional pain triggered by perceived failure.
+            </p>
+            <div class="chart-container">
+                <canvas id="emotionLineChart"></canvas>
+            </div>
+        </section>
 
-var map = L.map('map', {
-  zoomAnimation: false,       // keep overlays stable
-  scrollWheelZoom: false      // avoid accidental zoom
-}).setView([events[0].lat, events[0].lon], 6);
+        <!-- SECTION 4: COPING MECHANISMS -->
+        <section class="col-span-1 md:col-span-2">
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border-t-4 border-accent">
+                <h2 class="text-3xl font-bold text-dark mb-6">4. Coping Strategy: The Dopamine Menu</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+                        <div class="text-2xl mb-2">🥗</div>
+                        <h3 class="font-bold text-green-800 mb-2">Entrées</h3>
+                        <p class="text-xs text-gray-600">Fullfilling activities (Exercise, Hobbies).</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                        <div class="text-2xl mb-2">🍚</div>
+                        <h3 class="font-bold text-blue-800 mb-2">Sides</h3>
+                        <p class="text-xs text-gray-600">Passive stimulation (Podcasts, Fidgets).</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
+                        <div class="text-2xl mb-2">🧁</div>
+                        <h3 class="font-bold text-purple-800 mb-2">Desserts</h3>
+                        <p class="text-xs text-gray-600">High dopamine (Social media, Gaming).</p>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                        <div class="text-2xl mb-2">🔥</div>
+                        <h3 class="font-bold text-amber-800 mb-2">Specials</h3>
+                        <p class="text-xs text-gray-600">Novelty (New skills, Trips).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; OpenStreetMap"
-}).addTo(map);
+    </main>
 
-var marker = L.circleMarker([events[0].lat, events[0].lon], {
-  radius: 6,
-  color: "#b30000",
-  weight: 2,
-  fillColor: "#b30000",
-  fillOpacity: 1
-}).addTo(map);
+    <!-- Modal for Explanations -->
+    <div id="infoModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl">
+            <div id="modalContent" class="space-y-4">
+                <h2 id="modalTitle" class="text-2xl font-bold text-primary"></h2>
+                <div id="modalBody" class="text-slate-700 leading-relaxed italic"></div>
+                <button onclick="closeModal()" class="w-full bg-slate-100 py-3 rounded-xl font-bold hover:bg-slate-200 transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
 
-var pathLine = null;
+    <footer class="bg-dark text-white text-center py-8 mt-12">
+        <p class="opacity-70 text-sm">Visualized for educational purposes. Consult a medical professional for diagnosis.</p>
+    </footer>
 
-// ---- UI UPDATE ----
-function updateText() {
-  var e = events[currentIndex];
-  document.getElementById("event-title").innerHTML = e.title;
-  document.getElementById("event-details").innerHTML = e.details;
+    <script>
+        const apiKey = ""; // Provided by environment
 
-  var prevBtn = document.getElementById("prevBtn");
-  var nextBtn = document.getElementById("nextBtn");
-  prevBtn.classList.toggle("disabled", currentIndex === 0);
-  nextBtn.classList.toggle("disabled", currentIndex === events.length - 1);
-}
-updateText();
+        async function callGemini(prompt, systemInstruction) {
+            let retries = 0;
+            const maxRetries = 5;
+            
+            while (retries < maxRetries) {
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }],
+                            systemInstruction: { parts: [{ text: systemInstruction }] }
+                        })
+                    });
+                    
+                    if (!response.ok) throw new Error('API Error');
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (err) {
+                    retries++;
+                    await new Promise(r => setTimeout(r, Math.pow(2, retries) * 1000));
+                }
+            }
+            return "Unable to reach the AI coach right now. Please try again later.";
+        }
 
-// ---- ANIMATION ----
-function animateTo(targetIndex) {
-  if (animating || targetIndex === currentIndex) return;
-  if (targetIndex < 0 || targetIndex >= events.length) return;
+        async function generateStrategy() {
+            const input = document.getElementById('aiPrompt').value;
+            if (!input) return;
 
-  animating = true;
+            const btn = document.getElementById('generateBtn');
+            const loading = document.getElementById('aiLoading');
+            const container = document.getElementById('aiResponseContainer');
+            const textDiv = document.getElementById('aiResponseText');
 
-  var start = events[currentIndex];
-  var end   = events[targetIndex];
+            btn.disabled = true;
+            loading.classList.remove('hidden');
+            container.classList.add('hidden');
+            
+            const system = "You are an ADHD Coach. Provide a supportive, highly actionable 3-step action plan for the user's struggle. Use ADHD-specific techniques like task-slicing (breaking into tiny pieces), body doubling, or dopamine hacks. Use bold text for key actions. Keep the total response under 120 words.";
+            const result = await callGemini(input, system);
 
-  var steps = 80;
-  var delay = 40;
+            textDiv.innerHTML = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            loading.classList.add('hidden');
+            container.classList.remove('hidden');
+            btn.disabled = false;
+        }
 
-  var coords = [];
-  for (var i = 0; i <= steps; i++) {
-    var t = i / steps;
-    var lat = start.lat + (end.lat - start.lat) * t;
-    var lon = start.lon + (end.lon - start.lon) * t;
-    coords.push([lat, lon]);
-  }
+        async function explainTopic(topic) {
+            document.getElementById('infoModal').classList.remove('hidden');
+            document.getElementById('modalTitle').innerText = "✨ Understanding " + topic;
+            document.getElementById('modalBody').innerHTML = "<div class='shimmer h-20 rounded'></div>";
+            
+            const system = "You are a science communicator. Explain the following concept in simple, encouraging terms for someone with ADHD. Keep it under 80 words.";
+            const result = await callGemini(`Explain ${topic} in the context of ADHD research.`, system);
+            
+            document.getElementById('modalBody').innerText = result;
+        }
 
-  if (pathLine) map.removeLayer(pathLine);
-  pathLine = L.polyline([], {
-    color: "#b30000",
-    weight: 3,
-    dashArray: "6,8",
-    opacity: 0.9
-  }).addTo(map);
+        function closeModal() {
+            document.getElementById('infoModal').classList.add('hidden');
+        }
 
-  var iStep = 0;
-  var interval = setInterval(function() {
-    pathLine.setLatLngs(coords.slice(0, iStep + 1));
-    marker.setLatLng(coords[iStep]);
-    map.panTo(coords[iStep], {animate: false});
+        // --- CHART LOGIC (REUSED FROM PREVIOUS) ---
+        function wrapLabel(str, maxChars) {
+            if (str.length <= maxChars) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
 
-    iStep++;
-    if (iStep >= coords.length) {
-      clearInterval(interval);
-      currentIndex = targetIndex;
-      updateText();
-      animating = false;
-    }
-  }, delay);
-}
+        Chart.defaults.font.family = "'Poppins', sans-serif";
+        const commonTooltip = {
+            callbacks: {
+                title: (items) => {
+                    let label = items[0].chart.data.labels[items[0].dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
 
-// ---- BUTTON HANDLERS ----
-function nextEvent() {
-  if (currentIndex >= events.length - 1) return;
-  animateTo(currentIndex + 1);
-}
-function prevEvent() {
-  if (currentIndex <= 0) return;
-  animateTo(currentIndex - 1);
-}
-</script>
+        window.onload = () => {
+            // Heritability
+            new Chart(document.getElementById('heritabilityChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Genetic Factors', 'Environmental Factors'],
+                    datasets: [{ data: [74, 26], backgroundColor: ['#4F46E5', '#E2E8F0'], borderWidth: 0 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: commonTooltip, legend: { position: 'bottom' } } }
+            });
+
+            // Radar
+            new Chart(document.getElementById('symptomRadarChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Sustained Attention', 'Working Memory', 'Emotional Reg.', 'Impulse Control', 'Task Initiation'].map(l => wrapLabel(l, 16)),
+                    datasets: [
+                        { label: 'Neurotypical', data: [8, 8, 8, 8, 8], backgroundColor: 'rgba(226, 232, 240, 0.3)', borderColor: '#cbd5e1' },
+                        { label: 'ADHD', data: [3, 4, 2, 3, 2], backgroundColor: 'rgba(245, 158, 11, 0.2)', borderColor: '#F59E0B' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 10, ticks: { display: false } } }, plugins: { tooltip: commonTooltip } }
+            });
+
+            // Emotion
+            new Chart(document.getElementById('emotionLineChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Trigger', '10s', '1m', '5m', '10m', '30m'],
+                    datasets: [{ label: 'ADHD Response', data: [1, 10, 8, 5, 3, 1], borderColor: '#F43F5E', tension: 0.4 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: commonTooltip } }
+            });
+        };
+    </script>
 </body>
 </html>
 
