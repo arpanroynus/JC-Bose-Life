@@ -19,11 +19,10 @@
                         sans: ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        // Vibrant Palette: "Energetic Focus"
-                        primary: '#4F46E5',   // Indigo (Focus/Structure)
-                        secondary: '#F59E0B', // Amber (Energy/Creativity)
-                        accent: '#10B981',    // Emerald (Growth/Coping)
-                        danger: '#F43F5E',    // Rose (Impulsivity/Emotion)
+                        primary: '#4F46E5',   
+                        secondary: '#F59E0B', 
+                        accent: '#10B981',    
+                        danger: '#F43F5E',    
                         dark: '#1E293B',
                         light: '#F8FAFC'
                     }
@@ -37,24 +36,21 @@
             position: relative;
             width: 100%;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             height: 350px;
             max-height: 400px;
         }
         
         @media (max-width: 640px) {
-            .chart-container {
-                height: 300px;
-            }
+            .chart-container { height: 300px; }
         }
 
         .card-hover {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
         }
 
         .shimmer {
@@ -66,6 +62,14 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
+
+        .btn-interact {
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .btn-interact:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body class="bg-light text-slate-800 font-sans leading-relaxed">
@@ -75,15 +79,10 @@
         <div class="max-w-6xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Inside the ADHD Brain</h1>
             <p class="text-xl md:text-2xl opacity-90 font-light">Navigating Executive Function, Emotions, and Neurochemistry</p>
-            <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm font-semibold">
-                <span class="bg-white/20 px-4 py-2 rounded-full">Based on "ADHD 2.0" & "How to ADHD"</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full">Neurodivergence</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full">Dopamine Dynamics</span>
-            </div>
         </div>
     </header>
 
-    <!-- AI COACH SECTION (NEW) -->
+    <!-- AI COACH SECTION -->
     <section class="max-w-7xl mx-auto px-4 md:px-8 mt-12">
         <div class="bg-gradient-to-br from-indigo-900 to-primary rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -91,22 +90,18 @@
                     <h2 class="text-3xl font-bold mb-4 flex items-center gap-2">
                         ✨ AI Executive Function Coach
                     </h2>
-                    <p class="opacity-80 mb-6">Stuck on a task? Tell the AI what you're struggling with, and it will give you a quick, ADHD-friendly 3-step action plan using task-slicing and dopamine hacks.</p>
+                    <p class="opacity-80 mb-6 italic">Stuck on a task? Get a 3-step action plan instantly.</p>
                     <div class="space-y-4">
-                        <textarea id="aiPrompt" placeholder="e.g., 'I need to start my laundry but I'm overwhelmed' or 'I have to write a 5-page report...'" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-secondary min-h-[100px]"></textarea>
-                        <button onclick="generateStrategy()" id="generateBtn" class="bg-secondary hover:bg-amber-500 text-dark font-bold py-3 px-8 rounded-xl transition-all flex items-center gap-2 shadow-lg active:scale-95">
+                        <textarea id="aiPrompt" placeholder="What are you struggling with right now?" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary min-h-[100px]"></textarea>
+                        <button onclick="generateStrategy()" id="generateBtn" class="bg-secondary hover:bg-amber-500 text-dark font-bold py-3 px-8 rounded-xl transition-all shadow-lg btn-interact">
                             Get Strategy ✨
                         </button>
                     </div>
                 </div>
                 <div id="aiResponseContainer" class="hidden">
-                    <div class="bg-white text-slate-800 p-6 rounded-2xl shadow-inner min-h-[200px] flex flex-col">
-                        <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
-                            <span>🚀</span> Your Action Plan
-                        </h3>
-                        <div id="aiResponseText" class="text-sm space-y-4 leading-relaxed">
-                            <!-- Response injected here -->
-                        </div>
+                    <div class="bg-white text-slate-800 p-6 rounded-2xl shadow-inner min-h-[220px]">
+                        <h3 class="font-bold text-primary mb-3 flex items-center gap-2">🚀 Your Action Plan</h3>
+                        <div id="aiResponseText" class="text-sm space-y-4"></div>
                     </div>
                 </div>
                 <div id="aiLoading" class="hidden flex flex-col gap-4">
@@ -118,118 +113,106 @@
         </div>
     </section>
 
-    <!-- Main Content Grid -->
+    <!-- Main Content -->
     <main class="max-w-7xl mx-auto p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
-        <!-- SECTION 1: ETIOLOGY (CAUSES) -->
+        <!-- CAUSES SECTION -->
         <section class="col-span-1 md:col-span-2">
             <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border-t-4 border-primary">
-                <div class="flex flex-col md:flex-row justify-between items-start mb-4">
-                    <h2 class="text-3xl font-bold text-dark">1. Origins: It's Not Just "Bad Parenting"</h2>
-                    <button onclick="explainTopic('Neurotransmitters in ADHD')" class="mt-2 md:mt-0 text-xs font-semibold text-primary border border-primary/30 px-3 py-1 rounded-full hover:bg-primary hover:text-white transition-colors">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                    <div>
+                        <h2 class="text-3xl font-bold text-dark">1. Origins & Biology</h2>
+                        <p class="text-gray-500 text-sm italic">ADHD is a neurobiological condition, not a choice.</p>
+                    </div>
+                    <button onclick="explainTopic('Neurotransmitters & Dopamine')" class="mt-4 md:mt-0 text-xs font-bold text-primary border-2 border-primary/20 px-4 py-2 rounded-full hover:bg-primary hover:text-white transition-all btn-interact">
                         Explain Science ✨
                     </button>
                 </div>
-                <p class="text-gray-600 mb-6">
-                    Contrary to old myths, ADHD is highly heritable and rooted in neurobiology. Research indicates that genetics play a massive role, comparable to height. It involves the regulation of neurotransmitters like <strong>Dopamine</strong> and <strong>Norepinephrine</strong>.
-                </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                         <div class="chart-container">
                             <canvas id="heritabilityChart"></canvas>
                         </div>
-                        <p class="text-sm text-center text-gray-500 mt-2">Source: Faraone et al. (2005), Barkley (2015)</p>
                     </div>
                     <div class="space-y-4">
-                        <div class="bg-indigo-50 p-4 rounded-xl border-l-4 border-primary">
-                            <h3 class="font-bold text-lg text-primary">🧠 The Neurotransmitter Gap</h3>
-                            <p class="text-sm">ADHD brains often have a dysregulation in dopamine transporters. Think of it as having a "leaky" fuel line for motivation. The brain seeks stimulation to return to baseline levels.</p>
-                        </div>
-                        <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-secondary">
-                            <h3 class="font-bold text-lg text-secondary">📉 The 30% Rule</h3>
-                            <p class="text-sm">Dr. Russell Barkley suggests that children with ADHD generally display executive functions about <strong>30% behind</strong> their chronological age.</p>
+                        <div class="bg-indigo-50 p-5 rounded-2xl border-l-4 border-primary">
+                            <h3 class="font-bold text-primary">The Dopamine Gap</h3>
+                            <p class="text-sm text-slate-600 mt-1">ADHD brains often lack efficient dopamine processing, leading to a constant search for stimulation or "interest-based" motivation.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: SYMPTOMS -->
-        <section class="col-span-1 bg-white rounded-2xl shadow-md p-6 border-t-4 border-secondary card-hover">
-            <h2 class="text-2xl font-bold text-dark mb-4">2. The Spectrum of Symptoms</h2>
-            <p class="text-gray-600 mb-4 text-sm">
-                ADHD is categorized into three presentations. This radar chart visualizes how the <strong>Combined Type</strong> compares to a neurotypical baseline across key executive domains.
-            </p>
-            <div class="chart-container">
-                <canvas id="symptomRadarChart"></canvas>
-            </div>
-        </section>
-
-        <!-- SECTION 3: EMOTIONAL REGULATION -->
+        <!-- EMOTIONS SECTION -->
         <section class="col-span-1 bg-white rounded-2xl shadow-md p-6 border-t-4 border-danger card-hover">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-dark">3. Emotional Regulation</h2>
-                <button onclick="explainTopic('Rejection Sensitive Dysphoria')" class="text-xs font-semibold text-danger border border-danger/30 px-3 py-1 rounded-full hover:bg-danger hover:text-white transition-colors">
+                <h2 class="text-2xl font-bold text-dark">2. Emotional Peaks</h2>
+                <button onclick="explainTopic('Rejection Sensitivity')" class="text-xs font-bold text-danger border-2 border-danger/20 px-3 py-1.5 rounded-full hover:bg-danger hover:text-white transition-all btn-interact">
                     Explain RSD ✨
                 </button>
             </div>
-            <p class="text-gray-600 mb-4 text-sm">
-                Many with ADHD experience <strong>Rejection Sensitive Dysphoria (RSD)</strong>—intense emotional pain triggered by perceived failure.
-            </p>
             <div class="chart-container">
                 <canvas id="emotionLineChart"></canvas>
             </div>
+            <p class="text-xs text-slate-500 mt-4 text-center italic">Visualization of intensity over time after a perceived rejection.</p>
         </section>
 
-        <!-- SECTION 4: COPING MECHANISMS -->
+        <!-- SYMPTOMS SECTION -->
+        <section class="col-span-1 bg-white rounded-2xl shadow-md p-6 border-t-4 border-secondary card-hover">
+            <h2 class="text-2xl font-bold text-dark mb-4">3. Executive Function</h2>
+            <div class="chart-container">
+                <canvas id="symptomRadarChart"></canvas>
+            </div>
+            <p class="text-xs text-slate-500 mt-4 text-center italic">Comparison of ADHD vs. Neurotypical executive domain strengths.</p>
+        </section>
+
+        <!-- RESOURCE LIBRARY (FIXED LINKS) -->
         <section class="col-span-1 md:col-span-2">
-            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 border-t-4 border-accent">
-                <h2 class="text-3xl font-bold text-dark mb-6">4. Coping Strategy: The Dopamine Menu</h2>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="bg-green-50 p-4 rounded-xl border border-green-200">
-                        <div class="text-2xl mb-2">🥗</div>
-                        <h3 class="font-bold text-green-800 mb-2">Entrées</h3>
-                        <p class="text-xs text-gray-600">Fullfilling activities (Exercise, Hobbies).</p>
-                    </div>
-                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                        <div class="text-2xl mb-2">🍚</div>
-                        <h3 class="font-bold text-blue-800 mb-2">Sides</h3>
-                        <p class="text-xs text-gray-600">Passive stimulation (Podcasts, Fidgets).</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
-                        <div class="text-2xl mb-2">🧁</div>
-                        <h3 class="font-bold text-purple-800 mb-2">Desserts</h3>
-                        <p class="text-xs text-gray-600">High dopamine (Social media, Gaming).</p>
-                    </div>
-                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
-                        <div class="text-2xl mb-2">🔥</div>
-                        <h3 class="font-bold text-amber-800 mb-2">Specials</h3>
-                        <p class="text-xs text-gray-600">Novelty (New skills, Trips).</p>
-                    </div>
+            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                    📚 Reference Library
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="https://www.amazon.com/ADHD-2-0-Essential-Strategies-Distraction/dp/0399178732" target="_blank" class="block p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all group">
+                        <h3 class="font-bold text-secondary group-hover:text-amber-400">ADHD 2.0</h3>
+                        <p class="text-xs opacity-70 mt-1">By Hallowell & Ratey. Essential strategies for the modern world.</p>
+                        <span class="inline-block mt-4 text-xs font-bold underline">View Book →</span>
+                    </a>
+                    <a href="https://www.howtoadhd.com" target="_blank" class="block p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all group">
+                        <h3 class="font-bold text-accent group-hover:text-emerald-400">How to ADHD</h3>
+                        <p class="text-xs opacity-70 mt-1">Jessica McCabe's guide to building a life that works for your brain.</p>
+                        <span class="inline-block mt-4 text-xs font-bold underline">Visit Website →</span>
+                    </a>
+                    <a href="https://chadd.org" target="_blank" class="block p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all group">
+                        <h3 class="font-bold text-primary group-hover:text-indigo-400">CHADD Resources</h3>
+                        <p class="text-xs opacity-70 mt-1">Children and Adults with ADHD official resource center.</p>
+                        <span class="inline-block mt-4 text-xs font-bold underline">Get Support →</span>
+                    </a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Modal for Explanations -->
-    <div id="infoModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl">
+    <!-- Modal for AI Content -->
+    <div id="infoModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-8 shadow-2xl animate-in fade-in zoom-in duration-200">
             <div id="modalContent" class="space-y-4">
                 <h2 id="modalTitle" class="text-2xl font-bold text-primary"></h2>
-                <div id="modalBody" class="text-slate-700 leading-relaxed italic"></div>
-                <button onclick="closeModal()" class="w-full bg-slate-100 py-3 rounded-xl font-bold hover:bg-slate-200 transition-colors">Close</button>
+                <div id="modalBody" class="text-slate-700 leading-relaxed min-h-[100px]"></div>
+                <button onclick="closeModal()" class="w-full bg-slate-100 py-3 rounded-xl font-bold hover:bg-slate-200 transition-all">Close</button>
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark text-white text-center py-8 mt-12">
-        <p class="opacity-70 text-sm">Visualized for educational purposes. Consult a medical professional for diagnosis.</p>
+    <footer class="text-center py-12 opacity-50 text-xs">
+        <p>© 2025 Neurodivergent Insights • Created for Educational Purposes</p>
     </footer>
 
     <script>
-        const apiKey = ""; // Provided by environment
+        const apiKey = ""; 
 
         async function callGemini(prompt, systemInstruction) {
             let retries = 0;
@@ -254,7 +237,7 @@
                     await new Promise(r => setTimeout(r, Math.pow(2, retries) * 1000));
                 }
             }
-            return "Unable to reach the AI coach right now. Please try again later.";
+            return "Note: I'm currently unable to connect to the AI service. This might be because the environment hasn't provided the necessary API access yet.";
         }
 
         async function generateStrategy() {
@@ -270,7 +253,7 @@
             loading.classList.remove('hidden');
             container.classList.add('hidden');
             
-            const system = "You are an ADHD Coach. Provide a supportive, highly actionable 3-step action plan for the user's struggle. Use ADHD-specific techniques like task-slicing (breaking into tiny pieces), body doubling, or dopamine hacks. Use bold text for key actions. Keep the total response under 120 words.";
+            const system = "You are an ADHD Coach. Provide a supportive 3-step action plan (max 100 words). Use bold text for actions.";
             const result = await callGemini(input, system);
 
             textDiv.innerHTML = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
@@ -281,83 +264,52 @@
 
         async function explainTopic(topic) {
             document.getElementById('infoModal').classList.remove('hidden');
-            document.getElementById('modalTitle').innerText = "✨ Understanding " + topic;
-            document.getElementById('modalBody').innerHTML = "<div class='shimmer h-20 rounded'></div>";
+            document.getElementById('modalTitle').innerText = topic;
+            document.getElementById('modalBody').innerHTML = "<div class='shimmer h-24 rounded-lg'></div>";
             
-            const system = "You are a science communicator. Explain the following concept in simple, encouraging terms for someone with ADHD. Keep it under 80 words.";
-            const result = await callGemini(`Explain ${topic} in the context of ADHD research.`, system);
+            const system = "Explain this concept simply for an ADHD reader. Max 80 words.";
+            const result = await callGemini(`Explain ${topic}`, system);
             
             document.getElementById('modalBody').innerText = result;
         }
 
-        function closeModal() {
-            document.getElementById('infoModal').classList.add('hidden');
-        }
+        function closeModal() { document.getElementById('infoModal').classList.add('hidden'); }
 
-        // --- CHART LOGIC (REUSED FROM PREVIOUS) ---
-        function wrapLabel(str, maxChars) {
-            if (str.length <= maxChars) return str;
-            const words = str.split(' ');
-            const lines = [];
-            let currentLine = words[0];
-            for (let i = 1; i < words.length; i++) {
-                if (currentLine.length + 1 + words[i].length <= maxChars) {
-                    currentLine += ' ' + words[i];
-                } else {
-                    lines.push(currentLine);
-                    currentLine = words[i];
-                }
-            }
-            lines.push(currentLine);
-            return lines;
-        }
-
-        Chart.defaults.font.family = "'Poppins', sans-serif";
-        const commonTooltip = {
-            callbacks: {
-                title: (items) => {
-                    let label = items[0].chart.data.labels[items[0].dataIndex];
-                    return Array.isArray(label) ? label.join(' ') : label;
-                }
-            }
-        };
-
+        // --- CHARTS ---
         window.onload = () => {
-            // Heritability
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+            
             new Chart(document.getElementById('heritabilityChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Genetic Factors', 'Environmental Factors'],
+                    labels: ['Genetics', 'Environment'],
                     datasets: [{ data: [74, 26], backgroundColor: ['#4F46E5', '#E2E8F0'], borderWidth: 0 }]
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: commonTooltip, legend: { position: 'bottom' } } }
+                options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom' } } }
             });
 
-            // Radar
-            new Chart(document.getElementById('symptomRadarChart'), {
-                type: 'radar',
-                data: {
-                    labels: ['Sustained Attention', 'Working Memory', 'Emotional Reg.', 'Impulse Control', 'Task Initiation'].map(l => wrapLabel(l, 16)),
-                    datasets: [
-                        { label: 'Neurotypical', data: [8, 8, 8, 8, 8], backgroundColor: 'rgba(226, 232, 240, 0.3)', borderColor: '#cbd5e1' },
-                        { label: 'ADHD', data: [3, 4, 2, 3, 2], backgroundColor: 'rgba(245, 158, 11, 0.2)', borderColor: '#F59E0B' }
-                    ]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 10, ticks: { display: false } } }, plugins: { tooltip: commonTooltip } }
-            });
-
-            // Emotion
             new Chart(document.getElementById('emotionLineChart'), {
                 type: 'line',
                 data: {
-                    labels: ['Trigger', '10s', '1m', '5m', '10m', '30m'],
-                    datasets: [{ label: 'ADHD Response', data: [1, 10, 8, 5, 3, 1], borderColor: '#F43F5E', tension: 0.4 }]
+                    labels: ['Trigger', 'Fast Peak', 'Slow Fade'],
+                    datasets: [{ label: 'Intensity', data: [1, 10, 2], borderColor: '#F43F5E', tension: 0.4, fill: true, backgroundColor: 'rgba(244, 63, 94, 0.1)' }]
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { tooltip: commonTooltip } }
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false } } }
+            });
+
+            new Chart(document.getElementById('symptomRadarChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Memory', 'Inhibition', 'Focus', 'Initation', 'Emotion'],
+                    datasets: [
+                        { label: 'Neurotypical', data: [8, 8, 8, 8, 8], backgroundColor: 'rgba(200, 200, 200, 0.1)', borderColor: '#ccc' },
+                        { label: 'ADHD', data: [4, 3, 2, 3, 3], backgroundColor: 'rgba(245, 158, 11, 0.2)', borderColor: '#F59E0B' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { ticks: { display: false }, min: 0 } } }
             });
         };
     </script>
 </body>
 </html>
-
 
