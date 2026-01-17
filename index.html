@@ -10,11 +10,11 @@
             --text-main: #1a1a1a;
             --text-muted: #8e8e93;
             --accent: #007AFF;
-            --geog-color: #27ae60;
-            --hist-color: #e67e22;
+            --geog-accent: #2ecc71;
+            --hist-accent: #f1c40f;
             --card-bg: #f2f2f7;
-            --humor-bg: #fff9db;
-            --humor-text: #856404;
+            --fact-bg: #fdf2f2;
+            --fact-text: #c0392b;
         }
 
         body {
@@ -31,26 +31,26 @@
         }
 
         h1 { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
+        .subtitle { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
 
-        /* Icon Styles */
+        /* Icon Framework */
         .icon-circle {
             width: 44px; height: 44px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin-right: 15px; font-weight: bold;
+            margin-right: 15px;
         }
-
         .icon-square {
             width: 48px; height: 48px; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* Navigation */
+        /* Nav & Screens */
         .screen { display: none; padding: 0 25px 40px; }
         .screen.active { display: block; animation: slideUp 0.3s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
         .list-item {
-            background: var(--card-bg); padding: 20px; border-radius: 16px; margin-bottom: 12px;
+            background: var(--card-bg); padding: 18px; border-radius: 16px; margin-bottom: 12px;
             display: flex; align-items: center; cursor: pointer; transition: transform 0.1s;
         }
         .list-item:active { transform: scale(0.97); }
@@ -67,11 +67,13 @@
         .section-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
         p { margin: 0 0 12px; font-size: 15px; line-height: 1.5; color: #333; }
 
-        .quick-bite {
-            background: var(--humor-bg); border-radius: 8px; padding: 12px;
-            font-size: 13px; font-style: italic; color: var(--humor-text);
+        .fact-bite {
+            background: #fff9db; border-radius: 8px; padding: 12px;
+            font-size: 13px; font-style: italic; color: #856404;
             display: flex; align-items: center; border-left: 3px solid #f1c40f;
         }
+        .fact-bite::before { content: "⚡"; margin-right: 8px; font-style: normal; }
+
     </style>
 </head>
 <body>
@@ -80,110 +82,157 @@
     <header>
         <div>
             <h1 id="header-title">Subjects</h1>
-            <div class="subtitle" id="header-subtitle">ICSE Preparation</div>
+            <div class="subtitle" id="header-subtitle">ICSE Made Easy</div>
         </div>
         <div id="header-icon-container"></div>
     </header>
 
     <div id="home" class="screen active">
-        <div class="list-item" onclick="showScreen('geog')">
-            <div class="icon-circle" style="background: #e8f5e9; color: var(--geog-color);">G</div>
-            <h3>Geography</h3>
-            <span>→</span>
+        <div class="list-item" onclick="showScreen('geog-topics', 'geog')">
+            <div class="icon-circle" style="background: #e8f5e9; color: #2ecc71;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Geography</h3><span>→</span>
         </div>
-        <div class="list-item" style="opacity: 0.5;">
-            <div class="icon-circle" style="background: #fff3e0; color: var(--hist-color);">H</div>
-            <h3>History</h3>
-            <span>🔒</span>
+        <div class="list-item" onclick="showScreen('hist-topics', 'hist')">
+            <div class="icon-circle" style="background: #fff9c4; color: #f39c12;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+            </div>
+            <h3>History</h3><span>→</span>
         </div>
     </div>
 
-    <div id="geog" class="screen">
+    <div id="geog-topics" class="screen">
         <a href="#" class="back-btn" onclick="showScreen('home')">← All Subjects</a>
-        <div class="list-item" onclick="showScreen('volcanic')">
-            <div class="icon-circle" style="background: #efebe9; color: #4e342e;">V</div>
-            <h3>Volcanic Soil</h3>
-            <span>→</span>
+        <div class="list-item" onclick="showScreen('volcanic', 'geog')">
+            <div class="icon-circle" style="background: #efebe9; color: #4e342e;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 20 7-10 2 3 5-7 6 14H2z"/></svg>
+            </div>
+            <h3>Volcanic Soil</h3><span>→</span>
         </div>
-        <div class="list-item" onclick="showScreen('alluvial')">
-            <div class="icon-circle" style="background: #fff9c4; color: #fbc02d;">A</div>
-            <h3>Alluvial Soil</h3>
-            <span>→</span>
+        <div class="list-item" onclick="showScreen('alluvial', 'geog')">
+            <div class="icon-circle" style="background: #e3f2fd; color: #1976d2;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Alluvial Soil</h3><span>→</span>
+        </div>
+    </div>
+
+    <div id="hist-topics" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('home')">← All Subjects</a>
+        <div class="list-item" onclick="showScreen('revolt', 'hist')">
+            <div class="icon-circle" style="background: #ffebee; color: #c62828;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3>Revolt of 1857</h3><span>→</span>
         </div>
     </div>
 
     <div id="volcanic" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('geog')">← All Soils</a>
+        <a href="#" class="back-btn" onclick="showScreen('geog-topics', 'geog')">← Geography Topics</a>
         <div class="section" style="border-color: #f1c40f;">
-            <span class="label">Stage 1: ELI5</span>
-            <div class="section-title">Ancient Lava Powder</div>
-            <p>Volcanic soil is basically cooled-down lava that crumbled over millions of years into a fine black powder. It loves water and acts like a giant sponge!</p>
-            <div class="quick-bite">Nature’s black play-dough—it’s the reason your cotton shirts exist!</div>
+            <span class="label">Level 1: ELI5</span>
+            <div class="section-title">Crumbly Lava Dust</div>
+            <p>Volcanic soil is just very old lava that cooled down and broke into tiny black pieces over millions of years. It loves drinking water like a thirsty sponge.</p>
+            <div class="fact-bite">It’s basically nature's black play-dough—it's the only reason your cotton t-shirts exist!</div>
         </div>
         <div class="section" style="border-color: #27ae60;">
-            <span class="label">Stage 2: Class 8</span>
+            <span class="label">Level 2: Class 8</span>
             <div class="section-title">The Self-Plowing Regur</div>
-            <p>Called 'Regur' in the Deccan Trap, this soil develops deep cracks in summer. These cracks let air deep into the earth, effectively "plowing" the soil without any help from a farmer.</p>
-            <div class="quick-bite">This soil has trust issues; it literally "cracks up" the moment it stops raining.</div>
+            <p>Found in the Deccan Trap, this soil is called <strong>Regur</strong>. It is fine-textured and clayey, making it great for holding moisture for a long time.</p>
+            <p>During the hot summer, it develops deep cracks. These cracks let air travel deep into the ground, which effectively "plows" the soil without any help from a tractor.</p>
+            <div class="fact-bite">This soil has trust issues; it literally "cracks up" the second the rain stops.</div>
         </div>
         <div class="section" style="border-color: #2980b9;">
-            <span class="label">Stage 3: Class 10</span>
-            <div class="section-title">Titaniferous Magnetite</div>
-            <p>Class 10 exams focus on its composition: rich in iron, lime, and potash but poor in nitrogen. The black color is due to <strong>Titaniferous Magnetite</strong>.</p>
-            <div class="quick-bite">Fact: It's extremely sticky when wet—don't lose your chappals in the Gujarat mud!</div>
+            <span class="label">Level 3: Class 10 In-Depth</span>
+            <div class="section-title">Chemical Composition & Tillage</div>
+            <p>In Class 10, remember that the black color comes from <strong>Titaniferous Magnetite</strong>. It is highly argillaceous (clayey) and rich in iron, lime, and potash but lacks nitrogen.</p>
+            <p>Agricultural success depends on the timing. This soil becomes extremely sticky when wet, meaning farmers must till the land immediately after the first shower or it becomes unmanageable mud.</p>
+            <p>While it’s the king of the "Cotton Belt" in Maharashtra and Gujarat, it’s also used for growing citrus fruits, tobacco, and sugarcane due to its moisture retention.</p>
+            <div class="fact-bite">Exam Tip: Mention "Self-aeration through fissures"—it’s the fancy way of saying "the cracks let it breathe."</div>
         </div>
     </div>
 
     <div id="alluvial" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('geog')">← All Soils</a>
+        <a href="#" class="back-btn" onclick="showScreen('geog-topics', 'geog')">← Geography Topics</a>
         <div class="section" style="border-color: #f1c40f;">
-            <span class="label">Stage 1: ELI5</span>
+            <span class="label">Level 1: ELI5</span>
             <div class="section-title">The River's Gift</div>
-            <p>Imagine a river bringing heaps of mud and sand from the mountains and spreading it over the flat land. That’s Alluvial soil! It’s like a fresh delivery of super-food for plants every year.</p>
-            <div class="quick-bite">It’s basically the "Amazon Prime" of dirt—delivered right to the riverbank!</div>
+            <p>Imagine rivers bringing heaps of soft mud from the mountains and spreading it over the flat land. That’s Alluvial soil! It’s like a fresh delivery of super-food for plants.</p>
+            <div class="fact-bite">It’s the "Amazon Prime" of dirt—delivered right to the riverbank by the Ganga.</div>
         </div>
         <div class="section" style="border-color: #27ae60;">
-            <span class="label">Stage 2: Class 8</span>
-            <div class="section-title">Khadar vs. Bhangar</div>
-            <p>In Class 8, we split this into two: <strong>Khadar</strong> (New Alluvium) which is fine and fertile near the river, and <strong>Bhangar</strong> (Old Alluvium) which is older, coarser, and found further away.</p>
-            <div class="quick-bite">Bhangar is the grumpy grandfather, while Khadar is the energetic new kid on the block.</div>
+            <span class="label">Level 2: Class 8</span>
+            <div class="section-title">Khadar and Bhangar</div>
+            <p>Alluvial soil covers 40% of India. It’s found in the Indo-Gangetic plains. It’s divided into two types: <strong>Khadar</strong> (New alluvium) and <strong>Bhangar</strong> (Old alluvium).</p>
+            <p>Khadar is found near the river and is very fertile because it gets a new layer of silt every year. Bhangar is older, full of lime nodules (kankar), and sits higher up away from the floods.</p>
+            <div class="fact-bite">Bhangar is like the grumpy old grandfather, while Khadar is the energetic new kid on the block.</div>
         </div>
         <div class="section" style="border-color: #2980b9;">
-            <span class="label">Stage 3: Class 10</span>
-            <div class="section-title">Indo-Gangetic Wealth</div>
-            <p>For Class 10, focus on its transport: it's an <strong>Ex-situ</strong> soil carried by the Ganga, Indus, and Brahmaputra. It is rich in Potash and Lime but lacks Phosphorus. It supports the 'Food Bowl' of India (Wheat, Rice, Sugarcane).</p>
-            <div class="quick-bite">Fact: It covers 40% of India—without this soil, half of India's dinner plates would be empty!</div>
+            <span class="label">Level 3: Class 10 In-Depth</span>
+            <div class="section-title">Transported Wealth</div>
+            <p>Technically called <strong>Ex-situ</strong> or transported soil, it is formed by the silt deposited by the Himalayan rivers (Indus, Ganga, Brahmaputra). It is very deep and lacks distinct layers (horizons).</p>
+            <p>Chemically, it is rich in Potash and Lime but poor in Phosphorus and Nitrogen. Its texture varies from sandy loam in the upper plains to silty clay in the delta regions.</p>
+            <p>It is the backbone of India's "Food Bowl," supporting the massive production of Wheat, Rice, Sugarcane, and Jute. Its high porosity makes it ideal for irrigation through wells and canals.</p>
+            <div class="fact-bite">Fact: Without this soil, the North Indian "Langar" and "Bhandara" would be a very empty affair!</div>
+        </div>
+    </div>
+
+    <div id="revolt" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('hist-topics', 'hist')">← History Topics</a>
+        <div class="section" style="border-color: #e74c3c;">
+            <span class="label">Level 1: ELI5</span>
+            <div class="section-title">The Big No-No</div>
+            <p>Imagine some visitors came to your house, started making all the rules, and then asked you to use something that went against your beliefs. The Indians said "No more!" and fought back in a huge explosion of anger.</p>
+            <div class="fact-bite">It was basically the first time the whole neighborhood teamed up to tell the British to go home.</div>
+        </div>
+        <div class="section" style="border-color: #f39c12;">
+            <span class="label">Level 2: Class 8</span>
+            <div class="section-title">Greased Cartridges & Meerut</div>
+            <p>The revolt started in <strong>Meerut</strong> on May 10, 1857. The immediate cause was the introduction of the Enfield Rifle, which used cartridges reportedly greased with cow and pig fat.</p>
+            <p>Mangal Pandey was the first hero who refused to use them. Soon, soldiers (sepoys) marched to Delhi and declared the elderly Mughal Emperor, Bahadur Shah Zafar, as the leader of India.</p>
+            <div class="fact-bite">Mangal Pandey didn't just start a fight; he started a 90-year-long "Exit" notice for the British.</div>
+        </div>
+        <div class="section" style="border-color: #8e44ad;">
+            <span class="label">Level 3: Class 10 In-Depth</span>
+            <div class="section-title">Doctrine of Lapse & Consequences</div>
+            <p>ICSE focuses on the multiple causes: Political (Doctrine of Lapse by Lord Dalhousie), Economic (heavy land revenue), and Social (interference in religious customs like Sati and Widow Remarriage).</p>
+            <p>Key leaders were Rani Laxmibai (Jhansi), Nana Saheb (Kanpur), and Begum Hazrat Mahal (Lucknow). Though the revolt failed due to lack of central leadership and superior British weapons, it changed India forever.</p>
+            <p>The most important result was the <strong>Government of India Act 1858</strong>: the rule of the East India Company ended, and the British Crown took direct control of India. The office of Secretary of State was created.</p>
+            <div class="fact-bite">Fact: 1857 was the "Last Stand" of the Mughals and the "First Stand" of Indian Nationalism.</div>
         </div>
     </div>
 </div>
 
 <script>
-    const geogIcon = `<div class="icon-square" style="background: #e8f5e9; color: #27ae60; font-weight:bold;">G</div>`;
-    
-    function showScreen(id) {
+    const icons = {
+        geog: `<div class="icon-square" style="background: #e8f5e9; color: #2ecc71;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>`,
+        hist: `<div class="icon-square" style="background: #fff9c4; color: #f39c12;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg></div>`
+    };
+
+    function showScreen(screenId, type) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
+        document.getElementById(screenId).classList.add('active');
 
         const title = document.getElementById('header-title');
         const subtitle = document.getElementById('header-subtitle');
-        const iconContainer = document.getElementById('header-icon-container');
+        const iconBox = document.getElementById('header-icon-container');
 
-        if (id === 'home') {
+        if (screenId === 'home') {
             title.innerText = 'Subjects';
-            subtitle.innerText = 'ICSE Preparation';
-            iconContainer.innerHTML = '';
-        } else if (id === 'geog') {
-            title.innerText = 'Geography';
-            subtitle.innerText = 'Soil Resources';
-            iconContainer.innerHTML = geogIcon;
+            subtitle.innerText = 'ICSE Made Easy';
+            iconBox.innerHTML = '';
         } else {
-            // Keep the category icon even when viewing the specific soil content
-            iconContainer.innerHTML = geogIcon;
-            if (id === 'volcanic') { title.innerText = 'Volcanic'; subtitle.innerText = 'Deccan Trap'; }
-            if (id === 'alluvial') { title.innerText = 'Alluvial'; subtitle.innerText = 'River Plains'; }
+            iconBox.innerHTML = icons[type];
+            if (screenId === 'geog-topics') { title.innerText = 'Geography'; subtitle.innerText = 'Natural Resources'; }
+            if (screenId === 'hist-topics') { title.innerText = 'History'; subtitle.innerText = 'The Freedom Struggle'; }
+            if (screenId === 'volcanic') { title.innerText = 'Volcanic Soil'; subtitle.innerText = 'Geography Chapter 4'; }
+            if (screenId === 'alluvial') { title.innerText = 'Alluvial Soil'; subtitle.innerText = 'Geography Chapter 4'; }
+            if (screenId === 'revolt') { title.innerText = '1857 Revolt'; subtitle.innerText = 'History Chapter 1'; }
         }
         window.scrollTo(0, 0);
     }
 </script>
+
 </body>
 </html>
