@@ -3,160 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Learning without tears</title>
+    <title>ICSE Blinkist Demo</title>
     <style>
         :root {
             --bg-color: #ffffff;
             --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --accent: #27ae60; 
-            --card-bg: #f8f9fa;
-            --humor-bg: #fff9db;
-            --humor-text: #856404;
+            --text-muted: #8e8e93; /* Apple/Blinkist Grey */
+            --accent: #007AFF; /* Standard Blue */
+            --geog-accent: #27ae60;
+            --hist-accent: #e67e22;
+            --card-bg: #f2f2f7;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0; background-color: var(--bg-color); color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
-        #app { max-width: 500px; margin: 0 auto; min-height: 100vh; }
+        #app { max-width: 500px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
 
         header {
-            padding: 50px 20px 20px;
-            background: var(--bg-color);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 1px solid #eee;
+            padding: 60px 25px 20px;
+            display: flex; align-items: center; justify-content: space-between;
         }
 
-        h1 { font-size: 24px; font-weight: 800; margin: 0; }
-        .subtitle { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+        h1 { font-size: 28px; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
 
-        .screen { display: none; padding: 20px; }
-        .screen.active { display: block; animation: fadeIn 0.3s ease-out; }
+        /* Icon Styles */
+        .icon-circle {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 15px;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .icon-square {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            background: #eee;
+        }
 
+        /* Screens */
+        .screen { display: none; padding: 0 25px 40px; }
+        .screen.active { display: block; animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Menu Items */
         .list-item {
             background: var(--card-bg);
-            padding: 18px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px; border-radius: 16px; margin-bottom: 12px;
+            display: flex; align-items: center; cursor: pointer;
+            transition: transform 0.1s;
         }
+        .list-item:active { transform: scale(0.97); }
+        .list-item h3 { margin: 0; font-size: 18px; font-weight: 600; flex-grow: 1; }
 
         .back-btn {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
+            color: var(--accent); text-decoration: none; font-size: 15px; font-weight: 600;
+            display: inline-block; margin-bottom: 25px;
         }
 
-        .content-section { margin-bottom: 35px; }
-        .label {
-            display: inline-block;
-            background: #f0f0f0;
-            color: #555;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
+        /* Content Blocks */
+        .section { margin-bottom: 35px; border-left: 3px solid #ddd; padding-left: 20px; }
+        .label { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; display: block; }
+        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        p { margin: 0 0 12px; font-size: 16px; line-height: 1.5; color: #333; }
 
-        .section-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: #000; }
-        p { margin: 0 0 12px; color: #444; font-size: 15px; }
-
-        /* Humor/Fact Pill */
+        /* Quick Bite */
         .quick-bite {
-            background: var(--humor-bg);
-            border-radius: 8px;
-            padding: 12px 15px;
-            font-size: 13px;
-            font-style: italic;
-            color: var(--humor-text);
-            display: flex;
-            align-items: center;
-            border-left: 4px solid #f1c40f;
-            margin-top: 5px;
+            background: #fff9db; border-radius: 8px; padding: 12px;
+            font-size: 14px; font-style: italic; color: #856404; display: flex; align-items: center;
         }
-        .quick-bite::before { content: "💡"; margin-right: 10px; font-style: normal; }
-
-        /* Level Indicators */
-        .eli5 { border-left: 3px solid #ffcc00; padding-left: 15px; }
-        .c8 { border-left: 3px solid #2ecc71; padding-left: 15px; }
-        .c10 { border-left: 3px solid #3498db; padding-left: 15px; }
-
     </style>
 </head>
 <body>
 
 <div id="app">
     <header>
-        <h1 id="header-title">ICSE Blinkist</h1>
-        <div class="subtitle" id="header-subtitle">Knowledge in 15 mins</div>
+        <div>
+            <h1 id="header-title">Subjects</h1>
+            <div class="subtitle" id="header-subtitle">What are we learning today?</div>
+        </div>
+        <div id="header-icon-container"></div>
     </header>
 
     <div id="home" class="screen active">
-        <div class="list-item" onclick="showScreen('geog')"><h3>Geography</h3><span>→</span></div>
-        <div class="list-item" style="opacity:0.4"><h3>History</h3><span>🔒</span></div>
+        <div class="list-item" onclick="showScreen('geog')">
+            <div class="icon-circle" style="background: #e1f5fe; color: #0288d1;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3>Geography</h3>
+            <span>→</span>
+        </div>
+        <div class="list-item" style="opacity: 0.5;">
+            <div class="icon-circle" style="background: #fbe9e7; color: #d84315;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3>History</h3>
+            <span>🔒</span>
+        </div>
     </div>
 
     <div id="geog" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('home')">← All Subjects</a>
-        <div class="list-item" onclick="showScreen('volcanic')"><h3>Volcanic Soil</h3><span>→</span></div>
-        <div class="list-item" style="opacity:0.4"><h3>Alluvial Soil</h3><span>🔒</span></div>
+        <a href="#" class="back-btn" onclick="showScreen('home')">← Back</a>
+        <div class="list-item" onclick="showScreen('volcanic')">
+            <div class="icon-circle" style="background: #efebe9; color: #4e342e;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 20 7-10 2 3 5-7 6 14H2z"></path></svg>
+            </div>
+            <h3>Volcanic Soil</h3>
+            <span>→</span>
+        </div>
     </div>
 
     <div id="volcanic" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('geog')">← All Soils</a>
-        
-        <div class="content-section eli5">
+        <a href="#" class="back-btn" onclick="showScreen('geog')">← Back to Topics</a>
+        <div class="section" style="border-color: #f1c40f;">
             <span class="label">Stage 1: ELI5</span>
-            <div class="section-title">The "Volcano Smoothie"</div>
-            <p>Imagine a volcano erupted millions of years ago. The lava cooled down into hard black rocks, which then crumbled into a fine powder. That’s volcanic soil! It's super dark and acts like a sponge for water.</p>
-            <div class="quick-bite">Nature’s very own black play-dough—it’s the only reason your cotton t-shirts exist!</div>
+            <div class="section-title">The "Lava Rock" Soil</div>
+            <p>Volcanic soil is just cooled down lava that crumbled over millions of years into a fine black powder. It acts like a giant sponge for water!</p>
+            <div class="quick-bite">Nature’s black play-dough—it’s why your cotton t-shirts exist!</div>
         </div>
 
-        <div class="content-section c8">
+        <div class="section" style="border-color: #27ae60;">
             <span class="label">Stage 2: Class 8</span>
-            <div class="section-title">Regur & Self-Plowing</div>
-            <p>In Class 8, we call this <strong>Regur Soil</strong>. It's found in the Deccan Trap. Its most famous feature is that it develops deep cracks during the dry season.</p>
-            <p>This is actually a good thing! The cracks allow air to reach deep into the ground. When it rains, the soil swells up again, "plowing" itself naturally without any help from a tractor.</p>
-            <div class="quick-bite">This soil has serious trust issues; it literally "cracks up" the moment it stops raining.</div>
+            <div class="section-title">Regur Soil</div>
+            <p>In the Deccan Trap, this is called Regur Soil. It develops deep cracks in summer which helps it "self-plow" by letting oxygen deep into the ground.</p>
+            <div class="quick-bite">This soil has trust issues; it literally "cracks up" when it stops raining.</div>
         </div>
 
-        <div class="content-section c10">
-            <span class="label">Stage 3: Class 10 Mastery</span>
-            <div class="section-title">The Chemistry of Cotton</div>
-            <p>For the Board Exam, you must know that the black color comes from <strong>Titaniferous Magnetite</strong>. It is highly argillaceous (clayey) and rich in iron, lime, and potash.</p>
-            <p>While it’s perfect for the "Cotton Belt" of Maharashtra and Gujarat, it's actually very poor in Nitrogen and Phosphorus. Farmers have to be very careful with fertilizers to get the best yield.</p>
-            <p>Remember: It's extremely sticky when wet. If you try to walk on it during the first monsoon rain, you'll probably lose your slippers in the mud!</p>
-            <div class="quick-bite">Exam Tip: Write "Titaniferous Magnetite" or the examiner will think your preparation is as shallow as desert soil.</div>
+        <div class="section" style="border-color: #2980b9;">
+            <span class="label">Stage 3: Class 10</span>
+            <div class="section-title">Chemical Composition</div>
+            <p>Class 10 exams require the term <strong>Titaniferous Magnetite</strong> for its black color. It is highly argillaceous (clayey) and perfect for the Cotton Belt.</p>
+            <div class="quick-bite">Exam Tip: Write "Titaniferous Magnetite" or the examiner will think your prep is as thin as desert soil!</div>
         </div>
     </div>
 </div>
 
 <script>
+    const geographySquareIcon = `<div class="icon-square" style="background: #e1f5fe; color: #0288d1;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>`;
+
     function showScreen(id) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
+
+        const title = document.getElementById('header-title');
+        const subtitle = document.getElementById('header-subtitle');
+        const iconContainer = document.getElementById('header-icon-container');
+
+        if (id === 'home') {
+            title.innerText = 'Subjects';
+            subtitle.innerText = 'What are we learning today?';
+            iconContainer.innerHTML = '';
+        } else if (id === 'geog') {
+            title.innerText = 'Geography';
+            subtitle.innerText = 'Indian Soil Types';
+            iconContainer.innerHTML = geographySquareIcon;
+        } else {
+            title.innerText = 'Volcanic Soil';
+            subtitle.innerText = 'ICSE Board Focus';
+            iconContainer.innerHTML = geographySquareIcon;
+        }
         window.scrollTo(0, 0);
     }
 </script>
-
 </body>
 </html>
