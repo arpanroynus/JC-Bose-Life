@@ -9,8 +9,10 @@
             --bg-color: #ffffff;
             --text-main: #1a1a1a;
             --text-muted: #666666;
-            --accent: #2ecc71; /* Academic Green */
+            --accent: #27ae60; 
             --card-bg: #f8f9fa;
+            --humor-bg: #fff9db;
+            --humor-text: #856404;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -23,48 +25,36 @@
             line-height: 1.6;
         }
 
-        /* App Shell */
-        #app {
-            max-width: 500px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        #app { max-width: 500px; margin: 0 auto; min-height: 100vh; }
 
         header {
-            padding: 60px 20px 20px;
+            padding: 50px 20px 20px;
             background: var(--bg-color);
             position: sticky;
             top: 0;
             z-index: 10;
+            border-bottom: 1px solid #eee;
         }
 
-        h1 { font-size: 28px; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
-        .subtitle { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+        h1 { font-size: 24px; font-weight: 800; margin: 0; }
+        .subtitle { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
 
-        /* Navigation Screens */
-        .screen { display: none; padding: 0 20px 40px; }
+        .screen { display: none; padding: 20px; }
         .screen.active { display: block; animation: fadeIn 0.3s ease-out; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Cards & Lists */
         .list-item {
             background: var(--card-bg);
-            padding: 20px;
+            padding: 18px;
             border-radius: 12px;
             margin-bottom: 12px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: transform 0.1s;
         }
-        .list-item:active { transform: scale(0.98); background: #f0f0f0; }
-        .list-item h3 { margin: 0; font-size: 18px; font-weight: 600; }
 
-        /* Back Button */
         .back-btn {
             color: var(--accent);
             text-decoration: none;
@@ -74,26 +64,41 @@
             margin-bottom: 20px;
         }
 
-        /* Content Sections */
-        .content-section { margin-bottom: 30px; }
+        .content-section { margin-bottom: 35px; }
         .label {
             display: inline-block;
-            background: #e1f5fe;
-            color: #0288d1;
+            background: #f0f0f0;
+            color: #555;
             padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 11px;
+            border-radius: 20px;
+            font-size: 10px;
             font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
-        p { margin: 0 0 15px; color: #333; }
 
-        /* Specific styles for levels */
-        .level-eli5 { border-left: 4px solid #ffcc00; padding-left: 15px; }
-        .level-class8 { border-left: 4px solid #4caf50; padding-left: 15px; }
-        .level-class10 { border-left: 4px solid #2196f3; padding-left: 15px; }
+        .section-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: #000; }
+        p { margin: 0 0 12px; color: #444; font-size: 15px; }
+
+        /* Humor/Fact Pill */
+        .quick-bite {
+            background: var(--humor-bg);
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 13px;
+            font-style: italic;
+            color: var(--humor-text);
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #f1c40f;
+            margin-top: 5px;
+        }
+        .quick-bite::before { content: "💡"; margin-right: 10px; font-style: normal; }
+
+        /* Level Indicators */
+        .eli5 { border-left: 3px solid #ffcc00; padding-left: 15px; }
+        .c8 { border-left: 3px solid #2ecc71; padding-left: 15px; }
+        .c10 { border-left: 3px solid #3498db; padding-left: 15px; }
 
     </style>
 </head>
@@ -101,86 +106,54 @@
 
 <div id="app">
     <header>
-        <div id="nav-header">
-            <h1 id="main-title">ICSE Learning</h1>
-            <div class="subtitle" id="main-subtitle">Select a subject to start</div>
-        </div>
+        <h1 id="header-title">ICSE Blinkist</h1>
+        <div class="subtitle" id="header-subtitle">Knowledge in 15 mins</div>
     </header>
 
     <div id="home" class="screen active">
-        <div class="list-item" onclick="showScreen('geography')">
-            <h3>Geography</h3>
-            <span>→</span>
-        </div>
-        <div class="list-item" style="opacity: 0.5;">
-            <h3>History (Coming Soon)</h3>
-            <span>🔒</span>
-        </div>
+        <div class="list-item" onclick="showScreen('geog')"><h3>Geography</h3><span>→</span></div>
+        <div class="list-item" style="opacity:0.4"><h3>History</h3><span>🔒</span></div>
     </div>
 
-    <div id="geography" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('home')">← Back to Subjects</a>
-        <div class="list-item" style="opacity: 0.5;">
-            <h3>Alluvial Soil</h3>
-            <span>🔒</span>
-        </div>
-        <div class="list-item" onclick="showScreen('volcanic-soil')">
-            <h3>Volcanic Soil (Black Soil)</h3>
-            <span>→</span>
-        </div>
+    <div id="geog" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('home')">← All Subjects</a>
+        <div class="list-item" onclick="showScreen('volcanic')"><h3>Volcanic Soil</h3><span>→</span></div>
+        <div class="list-item" style="opacity:0.4"><h3>Alluvial Soil</h3><span>🔒</span></div>
     </div>
 
-    <div id="volcanic-soil" class="screen">
-        <a href="#" class="back-btn" onclick="showScreen('geography')">← Back to Geography</a>
+    <div id="volcanic" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('geog')">← All Soils</a>
         
-        <div class="content-section level-eli5">
+        <div class="content-section eli5">
             <span class="label">Stage 1: ELI5</span>
-            <div class="section-title">The "Lava Rock" Soil</div>
-            <p>Imagine a giant volcano erupted a long time ago and the hot lava cooled down into hard black rocks. Over thousands of years, the rain and wind crumbled these rocks into a super-fine, dark powder. This is Volcanic Soil! It’s like a giant sponge that loves water, which makes it the perfect home for cotton plants to grow big and strong.</p>
+            <div class="section-title">The "Volcano Smoothie"</div>
+            <p>Imagine a volcano erupted millions of years ago. The lava cooled down into hard black rocks, which then crumbled into a fine powder. That’s volcanic soil! It's super dark and acts like a sponge for water.</p>
+            <div class="quick-bite">Nature’s very own black play-dough—it’s the only reason your cotton t-shirts exist!</div>
         </div>
 
-        <div class="content-section level-class8">
-            <span class="label">Stage 2: Class 8 Level</span>
-            <div class="section-title">Formation and Characteristics</div>
-            <p>Volcanic soil, also known as Regur or Black Cotton Soil, is formed in the Deccan Trap region of India. It originates from the weathering of igneous rocks (basalt) that were formed by ancient volcanic activity. These soils are extremely fine-textured and clayey in nature.</p>
-            <p>One unique feature of this soil is its ability to retain moisture for a long time. During the dry season, it develops deep cracks, which helps in "self-plowing" by allowing oxygen to reach the deeper layers. It is rich in nutrients like calcium carbonate, magnesium, and potash, though it typically lacks phosphorus.</p>
+        <div class="content-section c8">
+            <span class="label">Stage 2: Class 8</span>
+            <div class="section-title">Regur & Self-Plowing</div>
+            <p>In Class 8, we call this <strong>Regur Soil</strong>. It's found in the Deccan Trap. Its most famous feature is that it develops deep cracks during the dry season.</p>
+            <p>This is actually a good thing! The cracks allow air to reach deep into the ground. When it rains, the soil swells up again, "plowing" itself naturally without any help from a tractor.</p>
+            <div class="quick-bite">This soil has serious trust issues; it literally "cracks up" the moment it stops raining.</div>
         </div>
 
-        <div class="content-section level-class10">
+        <div class="content-section c10">
             <span class="label">Stage 3: Class 10 Mastery</span>
-            <div class="section-title">Agricultural & Chemical Significance</div>
-            <p>In the ICSE curriculum, Black Soil is categorized by its high argillaceous (clayey) content. Chemically, it is composed of iron, lime, aluminum, and magnesium. The dark color is attributed to the presence of titaniferous magnetite or small amounts of iron and aluminum silicate. It is found predominantly in Maharashtra, Gujarat, and parts of Madhya Pradesh.</p>
-            <p>From an agricultural standpoint, this soil is synonymous with the "Cotton Belt of India." Because of its high moisture-retention capacity, it is ideal for dry farming. However, when wet, the soil becomes extremely sticky and difficult to manage, requiring farmers to till the land immediately after the first monsoon shower.</p>
-            <p>The "Self-Plowing" phenomenon mentioned in earlier stages is critical for the O-Level/ICSE board exams. These deep fissures allow for deep aeration of the soil. You must remember that while it is fertile for cotton, citrus fruits, and tobacco, it is deficient in Nitrogen and Organic matter (Humus), often requiring specific fertilizers for high-yield farming.</p>
+            <div class="section-title">The Chemistry of Cotton</div>
+            <p>For the Board Exam, you must know that the black color comes from <strong>Titaniferous Magnetite</strong>. It is highly argillaceous (clayey) and rich in iron, lime, and potash.</p>
+            <p>While it’s perfect for the "Cotton Belt" of Maharashtra and Gujarat, it's actually very poor in Nitrogen and Phosphorus. Farmers have to be very careful with fertilizers to get the best yield.</p>
+            <p>Remember: It's extremely sticky when wet. If you try to walk on it during the first monsoon rain, you'll probably lose your slippers in the mud!</p>
+            <div class="quick-bite">Exam Tip: Write "Titaniferous Magnetite" or the examiner will think your preparation is as shallow as desert soil.</div>
         </div>
     </div>
 </div>
 
 <script>
-    function showScreen(screenId) {
-        // Hide all screens
-        const screens = document.querySelectorAll('.screen');
-        screens.forEach(s => s.classList.remove('active'));
-
-        // Show selected screen
-        document.getElementById(screenId).classList.add('active');
-
-        // Update Header Text
-        const title = document.getElementById('main-title');
-        const subtitle = document.getElementById('main-subtitle');
-
-        if (screenId === 'home') {
-            title.innerText = 'ICSE Learning';
-            subtitle.innerText = 'Select a subject to start';
-        } else if (screenId === 'geography') {
-            title.innerText = 'Geography';
-            subtitle.innerText = 'Soil Types of India';
-        } else {
-            title.innerText = 'Volcanic Soil';
-            subtitle.innerText = 'Key Exam Takeaways';
-        }
-
-        // Scroll to top
+    function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
