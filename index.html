@@ -2,250 +2,187 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boro Din: The History of Christmas in Kolkata</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ICSE Blinkist Demo</title>
     <style>
         :root {
-            --primary-red: #8b0000;
-            --gold: #c5a059;
-            --dark-green: #1a3a32;
-            --off-white: #fdfaf5;
-            --text-dark: #2c2c2c;
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #2ecc71; /* Academic Green */
+            --card-bg: #f8f9fa;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--off-white);
-            color: var(--text-dark);
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* --- Hero Section --- */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                        url('https://assets.telegraphindia.com/telegraph/2023/Dec/1702909573_img_20221231_173836-01.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+        /* App Shell */
+        #app {
+            max-width: 500px;
+            margin: 0 auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
+        }
+
+        header {
+            padding: 60px 20px 20px;
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        h1 { font-size: 28px; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
+        .subtitle { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+
+        /* Navigation Screens */
+        .screen { display: none; padding: 0 20px 40px; }
+        .screen.active { display: block; animation: fadeIn 0.3s ease-out; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Cards & Lists */
+        .list-item {
+            background: var(--card-bg);
             padding: 20px;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            font-weight: 300;
-            border-top: 1px solid var(--gold);
-            padding-top: 20px;
-        }
-
-        /* --- Timeline Section --- */
-        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary-red);
-        }
-
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: var(--gold);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin-bottom: 60px;
-            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: transform 0.1s;
         }
+        .list-item:active { transform: scale(0.98); background: #f0f0f0; }
+        .list-item h3 { margin: 0; font-size: 18px; font-weight: 600; }
 
-        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
-
-        .timeline-content {
-            width: 45%;
-            padding: 30px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            border-bottom: 4px solid var(--gold);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.15);
-        }
-
-        .timeline-date {
+        /* Back Button */
+        .back-btn {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
             font-weight: 600;
-            color: var(--primary-red);
-            font-size: 1.5rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 30px; }
+        .label {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
             margin-bottom: 10px;
-            display: block;
         }
+        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        p { margin: 0 0 15px; color: #333; }
 
-        /* --- Interactive Bakeries --- */
-        .bakery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
+        /* Specific styles for levels */
+        .level-eli5 { border-left: 4px solid #ffcc00; padding-left: 15px; }
+        .level-class8 { border-left: 4px solid #4caf50; padding-left: 15px; }
+        .level-class10 { border-left: 4px solid #2196f3; padding-left: 15px; }
 
-        .bakery-card {
-            background: var(--dark-green);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .bakery-card:hover { background: var(--primary-red); }
-
-        .bakery-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-
-        /* --- Footer --- */
-        footer {
-            background: #111;
-            color: #777;
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before { left: 20px; }
-            .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; }
-            .timeline-content { width: calc(100% - 60px); margin-left: 40px; }
-        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Boro Din</h1>
-    <p>A 200-Year Legacy of Christmas in the City of Joy</p>
-</header>
-
-<div class="container">
-    <h2 class="section-title">The Evolution of the Festival</h2>
-    
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-content" onclick="revealFact('1800s')">
-                <span class="timeline-date">1800s</span>
-                <h3>The British Aristocracy</h3>
-                <p>Christmas was a formal affair for the East India Company elite. Grand balls were held at the Government House (now Raj Bhavan), and the air was filled with the sound of cannons and church bells.</p>
-                <small style="color: #999;">Click to see a fun fact!</small>
-            </div>
+<div id="app">
+    <header>
+        <div id="nav-header">
+            <h1 id="main-title">ICSE Learning</h1>
+            <div class="subtitle" id="main-subtitle">Select a subject to start</div>
         </div>
+    </header>
 
-        <div class="timeline-item">
-            <div class="timeline-content" onclick="revealFact('1900s')">
-                <span class="timeline-date">1902</span>
-                <h3>Nahoum & Sons Opens</h3>
-                <p>The Jewish community in Kolkata adds a new flavor to Christmas. Nahoum's opens in New Market, eventually becoming the 'holy grail' for fruitcakes and brownies.</p>
-            </div>
+    <div id="home" class="screen active">
+        <div class="list-item" onclick="showScreen('geography')">
+            <h3>Geography</h3>
+            <span>→</span>
         </div>
-
-        <div class="timeline-item">
-            <div class="timeline-content" onclick="revealFact('1940s')">
-                <span class="timeline-date">1940s</span>
-                <h3>Jazz & Park Street</h3>
-                <p>Despite the war years, Park Street emerges as the nightlife hub. The British soldiers and Anglo-Indians turn Kolkata into a city of jazz, shimmering lights, and midnight revelry.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-content" onclick="revealFact('modern')">
-                <span class="timeline-date">Present Day</span>
-                <h3>The Kolkata Christmas Festival</h3>
-                <p>Now a massive public carnival! Allen Park hosts live choirs, the entire Park Street is lit with blue and white LEDs, and people of all faiths join the queue for cake.</p>
-            </div>
+        <div class="list-item" style="opacity: 0.5;">
+            <h3>History (Coming Soon)</h3>
+            <span>🔒</span>
         </div>
     </div>
 
-    <hr style="margin: 80px 0; opacity: 0.2;">
+    <div id="geography" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('home')">← Back to Subjects</a>
+        <div class="list-item" style="opacity: 0.5;">
+            <h3>Alluvial Soil</h3>
+            <span>🔒</span>
+        </div>
+        <div class="list-item" onclick="showScreen('volcanic-soil')">
+            <h3>Volcanic Soil (Black Soil)</h3>
+            <span>→</span>
+        </div>
+    </div>
 
-    <h2 class="section-title">The "Cake Trail"</h2>
-    <div class="bakery-grid">
-        <div class="bakery-card">
-            <h3>Flurys</h3>
-            <p>Established 1927. Famous for its "rum-soaked" fruitcakes and English breakfast.</p>
+    <div id="volcanic-soil" class="screen">
+        <a href="#" class="back-btn" onclick="showScreen('geography')">← Back to Geography</a>
+        
+        <div class="content-section level-eli5">
+            <span class="label">Stage 1: ELI5</span>
+            <div class="section-title">The "Lava Rock" Soil</div>
+            <p>Imagine a giant volcano erupted a long time ago and the hot lava cooled down into hard black rocks. Over thousands of years, the rain and wind crumbled these rocks into a super-fine, dark powder. This is Volcanic Soil! It’s like a giant sponge that loves water, which makes it the perfect home for cotton plants to grow big and strong.</p>
         </div>
-        <div class="bakery-card">
-            <h3>Nahoum's</h3>
-            <p>The 120-year-old Jewish bakery in New Market where the queue starts at 6 AM.</p>
+
+        <div class="content-section level-class8">
+            <span class="label">Stage 2: Class 8 Level</span>
+            <div class="section-title">Formation and Characteristics</div>
+            <p>Volcanic soil, also known as Regur or Black Cotton Soil, is formed in the Deccan Trap region of India. It originates from the weathering of igneous rocks (basalt) that were formed by ancient volcanic activity. These soils are extremely fine-textured and clayey in nature.</p>
+            <p>One unique feature of this soil is its ability to retain moisture for a long time. During the dry season, it develops deep cracks, which helps in "self-plowing" by allowing oxygen to reach the deeper layers. It is rich in nutrients like calcium carbonate, magnesium, and potash, though it typically lacks phosphorus.</p>
         </div>
-        <div class="bakery-card">
-            <h3>Saldanha</h3>
-            <p>A Goan-run treasure hidden in the lanes of central Kolkata, legendary for walnut cakes.</p>
+
+        <div class="content-section level-class10">
+            <span class="label">Stage 3: Class 10 Mastery</span>
+            <div class="section-title">Agricultural & Chemical Significance</div>
+            <p>In the ICSE curriculum, Black Soil is categorized by its high argillaceous (clayey) content. Chemically, it is composed of iron, lime, aluminum, and magnesium. The dark color is attributed to the presence of titaniferous magnetite or small amounts of iron and aluminum silicate. It is found predominantly in Maharashtra, Gujarat, and parts of Madhya Pradesh.</p>
+            <p>From an agricultural standpoint, this soil is synonymous with the "Cotton Belt of India." Because of its high moisture-retention capacity, it is ideal for dry farming. However, when wet, the soil becomes extremely sticky and difficult to manage, requiring farmers to till the land immediately after the first monsoon shower.</p>
+            <p>The "Self-Plowing" phenomenon mentioned in earlier stages is critical for the O-Level/ICSE board exams. These deep fissures allow for deep aeration of the soil. You must remember that while it is fertile for cotton, citrus fruits, and tobacco, it is deficient in Nitrogen and Organic matter (Humus), often requiring specific fertilizers for high-yield farming.</p>
         </div>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2025 | Celebrating the Cultural Fusion of Kolkata</p>
-</footer>
-
 <script>
-    function revealFact(era) {
-        const facts = {
-            '1800s': "Did you know? In the 1800s, the British used to have 'Burra Khana' (Big Feasts) that often included local delicacies like venison and even turtle soup!",
-            '1900s': "Nahoum's original teakwood showcases and cash counter are still in use today, unchanged for over a century!",
-            '1940s': "During WWII, Park Street became a melting pot where American GIs and British soldiers shared Christmas pudding while listening to live Jazz.",
-            'modern': "The Park Street lighting is so iconic that it attracts nearly 2 million visitors over the Christmas week alone!"
-        };
-        alert(facts[era]);
+    function showScreen(screenId) {
+        // Hide all screens
+        const screens = document.querySelectorAll('.screen');
+        screens.forEach(s => s.classList.remove('active'));
+
+        // Show selected screen
+        document.getElementById(screenId).classList.add('active');
+
+        // Update Header Text
+        const title = document.getElementById('main-title');
+        const subtitle = document.getElementById('main-subtitle');
+
+        if (screenId === 'home') {
+            title.innerText = 'ICSE Learning';
+            subtitle.innerText = 'Select a subject to start';
+        } else if (screenId === 'geography') {
+            title.innerText = 'Geography';
+            subtitle.innerText = 'Soil Types of India';
+        } else {
+            title.innerText = 'Volcanic Soil';
+            subtitle.innerText = 'Key Exam Takeaways';
+        }
+
+        // Scroll to top
+        window.scrollTo(0, 0);
     }
-
-    // Scroll Animation Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.timeline-content').forEach(item => {
-        item.style.opacity = 0;
-        item.style.transform = "translateY(30px)";
-        item.style.transition = "all 0.6s ease-out";
-        observer.observe(item);
-    });
 </script>
 
 </body>
