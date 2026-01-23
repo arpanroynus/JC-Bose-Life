@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kolkata News</title>
+    <title>Precee AI - News Simplified</title>
     <style>
         * {
             margin: 0;
@@ -29,16 +30,35 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 2.5em;
+        .brand {
+            margin-bottom: 20px;
+        }
+
+        .brand-name {
+            font-size: 3em;
             font-weight: 700;
             color: #1a1a1a;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .brand-tagline {
+            font-size: 1.1em;
+            color: #6c757d;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #1a1a1a;
             margin-bottom: 10px;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
         .subtitle {
-            font-size: 1em;
+            font-size: 0.95em;
             color: #6c757d;
             font-weight: 400;
         }
@@ -103,8 +123,16 @@
                 padding: 20px 15px;
             }
             
-            h1 {
-                font-size: 2em;
+            .brand-name {
+                font-size: 2.2em;
+            }
+
+            .brand-tagline {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
             }
             
             .news-item {
@@ -120,7 +148,11 @@
 <body>
     <div class="container">
         <header>
-            <h1>Kolkata News</h1>
+            <div class="brand">
+                <h1 class="brand-name">Precee AI</h1>
+                <p class="brand-tagline">News Simplified</p>
+            </div>
+            <h2 class="section-title">Kolkata News</h2>
             <p class="subtitle" id="subtitle">Loading news...</p>
         </header>
 
@@ -136,7 +168,7 @@
                 // Update subtitle
                 const fetchDate = new Date(data.metadata.fetch_date);
                 document.getElementById('subtitle').textContent = 
-                    `${data.metadata.location} • ${fetchDate.toLocaleDateString('en-IN', {
+                    `${fetchDate.toLocaleDateString('en-IN', {
                         month: 'long',
                         day: 'numeric',
                         year: 'numeric'
@@ -148,8 +180,16 @@
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
                     
-                    // Get first sentence from summary
-                    const firstSentence = article.summary.split('.')[0] + '...';
+                    // Get first sentence from summary (handle missing summary)
+                    let preview = '';
+                    if (article.summary) {
+                        const firstSentence = article.summary.split('.')[0];
+                        preview = firstSentence.length > 100 
+                            ? firstSentence.substring(0, 100) + '...' 
+                            : firstSentence + '...';
+                    } else {
+                        preview = 'Click to read more...';
+                    }
                     
                     newsItem.innerHTML = `
                         <a href="detail.html?id=${index}">
@@ -157,7 +197,7 @@
                                 <span class="news-number">${index + 1}</span>
                                 <span class="news-headline">${article.headline}</span>
                             </div>
-                            <div class="news-preview">${firstSentence}</div>
+                            <div class="news-preview">${preview}</div>
                         </a>
                     `;
                     
