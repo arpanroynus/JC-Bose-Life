@@ -44,25 +44,22 @@
         }
 
         .news-list {
-            background: white;
-            border-radius: 12px;
             padding: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .news-item {
-            padding: 24px 28px;
-            border-bottom: 1px solid #e9ecef;
-            transition: background 0.2s ease;
+            padding: 28px 0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.2s ease;
             cursor: pointer;
         }
 
-        .news-item:last-child {
-            border-bottom: none;
+        .news-item:first-child {
+            padding-top: 0;
         }
 
         .news-item:hover {
-            background: #f8f9fa;
+            padding-left: 10px;
         }
 
         .news-item a {
@@ -72,10 +69,18 @@
         }
 
         .news-headline {
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-weight: 600;
             color: #1a1a1a;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .news-preview {
+            font-size: 0.95em;
+            color: #6c757d;
             line-height: 1.5;
+            margin-top: 6px;
         }
 
         .news-number {
@@ -90,6 +95,7 @@
             font-size: 0.85em;
             font-weight: 600;
             margin-right: 12px;
+            vertical-align: middle;
         }
 
         @media (max-width: 600px) {
@@ -102,7 +108,11 @@
             }
             
             .news-item {
-                padding: 20px 20px;
+                padding: 24px 0;
+            }
+            
+            .news-headline {
+                font-size: 1.1em;
             }
         }
     </style>
@@ -138,10 +148,16 @@
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
                     
+                    // Get first sentence from summary
+                    const firstSentence = article.summary.split('.')[0] + '...';
+                    
                     newsItem.innerHTML = `
                         <a href="detail.html?id=${index}">
-                            <span class="news-number">${index + 1}</span>
-                            <span class="news-headline">${article.headline}</span>
+                            <div>
+                                <span class="news-number">${index + 1}</span>
+                                <span class="news-headline">${article.headline}</span>
+                            </div>
+                            <div class="news-preview">${firstSentence}</div>
                         </a>
                     `;
                     
