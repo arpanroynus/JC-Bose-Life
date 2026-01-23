@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,39 +161,58 @@
     </div>
 
     <script>
+        // Function to check if article is complete
+        function isArticleComplete(article) {
+            return article.headline && 
+                   article.summary && 
+                   article.detailed_summary && 
+                   article.sentiment && 
+                   article.context !== undefined && 
+                   article.source;
+        }
+
         fetch('./kolkata_news.json')
             .then(response => response.json())
             .then(data => {
-                // Update subtitle
+                // Filter out incomplete articles
+                const completeArticles = data.articles
+                    .map((article, originalIndex) => ({ article, originalIndex }))
+                    .filter(item => isArticleComplete(item.article));
+
+                // Update subtitle with count
                 const fetchDate = new Date(data.metadata.fetch_date);
                 document.getElementById('subtitle').textContent = 
                     `${fetchDate.toLocaleDateString('en-IN', {
                         month: 'long',
                         day: 'numeric',
                         year: 'numeric'
-                    })}`;
+                    })} • ${completeArticles.length} ${completeArticles.length === 1 ? 'article' : 'articles'}`;
 
-                // Display articles
+                // Display complete articles
                 const newsList = document.getElementById('news-list');
-                data.articles.forEach((article, index) => {
+                
+                if (completeArticles.length === 0) {
+                    newsList.innerHTML = '<p style="padding: 20px; text-align: center; color: #6c757d;">No articles available at the moment. Please check back later.</p>';
+                    return;
+                }
+
+                completeArticles.forEach((item, displayIndex) => {
+                    const article = item.article;
+                    const originalIndex = item.originalIndex;
+                    
                     const newsItem = document.createElement('div');
                     newsItem.className = 'news-item';
                     
-                    // Get first sentence from summary (handle missing summary)
-                    let preview = '';
-                    if (article.summary) {
-                        const firstSentence = article.summary.split('.')[0];
-                        preview = firstSentence.length > 100 
-                            ? firstSentence.substring(0, 100) + '...' 
-                            : firstSentence + '...';
-                    } else {
-                        preview = 'Click to read more...';
-                    }
+                    // Get first sentence from summary
+                    const firstSentence = article.summary.split('.')[0];
+                    const preview = firstSentence.length > 100 
+                        ? firstSentence.substring(0, 100) + '...' 
+                        : firstSentence + '...';
                     
                     newsItem.innerHTML = `
-                        <a href="detail.html?id=${index}">
+                        <a href="detail.html?id=${originalIndex}">
                             <div>
-                                <span class="news-number">${index + 1}</span>
+                                <span class="news-number">${displayIndex + 1}</span>
                                 <span class="news-headline">${article.headline}</span>
                             </div>
                             <div class="news-preview">${preview}</div>
