@@ -1,50 +1,82 @@
 {
   "metadata": {
-    "fetch_date": "2026-01-23T18:59:49.343484",
-    "query": "top news stories from India today",
+    "fetch_date": "2026-01-23T19:44:49.903294",
+    "query": "top news stories from Kolkata today",
     "location": "Kolkata",
-    "total_articles": 5
+    "total_articles": 9
   },
   "articles": [
     {
-      "headline": "Gold price today in India (January 23, 2026): 24K at ₹15,971, 22K at ₹14,640; Silver rises",
-      "summary": "On January 23, 2026, gold prices in India saw a decline while silver prices rose. The 24‑karat gold rate stood at ₹15,971 per 10 grams, and 22‑karat at ₹14,640. This marks a shift in the recent trend of rising gold prices.",
-      "detailed_summary": "• 24‑karat gold price dropped to ₹15,971 per 10 grams\n• 22‑karat gold price stood at ₹14,640 per 10 grams\n• Silver prices experienced an upward movement on the same day\n• The decline in gold prices contrasts with previous sessions of strong upward momentum\n• The update provides city‑wise rates including Chennai, Mumbai, Delhi, and Kolkata",
-      "context": "Gold and silver prices in India are closely watched indicators of economic sentiment and inflation expectations. Gold, especially 24K and 22K, is a popular investment and cultural asset, while silver often reflects industrial demand. Price fluctuations can influence consumer behavior and investment decisions.",
+      "headline": "Mobile apps to expand breast cancer outreach and care launched in Kolkata",
+      "summary": "The Institute of Breast Disease in Kolkata has introduced two mobile apps aimed at enhancing breast cancer awareness, early detection, and treatment adherence. The launch was officiated by state health and education officials. This marks a significant step in leveraging technology for public health.",
+      "detailed_summary": "• Two new mobile applications launched by the Institute of Breast Disease (IBD)\n• Apps designed to enhance awareness, early detection, and treatment adherence\n• Launch event attended by Dr. Swapan Saren, Director of Health Services, West Bengal\n• Principal Secretary (Education) Binod Kumar also present\n• Initiative aims to reach a broader and more diverse population",
+      "context": "Institute of Breast Disease – a specialized medical institution in Kolkata dedicated to breast cancer research, diagnosis, and treatment, playing a key role in regional public health initiatives.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/mobile-apps-to-expand-breast-cancer-outreach-and-care-launched-in-kolkata/articleshow/127269387.cms"
+    },
+    {
+      "headline": "For 3rd time in Jan, North‑South Kolkata Metro ops hit due to tech snag",
+      "summary": "The North–South Blue Line of the Kolkata Metro experienced its third disruption in January due to technical issues, affecting services on January 22. The delay caused commuter inconvenience, with truncated operations until normalcy resumed.",
+      "detailed_summary": "• Third major disruption in January, latest on January 22\n• First train stalled at Rabindra Sadan, causing a 42-minute suspension between Maidan and Tollygunge\n• Services operated on truncated stretches: Maidan–Dakshineswar and Mahanayak Uttam Kumar–Shahid Khudiram\n• Normal operations resumed by 8:17 AM\n• Previous disruptions on January 13 and January 5 due to power and technical failures",
+      "context": "Kolkata Metro North–South Line – the oldest metro line in India, serving as a vital urban transit artery in Kolkata, frequently affected by technical and infrastructure challenges.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/for-3rd-time-in-jan-north-south-kolkata-metro-ops-hit-due-to-tech-snag/articleshow/127185885.cms"
+    },
+    {
+      "headline": "Boy found dead in lift shaft",
+      "summary": "A tragic incident in Entally saw the body of a 3-year-old boy discovered in a water-filled open elevator shaft at a construction site. The child had been reported missing earlier, and the body was sent for examination.",
+      "detailed_summary": "• Victim: 3-year-old boy named Pritam Rajbanshi\n• Found in a water-filled open elevator shaft at an under-construction building in Entally\n• Injury marks observed on the body\n• Parents had reported him missing at Entally Police Station\n• Body taken to NRS Hospital for further examination",
+      "context": null,
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/boy-found-dead-in-lift-shaft/articleshow/127185221.cms"
+    },
+    {
+      "headline": "16‑hour Setu shutdown for repairs on Sun",
+      "summary": "Vidyasagar Setu will be closed for 16 hours on Sunday for essential repair work, including cable and bearing replacements. Traffic diversions will be in place, and further closures are expected during the bridge’s rehabilitation.",
+      "detailed_summary": "• Closure scheduled from 5 AM to 9 PM on Sunday\n• Maintenance includes replacement of stay and holding-down cables and bearings\n• Part of broader rehabilitation of the 33-year-old bridge\n• Managed by Hooghly River Bridge Commissioners (HRBC)\n• Traffic diversions to be implemented by Kolkata Police",
+      "context": "Vidyasagar Setu – also known as the Second Hooghly Bridge, a major cable-stayed bridge in Kolkata connecting Howrah and Kolkata, critical for vehicular traffic and commerce.",
       "sentiment": "Neutral",
-      "source": "https://english.mathrubhumi.com/news/money/india-gold-silver-prices-jan-23-2026-k1jwqidf"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/16-hour-setu-shutdown-for-repairs-on-sun/articleshow/127184107.cms"
     },
     {
-      "headline": "Goa & Dubai dominate Republic Day weekend travel",
-      "summary": "Travel interest surged during the Republic Day weekend (January 23–26, 2026), with domestic accommodation searches up 115% and international searches up 63% year-on-year. Goa was the most searched domestic destination, while Dubai led internationally. Pondicherry, Udaipur, Varkala, and Ooty also saw significant increases.",
-      "detailed_summary": "• Domestic accommodation searches rose by 115% compared to the previous year\n• International searches increased by 63% year‑on‑year\n• Goa emerged as the top domestic travel destination\n• Dubai was the most searched international destination\n• Pondicherry (+211%), Udaipur (+148%), Varkala (+188%), and Ooty (+182%) recorded strong growth in searches",
-      "context": "Republic Day weekend is one of India’s major travel periods, often prompting spikes in tourism. Goa is a perennial favorite for domestic travelers, while Dubai remains a top international choice. The data reflects shifting preferences and the growing appeal of both established and emerging destinations.",
-      "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/life-style/spotlight/goa-dubai-dominate-republic-day-weekend-travel/articleshow/127231980.cms"
+      "headline": "R‑Day flyers told to reach airport early for checks",
+      "summary": "Ahead of Republic Day, Kolkata airport has intensified security, advising passengers to arrive early due to enhanced screening. Two layers of checks and additional personnel have increased waiting times.",
+      "detailed_summary": "• Enhanced security for Republic Day travel\n• Two layers of screening: at entrance and before boarding gates\n• Additional personnel deployed at terminal entrances and screening areas\n• Waiting times increased by 15–20 minutes\n• Domestic passengers advised to arrive 3 hours early; international, 4 hours early",
+      "context": "Republic Day – India’s national day celebrated on January 26, marked by heightened security across transport hubs and public spaces.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/r-day-flyers-told-to-reach-airport-early-for-checks/articleshow/127184238.cms"
     },
     {
-      "headline": "Linkin Park to make first‑ever India appearance after making fans wait two decades",
-      "summary": "Iconic rock band Linkin Park will perform in India for the first time on January 23, 2026, in Bengaluru, followed by a headline slot at Lollapalooza India in Mumbai on January 25. The long-awaited debut marks a major cultural moment for Indian fans.",
-      "detailed_summary": "• Linkin Park will perform in Bengaluru on January 23, 2026\n• The band will also headline Lollapalooza India 2026 in Mumbai on January 25\n• This marks their first-ever performances in India after over two decades of anticipation\n• The announcement has generated excitement among fans nationwide\n• The shows represent a significant cultural milestone for India’s live music scene",
-      "context": "Linkin Park, formed in 1996, is known for hits like “Numb,” “In the End,” and “Crawling.” Their music blends rock, hip-hop, and electronic elements, earning global acclaim. Lollapalooza is a major international music festival, and its India edition brings global artists to Indian audiences.",
-      "sentiment": "Positive",
-      "source": "https://m.economictimes.com/news/new-updates/linkin-park-announces-first-ever-india-shows-after-making-fans-wait-for-two-decades/articleshow/127261658.cms"
+      "headline": "Chingrighata night traffic block trial for Metro work starts",
+      "summary": "Traffic police have begun night-time trial diversions at Chingrighata to prepare for upcoming Metro construction. New slip roads and a traffic post have been introduced to manage flow during future weekend blocks.",
+      "detailed_summary": "• Night traffic trials initiated at Chingrighata from Thursday\n• Slip road created near Captain Bhery connecting flyover to Beliaghata Canal Road and EM Bypass\n• Trials conducted in two slots: 8–11:30 AM and 5–8:30 PM\n• New traffic post established at Majherpara, funded by Metro authorities\n• Aimed at familiarizing motorists before February weekend night blocks",
+      "context": "Chingrighata – a major junction in Kolkata; Metro viaduct construction requires temporary traffic management to minimize disruption.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/chingrighata-night-traffic-block-trial-for-metro-work-starts/articleshow/127185245.cms"
     },
     {
-      "headline": "Chennai to witness the Navagraha Symphony",
-      "summary": "On January 23, 2026, Chennai will host the Indian premiere of the Navagraha Symphony, led by violin maestro Dr. L. Subramaniam. The performance, part of the 35th Lakshminarayana Global Music Festival, blends Western symphonic structure with Indian cultural elements.",
-      "detailed_summary": "• The Navagraha Symphony will premiere in India on January 23, 2026, in Chennai\n• Violin maestro Dr. L. Subramaniam will lead the performance\n• The event is part of the 35th Lakshminarayana Global Music Festival\n• The production includes a full symphony orchestra, choir, soloists, and dancers\n• The symphony fuses Western classical form with Indian cosmological themes",
-      "context": "The Navagraha Symphony draws inspiration from Indian cosmology, specifically the nine celestial bodies (Navagrahas). Dr. L. Subramaniam is a renowned violinist known for blending Indian classical music with Western forms. The Lakshminarayana Global Music Festival is an annual event celebrating global musical traditions.",
+      "headline": "Gold Silver Price Today, 23 January, 2026: बाजार खुलते ही चांदी ₹12,600 उछली, सोने में 2800 की तेजी, जानें MCX गया रेट",
+      "summary": "On January 23, silver prices surged by ₹12,600 and gold by ₹2,800 per 10 grams. In Kolkata, 22-carat gold is priced at ₹14,737/g and 24-carat at ₹15,894/g.",
+      "detailed_summary": "• Silver price jumped by ₹12,600 at market open\n• Gold increased by ₹2,800 per 10 grams\n• Kolkata rates: 22-carat gold at ₹14,737/g; 24-carat at ₹15,894/g\n• Delhi: 22-carat ₹14,675/g; 24-carat ₹15,826/g\n• Highest 24-carat rate in Ranchi at ₹16,040/g",
+      "context": "Gold and silver prices – key indicators in commodity markets, influenced by global trends and domestic demand; important for investors and jewelers.",
       "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/entertainment/tamil/music/chennai-to-witness-the-navagraha-symphony/articleshow/127242752.cms"
+      "source": "https://navbharattimes.indiatimes.com/business/commodity/gold-silver-price-today-23-january-2026-sone-chandi-ka-bhav-mein-tezi-know-latest-rate-in-delhi-mumbai-chennai-kolkata-and-bangalore/articleshow/127235196.cms"
     },
     {
-      "headline": "‘Rashtragranth’: First‑ever large‑scale play on the Constitution of India to officially launch across Maharashtra this Republic Day",
-      "summary": "\"Rashtragranth,\" a Marathi theatre production based on the Constitution of India, will officially launch across Maharashtra in February 2026, coinciding with Republic Day. After successful pilot performances in nine districts, the play aims to promote constitutional awareness and civic dialogue.",
-      "detailed_summary": "• \"Rashtragranth\" is the first large‑scale play based on the Indian Constitution\n• Pilot performances were held across nine districts of Maharashtra with positive reception\n• The play was initially unveiled on January 26 of the previous year in the presence of Dr. Ambedkar’s grandson\n• It is set for an official public launch across Maharashtra beginning February 2026, aligned with Republic Day\n• The initiative is supported by the Department of Cultural Affairs, Government of Maharashtra",
-      "context": "The Constitution of India, adopted in 1950, is the supreme law of the land. Theatre has long been used as a medium to educate and engage citizens on civic values. Dr. B.R. Ambedkar, principal architect of the Constitution, is a central figure in its history.",
+      "headline": "From football to literature: Bonds that bind Argentina & West Bengal",
+      "summary": "The article explores cultural ties between Argentina and West Bengal, highlighting shared passions for football and literature. The Argentine Ambassador emphasizes mutual admiration for Tagore’s works and football culture.",
+      "detailed_summary": "• Cultural connection spans 17,000 km between regions\n• Shared passion for football, with fervent fan bases in both places\n• Rabindranath Tagore’s literary works deeply respected in Argentina\n• Argentine Ambassador Mariano A. Caucino underscores these bonds\n• Highlights how sports and literature foster international ties",
+      "context": "Rabindranath Tagore – Nobel laureate poet from Bengal, whose works have global influence; football – a unifying cultural phenomenon in both regions.",
       "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/entertainment/marathi/theatre/rashtragranth-first-ever-large-scale-play-on-the-constitution-of-india-to-official-launch-across-maharastra-this-republic-day/articleshow/127236876.cms"
+      "source": "https://m.economictimes.com/news/india/from-football-to-literature-bonds-that-bind-argentina-west-bengal/articleshow/127243761.cms"
+    },
+    {
+      "headline": "ED chief likely to meet officers involved in I‑PAC searches",
+      "summary": "Enforcement Directorate Director Rahul Naveen arrived in Kolkata to review operations, including the January 8 I‑PAC office searches. He is expected to meet involved officers at the CGO Complex and assess security arrangements.",
+      "detailed_summary": "• ED Director Rahul Naveen arrived Thursday night in Kolkata\n• Visit follows January 8 searches at I‑PAC office and director’s residence\n• He will meet officers at CGO Complex on Friday morning\n• Meetings to assess working conditions and security for ED personnel\n• Return flight likely Friday evening, though not confirmed",
+      "context": "Enforcement Directorate (ED) – India’s financial investigation agency, often involved in high-profile political and corporate probes; I‑PAC – political consultancy firm under investigation.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/ed-chief-likely-to-meet-officers-involved-in-i-pac-searches/articleshow/127192186.cms"
     }
   ]
 }
