@@ -88,10 +88,14 @@
             color: #495057;
             margin-bottom: 40px;
             line-height: 1.7;
+            padding-left: 20px;
+            border-left: 4px solid #28a745;
         }
 
         .details {
             margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 4px solid #ff9800;
         }
 
         .details ul {
@@ -112,7 +116,7 @@
             content: "•";
             position: absolute;
             left: 0;
-            color: #03dac6;
+            color: #ff9800;
             font-weight: bold;
             font-size: 1.4em;
             line-height: 1;
@@ -147,7 +151,7 @@
         .arrow {
             width: 50px;
             height: 50px;
-            background: #28a745;
+            background: #03dac6;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -160,11 +164,13 @@
         }
 
         .arrow svg {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             stroke: white;
-            stroke-width: 3;
+            stroke-width: 2.5;
             fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .back-text {
@@ -207,6 +213,14 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            .summary {
+                padding-left: 15px;
+            }
+
+            .details {
+                padding-left: 15px;
+            }
         }
     </style>
 </head>
@@ -219,7 +233,7 @@
         <a href="index.html" class="back-button">
             <div class="arrow">
                 <svg viewBox="0 0 24 24">
-                    <polyline points="15 18 9 12 15 6"></polyline>
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
             </div>
             <span class="back-text">back to main page</span>
@@ -309,31 +323,3 @@
     </script>
 </body>
 </html>
-```
-
-## **Key Features Implemented:**
-
-### **Main Page:**
-✅ Minimalist Blinkist-inspired design  
-✅ Clean white cards on light background  
-✅ Numbered circles for each article  
-✅ One-line headlines (clickable)  
-✅ Hover effects  
-✅ Responsive design  
-
-### **Detail Page:**
-✅ **Large title** as heading  
-✅ **"Quick Summary" subheading** with **sentiment badge** next to it  
-✅ Sentiment in colored rounded box (Positive=green, Negative=red, Neutral=blue, Mixed=yellow)  
-✅ **"Details" subheading** with bullet points  
-✅ **Context in thick yellow-bordered box** with rounded corners and black text  
-✅ **Green arrow** with "back to main page" text at bottom  
-✅ Clean, modern typography  
-✅ Responsive design  
-
-## **File Structure:**
-```
-your-folder/
-├── index.html          (main page)
-├── detail.html         (detail page)
-└── kolkata_news.json   (data file)
