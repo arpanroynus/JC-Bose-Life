@@ -1,33 +1,50 @@
 {
   "metadata": {
-    "fetch_date": "2026-01-23T14:10:07.345882",
-    "location": "Kolkata, India",
-    "total_articles": 4
+    "fetch_date": "2026-01-23T18:59:49.343484",
+    "query": "top news stories from India today",
+    "location": "Kolkata",
+    "total_articles": 5
   },
   "articles": [
     {
-      "headline": "Kolkata weather today: Sunny skies, warm temperatures, lingering air quality concerns",
-      "summary": "Kolkata is experiencing a sunny Friday, January 23, 2026, with temperatures ranging from 14.9 °C to 28.2 °C and no rain expected. However, air quality remains poor, with an AQI of 280 and elevated PM10 and CO levels, prompting recommendations for masks and limited outdoor exposure. The forecast predicts continued sunny conditions and warming temperatures through the week, with highs exceeding 32 °C by January 29.",
-      "sentiment": "Mixed",
-      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/kolkata-weather-today-sunny-skies-warm-afternoon-lingering-air-quality-concerns/articleshow/127214217.cms?utm_source=openai"
+      "headline": "Gold price today in India (January 23, 2026): 24K at ₹15,971, 22K at ₹14,640; Silver rises",
+      "summary": "On January 23, 2026, gold prices in India saw a decline while silver prices rose. The 24‑karat gold rate stood at ₹15,971 per 10 grams, and 22‑karat at ₹14,640. This marks a shift in the recent trend of rising gold prices.",
+      "detailed_summary": "• 24‑karat gold price dropped to ₹15,971 per 10 grams\n• 22‑karat gold price stood at ₹14,640 per 10 grams\n• Silver prices experienced an upward movement on the same day\n• The decline in gold prices contrasts with previous sessions of strong upward momentum\n• The update provides city‑wise rates including Chennai, Mumbai, Delhi, and Kolkata",
+      "context": "Gold and silver prices in India are closely watched indicators of economic sentiment and inflation expectations. Gold, especially 24K and 22K, is a popular investment and cultural asset, while silver often reflects industrial demand. Price fluctuations can influence consumer behavior and investment decisions.",
+      "sentiment": "Neutral",
+      "source": "https://english.mathrubhumi.com/news/money/india-gold-silver-prices-jan-23-2026-k1jwqidf"
     },
     {
-      "headline": "Into The World of Words And Ideas: Exide Kolkata Literary Meet Lights Up The City of Joy",
-      "summary": "The 14th edition of the Exide Kolkata Literary Meet is underway until January 27, featuring prominent authors such as Amitav Ghosh, Jhumpa Lahiri, Kiran Desai, Banu Mushtaq, and Geoff Dyer. The event promises eclectic conversations on topics including new releases, socio-cultural themes, literary trends, and centenaries. It aims to foster intellectual engagement and celebrate literature in Kolkata.",
+      "headline": "Goa & Dubai dominate Republic Day weekend travel",
+      "summary": "Travel interest surged during the Republic Day weekend (January 23–26, 2026), with domestic accommodation searches up 115% and international searches up 63% year-on-year. Goa was the most searched domestic destination, while Dubai led internationally. Pondicherry, Udaipur, Varkala, and Ooty also saw significant increases.",
+      "detailed_summary": "• Domestic accommodation searches rose by 115% compared to the previous year\n• International searches increased by 63% year‑on‑year\n• Goa emerged as the top domestic travel destination\n• Dubai was the most searched international destination\n• Pondicherry (+211%), Udaipur (+148%), Varkala (+188%), and Ooty (+182%) recorded strong growth in searches",
+      "context": "Republic Day weekend is one of India’s major travel periods, often prompting spikes in tourism. Goa is a perennial favorite for domestic travelers, while Dubai remains a top international choice. The data reflects shifting preferences and the growing appeal of both established and emerging destinations.",
       "sentiment": "Positive",
-      "source": "[outlookindia.com](https://www.outlookindia.com/books/into-the-world-of-words-and-ideas-exide-kolkata-literary-meet-set-to-light-up-the-city-of-joy?utm_source=openai"
+      "source": "https://timesofindia.indiatimes.com/life-style/spotlight/goa-dubai-dominate-republic-day-weekend-travel/articleshow/127231980.cms"
     },
     {
-      "headline": "‘Open creche at HC in 30 days’",
-      "summary": "Seven years after a PIL was filed, the Calcutta High Court on Thursday directed its registry to make a ready-to-use creche on the court premises functional within 30 days. The division bench of Chief Justice Sujoy Paul and Justice Partha Sarathi Sen also ordered that creche service guidelines be published on the court’s website within three weeks.",
+      "headline": "Linkin Park to make first‑ever India appearance after making fans wait two decades",
+      "summary": "Iconic rock band Linkin Park will perform in India for the first time on January 23, 2026, in Bengaluru, followed by a headline slot at Lollapalooza India in Mumbai on January 25. The long-awaited debut marks a major cultural moment for Indian fans.",
+      "detailed_summary": "• Linkin Park will perform in Bengaluru on January 23, 2026\n• The band will also headline Lollapalooza India 2026 in Mumbai on January 25\n• This marks their first-ever performances in India after over two decades of anticipation\n• The announcement has generated excitement among fans nationwide\n• The shows represent a significant cultural milestone for India’s live music scene",
+      "context": "Linkin Park, formed in 1996, is known for hits like “Numb,” “In the End,” and “Crawling.” Their music blends rock, hip-hop, and electronic elements, earning global acclaim. Lollapalooza is a major international music festival, and its India edition brings global artists to Indian audiences.",
       "sentiment": "Positive",
-      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/open-creche-at-hc-in-30-days/articleshow/127188248.cms?utm_source=openai"
+      "source": "https://m.economictimes.com/news/new-updates/linkin-park-announces-first-ever-india-shows-after-making-fans-wait-for-two-decades/articleshow/127261658.cms"
     },
     {
-      "headline": "‘Crowding, lack of real‑time tracking plague city buses’",
-      "summary": "Kolkata’s bus network is facing a growing crisis, with overcrowding and the absence of real-time tracking systems undermining its effectiveness. These issues are increasingly affecting the reliability and user experience of the city’s urban transport backbone. Authorities are being urged to address these operational shortcomings to improve commuter services.",
-      "sentiment": "Negative",
-      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/crowding-lack-of-real-time-tracking-plague-city-buses/articleshow/127183597.cms?utm_source=openai"
+      "headline": "Chennai to witness the Navagraha Symphony",
+      "summary": "On January 23, 2026, Chennai will host the Indian premiere of the Navagraha Symphony, led by violin maestro Dr. L. Subramaniam. The performance, part of the 35th Lakshminarayana Global Music Festival, blends Western symphonic structure with Indian cultural elements.",
+      "detailed_summary": "• The Navagraha Symphony will premiere in India on January 23, 2026, in Chennai\n• Violin maestro Dr. L. Subramaniam will lead the performance\n• The event is part of the 35th Lakshminarayana Global Music Festival\n• The production includes a full symphony orchestra, choir, soloists, and dancers\n• The symphony fuses Western classical form with Indian cosmological themes",
+      "context": "The Navagraha Symphony draws inspiration from Indian cosmology, specifically the nine celestial bodies (Navagrahas). Dr. L. Subramaniam is a renowned violinist known for blending Indian classical music with Western forms. The Lakshminarayana Global Music Festival is an annual event celebrating global musical traditions.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/entertainment/tamil/music/chennai-to-witness-the-navagraha-symphony/articleshow/127242752.cms"
+    },
+    {
+      "headline": "‘Rashtragranth’: First‑ever large‑scale play on the Constitution of India to officially launch across Maharashtra this Republic Day",
+      "summary": "\"Rashtragranth,\" a Marathi theatre production based on the Constitution of India, will officially launch across Maharashtra in February 2026, coinciding with Republic Day. After successful pilot performances in nine districts, the play aims to promote constitutional awareness and civic dialogue.",
+      "detailed_summary": "• \"Rashtragranth\" is the first large‑scale play based on the Indian Constitution\n• Pilot performances were held across nine districts of Maharashtra with positive reception\n• The play was initially unveiled on January 26 of the previous year in the presence of Dr. Ambedkar’s grandson\n• It is set for an official public launch across Maharashtra beginning February 2026, aligned with Republic Day\n• The initiative is supported by the Department of Cultural Affairs, Government of Maharashtra",
+      "context": "The Constitution of India, adopted in 1950, is the supreme law of the land. Theatre has long been used as a medium to educate and engage citizens on civic values. Dr. B.R. Ambedkar, principal architect of the Constitution, is a central figure in its history.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/entertainment/marathi/theatre/rashtragranth-first-ever-large-scale-play-on-the-constitution-of-india-to-official-launch-across-maharastra-this-republic-day/articleshow/127236876.cms"
     }
   ]
 }
