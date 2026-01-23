@@ -139,6 +139,16 @@
             font-size: 1.05em;
         }
 
+        .incomplete-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 30px;
+            color: #856404;
+            font-size: 0.9em;
+        }
+
         .back-button {
             display: flex;
             flex-direction: column;
@@ -256,43 +266,66 @@
                     return;
                 }
 
-                // Get sentiment class
-                const sentimentClass = `sentiment-${article.sentiment.toLowerCase()}`;
+                let html = '';
+                let isIncomplete = false;
 
-                // Parse detailed summary into bullet points
-                const bulletPoints = article.detailed_summary
-                    .split('\n')
-                    .filter(line => line.trim().startsWith('•'))
-                    .map(line => line.replace('•', '').trim());
+                // Check if article is incomplete
+                if (!article.detailed_summary || !article.sentiment || !article.context || !article.source) {
+                    isIncomplete = true;
+                    html += `
+                        <div class="incomplete-notice">
+                            ⚠️ This article is being updated. Some details may be incomplete.
+                        </div>
+                    `;
+                }
 
-                // Build HTML
-                let html = `
-                    <h1 class="article-title">${article.headline}</h1>
-                    
-                    <div class="section-header">
-                        <h2 class="subheading">Quick Summary</h2>
-                        <span class="sentiment-badge ${sentimentClass}">${article.sentiment}</span>
-                    </div>
-                    
-                    <p class="summary">${article.summary}</p>
-                    
-                    <div class="details">
-                        <h2 class="subheading">Details</h2>
-                        <ul>
-                            ${bulletPoints.map(point => `<li>${point}</li>`).join('')}
-                        </ul>
-                    </div>
-                `;
+                // Title (always present)
+                html += `<h1 class="article-title">${article.headline}</h1>`;
 
-                // Add context if it exists
+                // Quick Summary section with sentiment (if available)
+                html += `<div class="section-header">
+                    <h2 class="subheading">Quick Summary</h2>`;
+                
+                if (article.sentiment) {
+                    const sentimentClass = `sentiment-${article.sentiment.toLowerCase()}`;
+                    html += `<span class="sentiment-badge ${sentimentClass}">${article.sentiment}</span>`;
+                }
+                
+                html += `</div>`;
+
+                // Summary (if available)
+                if (article.summary) {
+                    html += `<p class="summary">${article.summary}</p>`;
+                }
+
+                // Detailed Summary (if available)
+                if (article.detailed_summary) {
+                    const bulletPoints = article.detailed_summary
+                        .split('\n')
+                        .filter(line => line.trim().startsWith('•'))
+                        .map(line => line.replace('•', '').trim());
+
+                    if (bulletPoints.length > 0) {
+                        html += `
+                            <div class="details">
+                                <h2 class="subheading">Details</h2>
+                                <ul>
+                                    ${bulletPoints.map(point => `<li>${point}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                    }
+                }
+
+                // Context (if available)
                 if (article.context) {
-                    // Extract context title if present (assumes format "Title: content")
-                    const contextMatch = article.context.match(/^([^:]+):\s*(.+)$/s);
+                    // Extract context title if present
+                    const contextMatch = article.context.match(/^([^:–]+)[:\s–]\s*(.+)$/s);
                     if (contextMatch) {
                         html += `
                             <div class="context-box">
-                                <div class="context-title">${contextMatch[1]}</div>
-                                <div>${contextMatch[2]}</div>
+                                <div class="context-title">${contextMatch[1].trim()}</div>
+                                <div>${contextMatch[2].trim()}</div>
                             </div>
                         `;
                     } else {
@@ -304,7 +337,7 @@
                     }
                 }
 
-                // Add source link
+                // Source link (if available)
                 if (article.source) {
                     html += `
                         <div class="source-link">
