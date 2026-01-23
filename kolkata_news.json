@@ -1,82 +1,86 @@
 {
   "metadata": {
-    "fetch_date": "2026-01-23T19:44:49.903294",
-    "query": "top news stories from Kolkata today",
+    "fetch_date": "2026-01-23T19:56:15.956397",
+    "query": "top news stories from Kolkata and Bengal today",
     "location": "Kolkata",
-    "total_articles": 9
+    "total_articles": 10
   },
   "articles": [
     {
-      "headline": "Mobile apps to expand breast cancer outreach and care launched in Kolkata",
-      "summary": "The Institute of Breast Disease in Kolkata has introduced two mobile apps aimed at enhancing breast cancer awareness, early detection, and treatment adherence. The launch was officiated by state health and education officials. This marks a significant step in leveraging technology for public health.",
-      "detailed_summary": "• Two new mobile applications launched by the Institute of Breast Disease (IBD)\n• Apps designed to enhance awareness, early detection, and treatment adherence\n• Launch event attended by Dr. Swapan Saren, Director of Health Services, West Bengal\n• Principal Secretary (Education) Binod Kumar also present\n• Initiative aims to reach a broader and more diverse population",
-      "context": "Institute of Breast Disease – a specialized medical institution in Kolkata dedicated to breast cancer research, diagnosis, and treatment, playing a key role in regional public health initiatives.",
+      "headline": "Nipah virus outbreak: 100 people quarantined in West Bengal to contain deadly zoonotic virus",
+      "summary": "Health authorities in West Bengal have quarantined nearly 100 individuals following confirmation of five Nipah virus cases, including two critically ill nurses in Kolkata. The virus, known for its high fatality rate, spreads from animals to humans and through human-to-human transmission. Symptoms include fever, headache, respiratory issues, and encephalitis; treatment is supportive only. Authorities are urgently working to contain the outbreak.",
+      "detailed_summary": "• Five confirmed Nipah virus cases in West Bengal, including two nurses in coma and a doctor and health staff member\n• Nearly 100 individuals quarantined to prevent further spread\n• Nipah virus has high fatality rate and spreads zoonotically and via human contact\n• Symptoms include fever, headache, drowsiness, respiratory distress, and brain swelling\n• No specific antiviral treatment exists; supportive care is primary approach",
+      "context": "Nipah virus – A zoonotic virus first identified in 1999 in Malaysia, known for causing severe respiratory illness and encephalitis in humans, with mortality rates up to 75%. Outbreaks have occurred in South and Southeast Asia, requiring rapid containment and supportive medical care.",
+      "sentiment": "Negative",
+      "source": "https://m.economictimes.com/news/new-updates/nipah-virus-outbreak-100-people-quarantined-in-west-bengal-to-contain-deadly-zoonotic-virus-with-high-fatality-check-signs-symptoms-and-treatment/articleshow/127254288.cms"
+    },
+    {
+      "headline": "From SIR to pollution, current affairs enter Saraswati Puja pandals as themes",
+      "summary": "During the 2026 Saraswati Puja in Kolkata, educational institutions incorporated contemporary social and political themes into their pandal decorations. Ballygunge Science College highlighted the controversial SIR process, Scottish Church Collegiate School focused on pollution control, and Jadavpur Vidyapith celebrated women’s empowerment. Other schools paid tribute to filmmaker Ritwik Ghatak and showcased Kolkata’s urban evolution.",
+      "detailed_summary": "• Ballygunge Science College depicted the SIR process with symbolic elements like a black hole and hanging ropes\n• Scottish Church Collegiate School promoted pollution control and plantation through creative artwork\n• Jadavpur Vidyapith emphasized women’s empowerment and achievements\n• Hindu School honored filmmaker Ritwik Ghatak’s centenary via Patachitra art\n• Bhawanipur Mitra Institution showcased Kolkata’s transformation into a modern metropolis",
+      "context": "Saraswati Puja – A Hindu festival celebrating the goddess of learning, Saraswati. Widely observed in West Bengal, especially in educational institutions, where students worship books and knowledge. Pandals often reflect cultural and social themes.",
       "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/mobile-apps-to-expand-breast-cancer-outreach-and-care-launched-in-kolkata/articleshow/127269387.cms"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/from-sir-to-pollution-current-affairs-enter-saraswati-puja-pandals-as-themes/articleshow/127183679.cms"
     },
     {
-      "headline": "For 3rd time in Jan, North‑South Kolkata Metro ops hit due to tech snag",
-      "summary": "The North–South Blue Line of the Kolkata Metro experienced its third disruption in January due to technical issues, affecting services on January 22. The delay caused commuter inconvenience, with truncated operations until normalcy resumed.",
-      "detailed_summary": "• Third major disruption in January, latest on January 22\n• First train stalled at Rabindra Sadan, causing a 42-minute suspension between Maidan and Tollygunge\n• Services operated on truncated stretches: Maidan–Dakshineswar and Mahanayak Uttam Kumar–Shahid Khudiram\n• Normal operations resumed by 8:17 AM\n• Previous disruptions on January 13 and January 5 due to power and technical failures",
-      "context": "Kolkata Metro North–South Line – the oldest metro line in India, serving as a vital urban transit artery in Kolkata, frequently affected by technical and infrastructure challenges.",
-      "sentiment": "Negative",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/for-3rd-time-in-jan-north-south-kolkata-metro-ops-hit-due-to-tech-snag/articleshow/127185885.cms"
-    },
-    {
-      "headline": "Boy found dead in lift shaft",
-      "summary": "A tragic incident in Entally saw the body of a 3-year-old boy discovered in a water-filled open elevator shaft at a construction site. The child had been reported missing earlier, and the body was sent for examination.",
-      "detailed_summary": "• Victim: 3-year-old boy named Pritam Rajbanshi\n• Found in a water-filled open elevator shaft at an under-construction building in Entally\n• Injury marks observed on the body\n• Parents had reported him missing at Entally Police Station\n• Body taken to NRS Hospital for further examination",
-      "context": null,
-      "sentiment": "Negative",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/boy-found-dead-in-lift-shaft/articleshow/127185221.cms"
-    },
-    {
-      "headline": "16‑hour Setu shutdown for repairs on Sun",
-      "summary": "Vidyasagar Setu will be closed for 16 hours on Sunday for essential repair work, including cable and bearing replacements. Traffic diversions will be in place, and further closures are expected during the bridge’s rehabilitation.",
-      "detailed_summary": "• Closure scheduled from 5 AM to 9 PM on Sunday\n• Maintenance includes replacement of stay and holding-down cables and bearings\n• Part of broader rehabilitation of the 33-year-old bridge\n• Managed by Hooghly River Bridge Commissioners (HRBC)\n• Traffic diversions to be implemented by Kolkata Police",
-      "context": "Vidyasagar Setu – also known as the Second Hooghly Bridge, a major cable-stayed bridge in Kolkata connecting Howrah and Kolkata, critical for vehicular traffic and commerce.",
-      "sentiment": "Neutral",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/16-hour-setu-shutdown-for-repairs-on-sun/articleshow/127184107.cms"
-    },
-    {
-      "headline": "R‑Day flyers told to reach airport early for checks",
-      "summary": "Ahead of Republic Day, Kolkata airport has intensified security, advising passengers to arrive early due to enhanced screening. Two layers of checks and additional personnel have increased waiting times.",
-      "detailed_summary": "• Enhanced security for Republic Day travel\n• Two layers of screening: at entrance and before boarding gates\n• Additional personnel deployed at terminal entrances and screening areas\n• Waiting times increased by 15–20 minutes\n• Domestic passengers advised to arrive 3 hours early; international, 4 hours early",
-      "context": "Republic Day – India’s national day celebrated on January 26, marked by heightened security across transport hubs and public spaces.",
+      "headline": "R-Day flyers told to reach airport early for checks",
+      "summary": "Ahead of Republic Day, Kolkata airport has ramped up security, advising passengers to arrive significantly earlier due to enhanced screening. Two layers of security checks have been introduced, increasing average waiting times by 15–20 minutes. Domestic travelers are advised to arrive three hours before departure, and international travelers four hours early.",
+      "detailed_summary": "• Enhanced security at Kolkata airport for Republic Day\n• Two layers of screening: at entrance and before boarding gates\n• Average waiting time increased by 15–20 minutes\n• Domestic passengers advised to arrive three hours early\n• International travelers advised to arrive four hours early",
+      "context": "Republic Day – Celebrated on January 26 in India, marking the adoption of the Constitution in 1950. Airports typically increase security measures during national holidays due to higher travel volumes and heightened vigilance.",
       "sentiment": "Neutral",
       "source": "https://timesofindia.indiatimes.com/city/kolkata/r-day-flyers-told-to-reach-airport-early-for-checks/articleshow/127184238.cms"
     },
     {
+      "headline": "For 3rd time in Jan, North-South Kolkata Metro ops hit due to tech snag",
+      "summary": "The North-South Blue Line of Kolkata Metro experienced its third operational disruption in January, with the latest incident on January 22 causing a 42-minute service suspension. The first train stalled at Rabindra Sadan, affecting commuters. Services resumed by 8:17 AM, with truncated operations on certain stretches. Previous disruptions occurred on January 5 and 13.",
+      "detailed_summary": "• Third disruption in January for North-South Blue Line occurred on January 22\n• First train stalled at Rabindra Sadan, suspending services for 42 minutes between Maidan and Tollygunge\n• Hundreds of commuters stranded, including office-goers and students\n• Services operated on truncated stretches: Maidan–Dakshineswar and Mahanayak Uttam Kumar–Shahid Khudiram\n• Normal operations resumed by 8:17 AM",
+      "context": "Kolkata Metro – India’s oldest metro system, operational since 1984. The North-South Blue Line is a major commuter corridor. Technical disruptions can significantly impact daily travel in the densely populated city.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/for-3rd-time-in-jan-north-south-kolkata-metro-ops-hit-due-to-tech-snag/articleshow/127185885.cms"
+    },
+    {
+      "headline": "16-hour Setu shutdown for repairs on Sun",
+      "summary": "Vidyasagar Setu in Kolkata will be closed to vehicular traffic for 16 hours on Sunday (5 am to 9 pm) for essential repairs, including replacement of cables and bearings. The 33-year-old bridge is undergoing a broader rehabilitation by HRBC. Traffic diversions will be implemented during the closure.",
+      "detailed_summary": "• Vidyasagar Setu to be closed for 16 hours on Sunday (5 am–9 pm)\n• Repairs include replacement of stay and holding-down cables and bearings\n• Part of comprehensive rehabilitation of the 33-year-old bridge by HRBC\n• Traffic diversions to be managed by Kolkata Police via alternate routes\n• Further closures expected before full rehabilitation is complete",
+      "context": "Vidyasagar Setu – Also known as the Second Hooghly Bridge, it is a key cable-stayed bridge in Kolkata, opened in 1992. It connects Howrah and Kolkata and is vital for daily traffic flow.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/16-hour-setu-shutdown-for-repairs-on-sun/articleshow/127184107.cms"
+    },
+    {
+      "headline": "2 Bengal migrant workers found dead in AP, Kerala",
+      "summary": "Two migrant workers from West Bengal were found dead in Andhra Pradesh and Kerala within 24 hours. Manjur Alam Laskar, 32, from South 24 Parganas, was killed after a ransom demand; his family suspects targeting due to his identity. Alamgir Alam, 29, from Malda, was found dead near a Chennai railway track; his family suspects foul play. Both families demand thorough investigations.",
+      "detailed_summary": "• Manjur Alam Laskar (32) found dead in Andhra Pradesh after ransom demand of Rs 25,000; family transferred Rs 6,000\n• Family alleges he was targeted for being a Bengali-speaking Muslim and suspected to be Bangladeshi\n• Alamgir Alam (29) from Malda found dead near a Chennai railway track; last contacted wife on January 14\n• Family suspects murder and demands investigation\n• Both cases occurred within 24 hours, raising concerns over migrant worker safety",
+      "context": "Migrant workers – Many from West Bengal work in other Indian states under challenging conditions. Incidents of violence or suspicious deaths highlight vulnerabilities and the need for better protection and support systems.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/2-bengal-migrant-workers-found-dead-in-ap-kerala/articleshow/127191972.cms"
+    },
+    {
       "headline": "Chingrighata night traffic block trial for Metro work starts",
-      "summary": "Traffic police have begun night-time trial diversions at Chingrighata to prepare for upcoming Metro construction. New slip roads and a traffic post have been introduced to manage flow during future weekend blocks.",
-      "detailed_summary": "• Night traffic trials initiated at Chingrighata from Thursday\n• Slip road created near Captain Bhery connecting flyover to Beliaghata Canal Road and EM Bypass\n• Trials conducted in two slots: 8–11:30 AM and 5–8:30 PM\n• New traffic post established at Majherpara, funded by Metro authorities\n• Aimed at familiarizing motorists before February weekend night blocks",
-      "context": "Chingrighata – a major junction in Kolkata; Metro viaduct construction requires temporary traffic management to minimize disruption.",
+      "summary": "Kolkata Traffic Police have begun night traffic trials at Chingrighata to collect data ahead of planned weekend night closures in February for Metro viaduct construction. A new slip road has been created, and trials are conducted in two time slots. A traffic post at Majherpara has also been established to aid management.",
+      "detailed_summary": "• Night traffic trials initiated at Chingrighata for Metro viaduct construction planning\n• Slip road created near Captain Bhery connecting flyover to Beliaghata Canal Road and EM Bypass\n• Trials conducted in morning (8–11:30 am) and evening (5–8:30 pm) slots\n• New traffic post set up at Majherpara, funded by Metro authorities\n• Trials aim to familiarize motorists and adjust signal cycles before February closures",
+      "context": "Metro expansion – Kolkata Metro is undergoing expansion, requiring construction of viaducts. Traffic trials help plan diversions and minimize disruption during construction.",
       "sentiment": "Neutral",
       "source": "https://timesofindia.indiatimes.com/city/kolkata/chingrighata-night-traffic-block-trial-for-metro-work-starts/articleshow/127185245.cms"
     },
     {
-      "headline": "Gold Silver Price Today, 23 January, 2026: बाजार खुलते ही चांदी ₹12,600 उछली, सोने में 2800 की तेजी, जानें MCX गया रेट",
-      "summary": "On January 23, silver prices surged by ₹12,600 and gold by ₹2,800 per 10 grams. In Kolkata, 22-carat gold is priced at ₹14,737/g and 24-carat at ₹15,894/g.",
-      "detailed_summary": "• Silver price jumped by ₹12,600 at market open\n• Gold increased by ₹2,800 per 10 grams\n• Kolkata rates: 22-carat gold at ₹14,737/g; 24-carat at ₹15,894/g\n• Delhi: 22-carat ₹14,675/g; 24-carat ₹15,826/g\n• Highest 24-carat rate in Ranchi at ₹16,040/g",
-      "context": "Gold and silver prices – key indicators in commodity markets, influenced by global trends and domestic demand; important for investors and jewelers.",
-      "sentiment": "Positive",
-      "source": "https://navbharattimes.indiatimes.com/business/commodity/gold-silver-price-today-23-january-2026-sone-chandi-ka-bhav-mein-tezi-know-latest-rate-in-delhi-mumbai-chennai-kolkata-and-bangalore/articleshow/127235196.cms"
+      "headline": "864 call records help nab murder accused",
+      "summary": "Kolkata police arrested the main accused, Nur, and accomplice Nazmul in the murder of 38-year-old Rinku Samaddar, using analysis of 864 call records. Rinku had called her husband from Nur’s phone before her death. CCTV footage traced their movements, leading to the arrest. The accused were not professional criminals.",
+      "detailed_summary": "• Police analyzed 864 call records, narrowed to 40 key numbers, leading to arrest of Nur and Nazmul\n• Rinku called her husband from Nur’s phone instructing him not to search for her\n• CCTV tracked movements from Santragachhi to Brace Bridge station\n• Nur bought a knife, walked with Rinku along tracks, killed her, fled without taking anything\n• Accused were not professional criminals; Nur reportedly under psychological pressure",
+      "context": "Criminal investigation – Use of call data records (CDRs) and CCTV footage is a common investigative tool in Indian law enforcement to trace suspects and reconstruct crime events.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/864-call-records-help-nab-murder-accused/articleshow/127184129.cms"
     },
     {
       "headline": "From football to literature: Bonds that bind Argentina & West Bengal",
-      "summary": "The article explores cultural ties between Argentina and West Bengal, highlighting shared passions for football and literature. The Argentine Ambassador emphasizes mutual admiration for Tagore’s works and football culture.",
-      "detailed_summary": "• Cultural connection spans 17,000 km between regions\n• Shared passion for football, with fervent fan bases in both places\n• Rabindranath Tagore’s literary works deeply respected in Argentina\n• Argentine Ambassador Mariano A. Caucino underscores these bonds\n• Highlights how sports and literature foster international ties",
-      "context": "Rabindranath Tagore – Nobel laureate poet from Bengal, whose works have global influence; football – a unifying cultural phenomenon in both regions.",
+      "summary": "The cultural connection between Argentina and West Bengal is highlighted through shared passions for football and literature. Argentine Ambassador Mariano A. Caucino noted the admiration for Rabindranath Tagore in Argentina and the fervent football culture in both regions. The article underscores how sports and literature foster international ties.",
+      "detailed_summary": "• Cultural ties between Argentina and West Bengal span football and literature\n• Argentine Ambassador Mariano A. Caucino emphasized shared passions\n• Football holds a special place in both Argentine and Bengali hearts\n• Rabindranath Tagore’s works are deeply respected in Argentina\n• Cultural exchange showcases how sports and literature transcend borders",
+      "context": "Rabindranath Tagore – Nobel laureate poet from Bengal whose literary works have global influence. Football – A major sport in both Argentina and West Bengal, with passionate fan cultures.",
       "sentiment": "Positive",
       "source": "https://m.economictimes.com/news/india/from-football-to-literature-bonds-that-bind-argentina-west-bengal/articleshow/127243761.cms"
     },
     {
-      "headline": "ED chief likely to meet officers involved in I‑PAC searches",
-      "summary": "Enforcement Directorate Director Rahul Naveen arrived in Kolkata to review operations, including the January 8 I‑PAC office searches. He is expected to meet involved officers at the CGO Complex and assess security arrangements.",
-      "detailed_summary": "• ED Director Rahul Naveen arrived Thursday night in Kolkata\n• Visit follows January 8 searches at I‑PAC office and director’s residence\n• He will meet officers at CGO Complex on Friday morning\n• Meetings to assess working conditions and security for ED personnel\n• Return flight likely Friday evening, though not confirmed",
-      "context": "Enforcement Directorate (ED) – India’s financial investigation agency, often involved in high-profile political and corporate probes; I‑PAC – political consultancy firm under investigation.",
-      "sentiment": "Neutral",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/ed-chief-likely-to-meet-officers-involved-in-i-pac-searches/articleshow/127192186.cms"
+      "headline": "JEE Main 2026 Jan 23 Exam Postponed in West Bengal, Saraswati Puja Date Clash",
+      "summary": "The National Testing Agency (NTA) has postponed the January 23 JEE Main exam for West Bengal candidates due to a clash with Saraswati Puja celebrations. Affected students will receive revised dates and updated admit cards."
     }
   ]
 }
