@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-23T14:10:07.345882",
+    "location": "Kolkata, India",
+    "total_articles": 4
+  },
+  "articles": [
+    {
+      "headline": "Kolkata weather today: Sunny skies, warm temperatures, lingering air quality concerns",
+      "summary": "Kolkata is experiencing a sunny Friday, January 23, 2026, with temperatures ranging from 14.9 °C to 28.2 °C and no rain expected. However, air quality remains poor, with an AQI of 280 and elevated PM10 and CO levels, prompting recommendations for masks and limited outdoor exposure. The forecast predicts continued sunny conditions and warming temperatures through the week, with highs exceeding 32 °C by January 29.",
+      "sentiment": "Mixed",
+      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/kolkata-weather-today-sunny-skies-warm-afternoon-lingering-air-quality-concerns/articleshow/127214217.cms?utm_source=openai"
+    },
+    {
+      "headline": "Into The World of Words And Ideas: Exide Kolkata Literary Meet Lights Up The City of Joy",
+      "summary": "The 14th edition of the Exide Kolkata Literary Meet is underway until January 27, featuring prominent authors such as Amitav Ghosh, Jhumpa Lahiri, Kiran Desai, Banu Mushtaq, and Geoff Dyer. The event promises eclectic conversations on topics including new releases, socio-cultural themes, literary trends, and centenaries. It aims to foster intellectual engagement and celebrate literature in Kolkata.",
+      "sentiment": "Positive",
+      "source": "[outlookindia.com](https://www.outlookindia.com/books/into-the-world-of-words-and-ideas-exide-kolkata-literary-meet-set-to-light-up-the-city-of-joy?utm_source=openai"
+    },
+    {
+      "headline": "‘Open creche at HC in 30 days’",
+      "summary": "Seven years after a PIL was filed, the Calcutta High Court on Thursday directed its registry to make a ready-to-use creche on the court premises functional within 30 days. The division bench of Chief Justice Sujoy Paul and Justice Partha Sarathi Sen also ordered that creche service guidelines be published on the court’s website within three weeks.",
+      "sentiment": "Positive",
+      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/open-creche-at-hc-in-30-days/articleshow/127188248.cms?utm_source=openai"
+    },
+    {
+      "headline": "‘Crowding, lack of real‑time tracking plague city buses’",
+      "summary": "Kolkata’s bus network is facing a growing crisis, with overcrowding and the absence of real-time tracking systems undermining its effectiveness. These issues are increasingly affecting the reliability and user experience of the city’s urban transport backbone. Authorities are being urged to address these operational shortcomings to improve commuter services.",
+      "sentiment": "Negative",
+      "source": "[timesofindia.indiatimes.com](https://timesofindia.indiatimes.com/city/kolkata/crowding-lack-of-real-time-tracking-plague-city-buses/articleshow/127183597.cms?utm_source=openai"
+    }
+  ]
+}
