@@ -5,105 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kolkata News</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        .metadata {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .article {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .headline {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 10px;
-        }
-        .summary {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
             line-height: 1.6;
-            color: #444;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a1a1a;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
-        .sentiment {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            margin-right: 10px;
+
+        .subtitle {
+            font-size: 1em;
+            color: #6c757d;
+            font-weight: 400;
         }
-        .sentiment.positive { background: #d4edda; color: #155724; }
-        .sentiment.negative { background: #f8d7da; color: #721c24; }
-        .sentiment.neutral { background: #d1ecf1; color: #0c5460; }
-        .sentiment.mixed { background: #fff3cd; color: #856404; }
-        .source {
-            font-size: 0.9em;
-            color: #007bff;
+
+        .news-list {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .news-item {
+            padding: 24px 28px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s ease;
+            cursor: pointer;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item:hover {
+            background: #f8f9fa;
+        }
+
+        .news-item a {
             text-decoration: none;
+            color: inherit;
+            display: block;
         }
-        .source:hover {
-            text-decoration: underline;
+
+        .news-headline {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .news-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #03dac6;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .news-item {
+                padding: 20px 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>📰 Latest News from Kolkata</h1>
-    <div class="metadata" id="metadata"></div>
-    <div id="news-container"></div>
+    <div class="container">
+        <header>
+            <h1>Kolkata News</h1>
+            <p class="subtitle" id="subtitle">Loading news...</p>
+        </header>
+
+        <div class="news-list" id="news-list">
+            <!-- News items will be loaded here -->
+        </div>
+    </div>
 
     <script>
-        // Load and display news
-        fetch('kolkata_news.json')
+        fetch('./kolkata_news.json')
             .then(response => response.json())
             .then(data => {
-                // Display metadata
-                const metaDiv = document.getElementById('metadata');
+                // Update subtitle
                 const fetchDate = new Date(data.metadata.fetch_date);
-                metaDiv.innerHTML = `
-                    📍 ${data.metadata.location} | 
-                    📅 ${fetchDate.toLocaleDateString()} ${fetchDate.toLocaleTimeString()} | 
-                    📊 ${data.metadata.total_articles} articles
-                `;
+                document.getElementById('subtitle').textContent = 
+                    `${data.metadata.location} • ${fetchDate.toLocaleDateString('en-IN', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    })}`;
 
                 // Display articles
-                const container = document.getElementById('news-container');
+                const newsList = document.getElementById('news-list');
                 data.articles.forEach((article, index) => {
-                    const articleDiv = document.createElement('div');
-                    articleDiv.className = 'article';
+                    const newsItem = document.createElement('div');
+                    newsItem.className = 'news-item';
                     
-                    const sentimentClass = article.sentiment.toLowerCase();
-                    
-                    articleDiv.innerHTML = `
-                        <div class="headline">${index + 1}. ${article.headline}</div>
-                        <div class="summary">${article.summary}</div>
-                        <div>
-                            <span class="sentiment ${sentimentClass}">${article.sentiment}</span>
-                            <a href="${article.source}" target="_blank" class="source">Read more →</a>
-                        </div>
+                    newsItem.innerHTML = `
+                        <a href="detail.html?id=${index}">
+                            <span class="news-number">${index + 1}</span>
+                            <span class="news-headline">${article.headline}</span>
+                        </a>
                     `;
                     
-                    container.appendChild(articleDiv);
+                    newsList.appendChild(newsItem);
                 });
             })
             .catch(error => {
                 console.error('Error loading news:', error);
-                document.getElementById('news-container').innerHTML = 
-                    '<p style="color: red;">Error loading news data.</p>';
+                document.getElementById('news-list').innerHTML = 
+                    '<p style="padding: 20px; text-align: center; color: #6c757d;">Unable to load news. Please try again later.</p>';
             });
     </script>
 </body>
