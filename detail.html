@@ -310,11 +310,15 @@
     </div>
 
     <script>
-        // Get article ID from URL
+        // Get source and article ID from URL
         const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source'); // 'kolkata', 'india', or 'quirky'
         const articleId = parseInt(urlParams.get('id'));
 
-        fetch('./kolkata_news.json')
+        // Determine which JSON file to load
+        const jsonFile = `${source}_news.json`;
+
+        fetch(`./${jsonFile}`)
             .then(response => response.json())
             .then(data => {
                 const article = data.articles[articleId];
@@ -329,7 +333,7 @@
                 let isIncomplete = false;
 
                 // Check if article is incomplete
-                if (!article.detailed_summary || !article.sentiment || !article.context || !article.source) {
+                if (!article.detailed_summary || !article.sentiment || !article.source) {
                     isIncomplete = true;
                     html += `
                         <div class="incomplete-notice">
