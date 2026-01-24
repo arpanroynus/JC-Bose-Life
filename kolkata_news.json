@@ -1,122 +1,100 @@
 {
   "metadata": {
-    "fetch_date": "2026-01-23T20:14:46.370061",
+    "fetch_date": "2026-01-24T08:45:02.053837",
     "query": "top news stories from Kolkata and Bengal today",
     "location": "Kolkata",
-    "total_articles": 14
+    "total_articles": 10
   },
   "articles": [
     {
-      "headline": "Mobile apps to expand breast cancer outreach and care launched in Kolkata",
-      "summary": "The Institute of Breast Disease in Kolkata launched two mobile applications aimed at enhancing breast cancer awareness, early detection, and treatment adherence. The apps were inaugurated by Dr. Swapan Saren and attended by Principal Secretary Binod Kumar. This initiative marks a significant technological step in public health outreach.",
-      "detailed_summary": "• Two new mobile apps launched to improve breast cancer awareness and care\n• Focus on early detection and treatment adherence among women\n• Initiative led by Institute of Breast Disease, Kolkata\n• Launch event attended by Dr. Swapan Saren (Director of Health Services, West Bengal) and Principal Secretary (Education) Binod Kumar\n• Aims to expand outreach to a broader and more diverse population",
-      "context": "Institute of Breast Disease – a specialized healthcare institution in Kolkata dedicated to breast cancer diagnosis, treatment, research, and awareness programs.",
+      "headline": "Winter windfall for city eateries as Jan footfall smashes last yr's record",
+      "summary": "Kolkata’s food and beverage sector saw a 10% increase in footfall in January compared to the previous year. The rise is driven by cold weather and the extended festive period. Popular restaurants on Park Street and specialty venues reported higher patronage and special events.",
+      "detailed_summary": "• January footfall up ~10% year-on-year\n• Specialty Restaurants saw a 5% rise in business\n• Park Street venues like Mocambo, Peter Cat, Kwality had long queues\n• Restaurants such as Oudh 1590, Mezzuna, Mainland China hosted kebab festivals and curated menus\n• Cold weather and festive mood contributed to increased dining out",
+      "why_it_matters": "The surge benefits restaurant workers, suppliers, and the hospitality sector, offering more job opportunities and economic activity. For residents, it means more dining options and festive experiences.",
+      "context": null,
       "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/mobile‑apps‑to‑expand‑breast‑cancer‑outreach‑and‑care‑launched‑in‑kolkata/articleshow/127269387.cms"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/winter-windfall-for-city-eateries-as-jan-footfall-smashes-last-yrs-record/articleshow/127320599.cms"
     },
     {
-      "headline": "Nipah virus outbreak: 100 people quarantined in West Bengal",
-      "summary": "West Bengal health authorities have quarantined nearly 100 individuals following confirmation of five Nipah virus cases, including two critically ill nurses in Kolkata. The virus, with high fatality, spreads from animals to humans and through human contact. Supportive care remains the only treatment.",
-      "detailed_summary": "• Five confirmed Nipah virus cases in West Bengal\n• Nearly 100 individuals quarantined to contain spread\n• Two nurses in Kolkata are critically ill and in coma\n• Virus known for high fatality and zoonotic transmission\n• No specific antiviral treatment; supportive care is primary approach",
-      "context": "Nipah virus – a zoonotic virus first identified in 1999 in Malaysia, known for high fatality rates and outbreaks in South and Southeast Asia; no specific treatment exists, making containment and early detection critical.",
+      "headline": "Wife files FIR after seeing Hiraan's '2nd wedding' pics",
+      "summary": "BJP MLA and actor Hiraan Chatterjee faces an FIR filed by his wife, accusing him of cruelty and entering a second marriage without divorce. The complaint was lodged after photos of the alleged second wedding surfaced online. Police have begun investigating.",
+      "detailed_summary": "• FIR filed at Anandapur Police Station under Bharatiya Nyaya Sanhita\n• Wife Anindita Chattopadhyay alleges mental and physical cruelty and bigamy\n• Photos of second wedding with model Rittika Giri in Varanasi triggered the complaint\n• Anindita claims marriage since December 11, 2000, with no separation or divorce\n• Rittika denied wrongdoing, claimed a five-year relationship and that divorce notice was served\n• Police investigation underway; no arrests yet",
+      "why_it_matters": "The case highlights legal and social issues around marriage, gender rights, and public accountability. It may influence public discourse on personal conduct of elected representatives.",
+      "context": "Bharatiya Nyaya Sanhita – India’s new criminal code replacing the Indian Penal Code, Criminal Procedure Code, and Evidence Act, aiming to modernize and consolidate criminal laws.",
       "sentiment": "Negative",
-      "source": "https://m.economictimes.com/news/new‑updates/nipah‑virus‑outbreak‑100‑people‑quarantined‑in‑west‑bengal‑to‑contain‑deadly‑zoonotic‑virus‑with‑high‑fatality‑check‑signs‑symptoms‑and‑treatment/articleshow/127254288.cms"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/wife-files-fir-after-seeing-hiraans-2nd-wedding-pics/articleshow/127316596.cms"
     },
     {
-      "headline": "For 3rd time in Jan, North‑South Kolkata Metro ops hit due to tech snag",
-      "summary": "The North‑South Blue Line of Kolkata Metro experienced its third disruption in January due to technical issues, with the latest incident on January 22 causing a 42‑minute suspension. Services resumed by 8:17 AM after truncated operations.",
-      "detailed_summary": "• Third major disruption in January 2026 on North‑South Blue Line\n• Latest occurred January 22; first train stalled at Rabindra Sadan\n• 42‑minute suspension between Maidan and Tollygunge\n• Services truncated: Maidan to Dakshineswar and Mahanayak Uttam Kumar to Shahid Khudiram\n• Normal operations resumed by 8:17 AM",
-      "context": "Kolkata Metro – India’s oldest metro system, operational since 1984, serving as a vital urban transit mode in the city; technical disruptions affect thousands of daily commuters.",
-      "sentiment": "Negative",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/for‑3rd‑time‑in‑jan‑north‑south‑kolkata‑metro‑ops‑hit‑due‑to‑tech‑snag/articleshow/127185885.cms"
+      "headline": "Mobile apps to expand breast cancer outreach and care launched in Kolkata",
+      "summary": "The Institute of Breast Disease in Kolkata launched two mobile apps to enhance breast cancer awareness, early detection, and treatment adherence. The initiative aims to reach a broader population and improve healthcare accessibility.",
+      "detailed_summary": "• Two mobile applications launched by Institute of Breast Disease (IBD)\n• Apps focus on awareness, early detection, and treatment adherence\n• Launched by Dr. Swapan Saren, Director of Health Services, West Bengal\n• Principal Secretary (Education) Binod Kumar present at the event\n• Initiative marks technological advancement in public health outreach",
+      "why_it_matters": "These apps can empower women across Bengal with health information, early screening, and treatment support—potentially saving lives and reducing healthcare disparities.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/mobile-apps-to-expand-breast-cancer-outreach-and-care-launched-in-kolkata/articleshow/127269387.cms"
     },
     {
-      "headline": "Boy found dead in lift shaft",
-      "summary": "A tragic incident in Entally, Kolkata, where a 3‑year‑old boy named Pritam Rajbanshi was found dead in a water‑filled open elevator shaft at an under‑construction building. The child had injury marks, and his body was taken to NRS Hospital.",
-      "detailed_summary": "• Victim: 3‑year‑old Pritam Rajbanshi\n• Found dead in water‑filled open elevator shaft at under‑construction building in Entally\n• Injury marks observed on the body\n• Parents had reported him missing at Entally Police Station\n• Body sent to NRS Hospital for examination",
+      "headline": "'Open creche at HC in 30 days'",
+      "summary": "The Calcutta High Court has ordered its registry to operationalize a long-pending crèche within 30 days. The facility, ready since 2019, will serve court employees and advocates, with staffing and safety measures mandated.",
+      "detailed_summary": "• Court directed to open crèche within 30 days\n• Service guidelines to be published online within three weeks\n• PWD to install aluminium grilles within two weeks\n• State government to assign two doctors and a nurse before opening\n• Crèche planned since 2019; paediatric and nursing posts sanctioned in August 2021",
+      "why_it_matters": "The crèche will support working parents in the legal community, promoting work-life balance and childcare access. It reflects broader progress toward family-friendly public institutions.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/open-creche-at-hc-in-30-days/articleshow/127188248.cms"
+    },
+    {
+      "headline": "Adjourn West Bengal SIR hearing, file FIR if attacked: CEO",
+      "summary": "The West Bengal Chief Electoral Officer has instructed district officials to ensure law and order during Special Summary Revision (SIR) hearings. FIRs must be filed immediately if any threats or attacks occur.",
+      "detailed_summary": "• CEO directed district magistrates and election officers to maintain peace during SIR hearings\n• FIRs to be filed immediately if public property is damaged or officials attacked\n• Instructions apply to hearings at panchayat, block, and ward offices\n• Aimed at safeguarding sensitive electoral processes\n• Emphasis on proactive law enforcement during revision process",
+      "why_it_matters": "Ensuring safe and fair electoral roll revisions is critical for democratic participation. It reassures citizens about the integrity of the process and protects officials and voters.",
+      "context": "Special Summary Revision (SIR) – A process by the Election Commission to update electoral rolls, removing ineligible names and adding new voters ahead of elections.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/india/adjourn-wb-sir-hearing-file-fir-if-attacked-ceo/articleshow/127335819.cms"
+    },
+    {
+      "headline": "Didi: If Netaji were alive, even he would've been called for hearing",
+      "summary": "CM Mamata Banerjee criticized the SIR process, saying even Netaji Subhas Chandra Bose would be summoned today. She accused the Centre of deleting nearly 2 crore names from electoral rolls, disproportionately affecting vulnerable groups.",
+      "detailed_summary": "• Made remarks during Netaji Jayanti event in Kolkata\n• Claimed even national icons would face SIR summons today\n• Alleged deletion of nearly 2 crore names from Bengal’s electoral roll\n• Said women, tribal communities, and elderly disproportionately affected\n• Cited emotional toll including suicides; called for accountability and resistance",
+      "why_it_matters": "The comments reflect deep political tensions and raise concerns about voter disenfranchisement. For citizens, it underscores the importance of vigilance in protecting electoral rights.",
       "context": null,
       "sentiment": "Negative",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/boy‑found‑dead‑in‑lift‑shaft/articleshow/127185221.cms"
-    },
-    {
-      "headline": "16‑hour Setu shutdown for repairs on Sun",
-      "summary": "Vidyasagar Setu in Kolkata will be closed for 16 hours on Sunday (5 am to 9 pm) for essential repair work including cable and bearing replacement. Traffic diversions will be in place during the shutdown.",
-      "detailed_summary": "• Vidyasagar Setu to be closed for 16 hours on Sunday (5 am to 9 pm)\n• Repairs include replacement of stay and holding‑down cables and bearings\n• Part of broader rehabilitation of the 33‑year‑old bridge\n• Managed by Hooghly River Bridge Commissioners (HRBC)\n• Kolkata Police to implement traffic diversions via alternate routes",
-      "context": "Vidyasagar Setu – also known as the Second Hooghly Bridge, a major cable‑stayed bridge connecting Kolkata and Howrah, opened in 1992 and vital for vehicular traffic across the Hooghly River.",
-      "sentiment": "Neutral",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/16‑hour‑setu‑shutdown‑for‑repairs‑on‑sun/articleshow/127184107.cms"
-    },
-    {
-      "headline": "R‑Day flyers told to reach airport early for checks",
-      "summary": "Ahead of Republic Day, Kolkata airport has enhanced security with two layers of screening, increasing average waiting time by 15‑20 minutes. Domestic passengers are advised to arrive three hours early, international four hours.",
-      "detailed_summary": "• Security at Kolkata airport significantly increased for Republic Day\n• Two layers of screening: at entrance and before boarding gates\n• Additional personnel deployed at terminal entrances and screening areas\n• Average waiting time increased by 15‑20 minutes\n• Recommendation: domestic passengers arrive 3 hours early, international 4 hours",
-      "context": "Republic Day – celebrated annually on January 26 in India, marking the adoption of the Constitution in 1950; airports often enhance security during national holidays due to increased travel and heightened alertness.",
-      "sentiment": "Neutral",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/r‑day‑flyers‑told‑to‑reach‑airport‑early‑for‑checks/articleshow/127184238.cms"
-    },
-    {
-      "headline": "Rudrajit Roy earns directorial honour at Third Eye Asian Film Festival",
-      "summary": "Kolkata filmmaker Rudrajit Roy received the Best Director (Special Jury Mention) award in the Indian Cinema Competition at the 22nd Third Eye Asian Film Festival. He is the only director from West Bengal to be honored at the event.",
-      "detailed_summary": "• Rudrajit Roy won Best Director (Special Jury Mention) at 22nd Third Eye Asian Film Festival\n• Award in Indian Cinema Competition category\n• Only director from West Bengal to receive recognition at the festival\n• Recognition for his latest film (unnamed)\n• Highlights growing influence of regional Indian filmmakers internationally",
-      "context": "Third Eye Asian Film Festival – an annual event held in India celebrating cinematic excellence across Asia, showcasing films and talents from the region and fostering cultural exchange.",
-      "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/entertainment/rudrajit‑roy‑earns‑directorial‑honour‑at‑third‑eye‑asian‑film‑festival/articleshow/127254952.cms"
-    },
-    {
-      "headline": "From SIR to pollution, current affairs enter Saraswati Puja pandals as themes",
-      "summary": "During Saraswati Puja in Kolkata, educational institutions used contemporary social and political themes to decorate their pandals, addressing issues like SIR process stress, pollution, women’s empowerment, and heritage.",
-      "detailed_summary": "• Ballygunge Science College highlighted SIR process with symbolic elements (black hole, ropes, goalpost)\n• Scottish Church Collegiate School focused on pollution control and plantation through artwork\n• Jadavpur Vidyapith emphasized women’s empowerment and achievements\n• Hindu School paid tribute to filmmaker Ritwik Ghatak on his centenary via Patachitra art\n• Bhawanipur Mitra Institution showcased Kolkata’s evolution into a modern metropolis",
-      "context": "Saraswati Puja – a Hindu festival dedicated to Goddess Saraswati, celebrated widely in Bengal with elaborate pandals, cultural programs, and thematic decorations reflecting contemporary issues.",
-      "sentiment": "Positive",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/from‑sir‑to‑pollution‑current‑affairs‑enter‑saraswati‑puja‑pandals‑as‑themes/articleshow/127183679.cms"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/didi-if-netaji-were-alive-even-he-wouldve-been-called-for-hearing/articleshow/127320621.cms"
     },
     {
       "headline": "2 Bengal migrant workers found dead in AP, Kerala",
-      "summary": "Two migrant workers from West Bengal were found dead in Andhra Pradesh and Kerala within 24 hours. One had received a ransom call before being killed; the other was found near a railway track. Families suspect foul play and demand investigations.",
-      "detailed_summary": "• Manjur Alam Laskar (32, South 24 Parganas) found dead in Andhra Pradesh after ransom call demanding ₹25,000; family paid ₹6,000\n• Family alleges he was targeted for being Bengali‑speaking Muslim and suspected as Bangladeshi\n• Alamgir Alam (29, Malda) found dead near railway track in Chennai after last contact on January 14; family suspects murder\n• Both incidents occurred within 24 hours in different states\n• Families demand thorough investigations into suspicious deaths",
-      "context": "Migrant workers from West Bengal often travel to other states for employment; incidents of violence or suspicious deaths raise concerns about worker safety and interstate protections.",
+      "summary": "Two migrant workers from West Bengal were found dead in Andhra Pradesh and near Chennai within 24 hours. Families allege foul play and demand thorough investigations.",
+      "detailed_summary": "• Manjur Alam Laskar (32) from South 24 Parganas found dead in Andhra Pradesh after ransom call demanding ₹25,000; family paid ₹6,000\n• Family alleges he was targeted for being Bengali-speaking Muslim\n• Alamgir Alam (29) from Malda found dead near Chennai railway track; last contacted wife on January 14\n• Both families suspect murder and demand full investigations\n• Incidents occurred within a 24-hour span in separate states",
+      "why_it_matters": "The deaths highlight migrant worker vulnerabilities and safety concerns outside Bengal. It underscores the need for better protection and support systems for migrant laborers.",
+      "context": null,
       "sentiment": "Negative",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/2‑bengal‑migrant‑workers‑found‑dead‑in‑ap‑kerala/articleshow/127191972.cms"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/2-bengal-migrant-workers-found-dead-in-ap-kerala/articleshow/127191972.cms"
     },
     {
-      "headline": "Santragachhi Jheel sewage plant & drain may be ready by Aug 31: State",
-      "summary": "The West Bengal government informed the NGT that the sewage treatment plant and garland drain project at Santragachhi Jheel in Howrah is 22% complete and expected to finish by August 31, 2026. The ₹28.8 crore project aims to reduce pollution in this migratory bird habitat.",
-      "detailed_summary": "• Project 22% complete as of early January 2026\n• Expected completion by August 31, 2026\n• Budget: ₹28.8 crore; includes STP, pumping station, and garland drain\n• Initiated following NGT directive due to pollution from municipal and railway sewage\n• Additional efforts: waste management, public awareness, biodiversity projects, and handicraft use of water hyacinth",
-      "context": "Santragachhi Jheel – a lake in Howrah known for migratory birds; pollution from sewage has prompted environmental interventions and NGT oversight.",
+      "headline": "Bengal SIR: EC orders FIRs against negligent BLOs, warns DEOs on law and order",
+      "summary": "The Election Commission has directed FIRs against negligent Booth Level Officers during the SIR process and warned District Election Officers to maintain law and order.",
+      "detailed_summary": "• EC mandates FIRs against negligent BLOs across states including West Bengal\n• DEOs warned to ensure law and order during SIR\n• Aimed at ensuring transparency and accountability in electoral roll revision\n• Applies to all regions undergoing SIR\n• Reinforces legal consequences for administrative lapses",
+      "why_it_matters": "It reinforces electoral accountability and ensures officials are held responsible, protecting voter rights and the integrity of the process.",
+      "context": "Booth Level Officers (BLOs) – Grassroots officials responsible for maintaining accurate voter lists; District Election Officers (DEOs) oversee election administration at district level.",
       "sentiment": "Neutral",
-      "source": "https://timesofindia.indiatimes.com/city/kolkata/santragachhi‑jheel‑sewage‑plant‑drain‑may‑be‑ready‑by‑aug‑31‑state/articleshow/127184053.cms"
+      "source": "https://m.economictimes.com/news/elections/assembly-elections/west-bengal/bengal-sir-ec-orders-firs-against-negligent-blos-warns-deos-on-law-and-order/articleshow/127309302.cms"
     },
     {
-      "headline": "Gold Silver Price Today, 23 January, 2026: silver jumps ₹12,600, gold ₹2,800 in Kolkata",
-      "summary": "On January 23, 2026, silver prices surged by ₹12,600 and gold by ₹2,800 per 10 grams. In Kolkata, 22‑carat gold was ₹14,737/gm and 24‑carat ₹15,894/gm.",
-      "detailed_summary": "• Silver price increased by ₹12,600 (unit unspecified) at market open\n• Gold price rose by ₹2,800 per 10 grams\n• Kolkata rates: 22‑carat ₹14,737/gm; 24‑carat ₹15,894/gm\n• Other cities: Delhi 22‑carat ₹14,675/gm, 24‑carat ₹15,826/gm; Mumbai 22‑carat ₹14,623/gm, 24‑carat ₹15,773/gm\n• Highest 24‑carat rate in Ranchi at ₹16,040/gm",
-      "context": "Gold and silver prices are closely watched in India for investment and cultural reasons; fluctuations reflect global trends and domestic demand.",
+      "headline": "ED chief Rahul Navin reviews Bengal probes, I-PAC coal case in focus",
+      "summary": "ED Director Rahul Navin visited Kolkata to review ongoing investigations, with a focus on the I-PAC coal smuggling case. The visit signals heightened scrutiny of financial corruption in the region.",
+      "detailed_summary": "• Rahul Navin, ED Director, visited Kolkata on Friday\n• Reviewed progress of multiple investigations in West Bengal\n• Focus on I-PAC’s alleged involvement in coal smuggling\n• Meetings held with senior officials to assess probe status\n• Reflects increased enforcement activity in the state",
+      "why_it_matters": "The probe may impact political funding and governance transparency. For citizens, it signals accountability and may influence future political and economic landscapes.",
+      "context": "I-PAC (Indian Political Action Committee) – A political consultancy firm involved in campaign strategy; has faced scrutiny over alleged involvement in coal smuggling and financial irregularities.",
       "sentiment": "Neutral",
-      "source": "https://navbharattimes.indiatimes.com/business/commodity/gold‑silver‑price‑today‑23‑january‑2026‑sone‑chandi‑ka‑bhav‑mein‑tezi‑know‑latest‑rate‑in‑delhi‑mumbai‑chennai‑kolkata‑and‑bangalore/articleshow/127235196.cms"
+      "source": "https://m.economictimes.com/news/india/ed-chief-rahul-navin-reviews-bengal-probes-i-pac-coal-case-in-focus/articleshow/127317906.cms"
     },
     {
-      "headline": "From football to literature: Bonds that bind Argentina & West Bengal",
-      "summary": "The article explores cultural ties between Argentina and West Bengal, highlighting shared passions for football and literature. Argentine Ambassador Mariano A. Caucino notes admiration for Rabindranath Tagore and football fervor in both regions.",
-      "detailed_summary": "• Cultural connection between Argentina and West Bengal despite 17,000 km distance\n• Shared passions: football and literature\n• Argentine Ambassador Mariano A. Caucino emphasizes these bonds\n• Rabindranath Tagore’s works deeply respected in Argentina\n• Highlights how sports and literature transcend borders",
-      "context": "Rabindranath Tagore – Bengali polymath and Nobel laureate poet whose works have global influence; football is a major cultural phenomenon in both Argentina and Bengal.",
+      "headline": "Bharti Airtel boosts network connectivity on Vidyasagar Setu",
+      "summary": "Bharti Airtel enhanced mobile connectivity on Vidyasagar Setu by laying 1.3 km of fiber optic cable and installing antennas on six poles. This aims to improve communication for commuters and emergency services.",
+      "detailed_summary": "• Installed 1.3 km fiber optic cable along Vidyasagar Setu\n• Network antennas placed on six poles across the bridge\n• Collaboration with PWD, West Bengal Police Traffic Department, HRBC\n• Airtel installed over 5,250 new network sites across Bengal in past three years\n• Aims to ensure uninterrupted connectivity for commuters and safety services",
+      "why_it_matters": "Improved connectivity enhances commuter convenience, emergency response, and daily communication for residents traveling between Kolkata and Howrah.",
+      "context": null,
       "sentiment": "Positive",
-      "source": "https://m.economictimes.com/news/india/from‑football‑to‑literature‑bonds‑that‑bind‑argentina‑west‑bengal/articleshow/127243761.cms"
-    },
-    {
-      "headline": "JEE Main 2026 Jan 23 Exam Postponed in West Bengal due to Saraswati Puja",
-      "summary": "The National Testing Agency postponed the JEE Main exam scheduled for January 23, 2026, in West Bengal due to clashes with Saraswati Puja. A revised date will be announced.",
-      "detailed_summary": "• JEE Main exam on January 23 postponed in West Bengal\n• Postponement due to Saraswati Puja celebrations\n• Affected candidates will receive a revised date\n• Announcement made via NTA’s ‘X’ handle\n• Candidates advised to check official website for updates and new admit cards",
-      "context": "JEE Main – a national engineering entrance exam in India; Saraswati Puja is a major festival in West Bengal, often affecting academic schedules.",
-      "sentiment": "Neutral",
-      "source": "https://www.collegedekho.com/amp/news/jee‑main‑2026‑jan‑23‑exam‑postponed‑in‑west‑bengal‑saraswati‑puja‑date‑clash‑76406/"
-    },
-    {
-      "headline": "Kolkata Book Fair begins January 22 with Argentina as theme country",
-      "summary": "The Kolkata Book Fair started on January 22 and will run until February 3 at Salt Lake. Argentina is the theme country, the first non‑South Asian nation to be featured. Major publishers are participating, though Bangladesh’s presence is uncertain due to political sensitivities.",
-      "detailed_summary": "• Book Fair runs from January 22 to February 3 at Boimela Prangan, Salt Lake\n• Argentina is the theme country—the first non‑South Asian nation featured\n• Major publishers include Penguin Random House, HarperCollins, Oxford University Press\n• Bangladesh’s participation uncertain due to political sensitivities and government approvals\n• Organized by Publishers and Booksellers Guild",
-      "context": "Kolkata Book Fair – one of Asia’s largest book fairs, held annually since 1976, attracting publishers, authors, and readers from across the world.",
-      "sentiment": "Positive",
-      "source": "https://indianexpress.com/article/cities/kolkata/7‑things‑to‑watch‑out‑for‑this‑year‑10449150/"
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/bharti-airtel-boosts-network-connectivity-on-vidyasagar-setu/articleshow/127038229.cms"
     }
   ]
 }
