@@ -29,6 +29,19 @@
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .article-title {
@@ -86,16 +99,30 @@
         .summary {
             font-size: 1.05em;
             color: #495057;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.7;
             padding-left: 20px;
-            border-left: 4px solid #28a745;
+            border-left: 4px solid #03dac6;
+        }
+
+        /* Context box - right after quick summary */
+        .context-box {
+            background: #03dac6;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.95em;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
         }
 
         .details {
             margin-bottom: 40px;
             padding-left: 20px;
-            border-left: 4px solid #ff9800;
+            border-left: 4px solid #03dac6;
         }
 
         .details ul {
@@ -116,27 +143,37 @@
             content: "•";
             position: absolute;
             left: 0;
-            color: #ff9800;
+            color: #03dac6;
             font-weight: bold;
             font-size: 1.4em;
             line-height: 1;
         }
 
-        .context-box {
-            background: white;
-            border: 4px solid #ffd700;
+        /* Why it matters box - after details */
+        .why-matters-box {
+            background: #03dac6;
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 50px;
-            color: #1a1a1a;
-            font-size: 0.95em;
-            line-height: 1.7;
         }
 
-        .context-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.05em;
+        .why-matters-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        .why-matters-content {
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.95em;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
         }
 
         .incomplete-notice {
@@ -156,6 +193,8 @@
             gap: 10px;
             text-decoration: none;
             margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.3s forwards;
         }
 
         .arrow {
@@ -166,11 +205,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .back-button:hover .arrow {
             transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(3, 218, 198, 0.4);
         }
 
         .arrow svg {
@@ -196,13 +236,16 @@
         }
 
         .source-link a {
-            color: #007bff;
+            color: #03dac6;
             text-decoration: none;
             font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         .source-link a:hover {
             text-decoration: underline;
+            color: #02b8a8;
         }
 
         @media (max-width: 600px) {
@@ -230,6 +273,22 @@
 
             .details {
                 padding-left: 15px;
+            }
+
+            .context-box,
+            .why-matters-box {
+                padding: 20px;
+            }
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -298,6 +357,15 @@
                     html += `<p class="summary">${article.summary}</p>`;
                 }
 
+                // Context (RIGHT AFTER summary - mint green box with white blocky text)
+                if (article.context) {
+                    html += `
+                        <div class="context-box">
+                            ${article.context}
+                        </div>
+                    `;
+                }
+
                 // Detailed Summary (if available)
                 if (article.detailed_summary) {
                     const bulletPoints = article.detailed_summary
@@ -317,24 +385,14 @@
                     }
                 }
 
-                // Context (if available)
-                if (article.context) {
-                    // Extract context title if present
-                    const contextMatch = article.context.match(/^([^:–]+)[:\s–]\s*(.+)$/s);
-                    if (contextMatch) {
-                        html += `
-                            <div class="context-box">
-                                <div class="context-title">${contextMatch[1].trim()}</div>
-                                <div>${contextMatch[2].trim()}</div>
-                            </div>
-                        `;
-                    } else {
-                        html += `
-                            <div class="context-box">
-                                ${article.context}
-                            </div>
-                        `;
-                    }
+                // Why it matters (AFTER details - mint green box with title and white blocky text)
+                if (article.why_it_matters) {
+                    html += `
+                        <div class="why-matters-box">
+                            <div class="why-matters-title">Why does it matter?</div>
+                            <div class="why-matters-content">${article.why_it_matters}</div>
+                        </div>
+                    `;
                 }
 
                 // Source link (if available)
