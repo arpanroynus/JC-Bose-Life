@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-26T11:32:33.076755",
+    "query": "top news stories from Kolkata and Bengal today",
+    "location": "Kolkata",
+    "total_articles": 5,
+    "news_type": "serious"
+  },
+  "articles": [
+    {
+      "headline": "10L visitors in first 3 days: Book fair sets new opening record",
+      "summary": "The 49th International Kolkata Book Fair (IKBF) has drawn a record-breaking 10 lakh visitors in its first three days, with nearly four lakh attending on Sunday alone. The fair’s nine entry gates and new Metro kiosk facilities, especially the Green Line, helped manage the massive crowds. The Publishers and Booksellers Guild praised the turnout, highlighting continued enthusiasm for literature.",
+      "detailed_summary": "• IKBF attracted around 10 lakh visitors in just three days\n• Sunday saw nearly four lakh attendees, creating heavy foot and vehicle traffic\n• Fair features nine entry gates and a Little Magazine pavilion\n• New Metro kiosks and the Green Line metro improved access, especially from Howrah\n• Guild expressed satisfaction at the sustained enthusiasm of book lovers",
+      "why_it_matters": "If you’re a bibliophile in Kolkata, this is your literary Woodstock—minus the mud. Huge crowds mean more traffic, but also more bookish joy and cultural buzz in the city.",
+      "context": "International Kolkata Book Fair  \n   • The International Kolkata Book Fair is one of Asia’s largest and most prestigious book fairs, held annually since 1976. It brings together publishers, authors, and readers from across India and abroad, offering a vast array of books, literary events, and cultural programs.  \n   • Organized by the Publishers and Booksellers Guild, the fair is a major cultural event in Kolkata, promoting reading culture and providing a platform for publishers and writers to connect with a wide audience.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/10l-visitors-in-first-3-days-book-fair-sets-new-opening-record/articleshow/127492744.cms"
+    },
+    {
+      "headline": "3-month partial weekend shutdown for Setu",
+      "summary": "Vidyasagar Setu in Kolkata underwent a 16-hour shutdown on Sunday for cable replacement work, marking the start of a three-month series of partial weekend closures. These shutdowns, lasting between 5 to 16 hours, are part of ongoing repair efforts by the Hooghly River Bridge Commission. Police have coordinated alternative routes to ease traffic disruption.",
+      "detailed_summary": "• Vidyasagar Setu shut down for 16 hours on Sunday for cable replacement\n• This is the first of partial weekend closures over the next three months\n• Shutdown durations will vary between 5 to 16 hours\n• Kolkata Police coordinated with Howrah, Barrackpore, and Bidhannagar forces\n• Alternative routes ensure Strand Road and Hastings remain accessible",
+      "why_it_matters": "If you drive over the bridge on weekends, plan ahead—or risk feeling like you're in a traffic-themed escape room. Repairs are essential, but your weekend plans might need a detour.",
+      "context": "Vidyasagar Setu  \n   • Vidyasagar Setu, also known as the Second Hooghly Bridge, is a vital cable-stayed bridge connecting Kolkata and Howrah over the Hooghly River. Opened in 1992, it is one of the longest bridges in India and a key artery for vehicular traffic.  \n   • The Hooghly River Bridge Commission is responsible for the maintenance and operations of the bridge, ensuring its structural integrity and safety through periodic repairs and upgrades.",
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/3-month-partial-weekend-shutdown-for-setu/articleshow/127492739.cms"
+    },
+    {
+      "headline": "ISF, TMC clash in Bhangar, one held",
+      "summary": "Tensions flared in Kantadanga, Bhangar, as the Indian Secular Front (ISF) accused Trinamool Congress (TMC) workers of attacking the home of ISF leader Wahidul Islam. Allegations include bomb-throwing and assault on Islam’s parents. TMC denied the claims, and no police complaint has been filed yet. One person has been detained.",
+      "detailed_summary": "• Clash occurred Sunday morning in Kantadanga, Bhangar between ISF and TMC\n• ISF alleges TMC attacked Wahidul Islam’s home, threw four bombs, and assaulted his parents\n• TMC denies allegations, calling them false\n• No official police complaint filed so far\n• One person has been held in connection with the incident",
+      "why_it_matters": "If you live in Bhangar or nearby, this isn’t just political drama—it’s your peace of mind at stake. Bombs and brawls in your neighborhood? Hardly the kind of fireworks anyone wants.",
+      "context": "Indian Secular Front (ISF)  \n   • The Indian Secular Front is a regional political party in West Bengal, founded in 2021 by Abbas Siddiqui, a cleric and social leader. The party aims to represent minority and marginalized communities in the state’s political landscape.  \n   • ISF has formed alliances with larger parties like the Left Front and Congress in the past, attempting to carve out a space in West Bengal’s competitive political arena.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/isf-tmc-clash-in-bhangar-one-held/articleshow/127498766.cms"
+    },
+    {
+      "headline": "'Intentional' BLO errors part of plot to defame SIR: BJP netas",
+      "summary": "BJP leaders in Bengal accused Booth Level Officers (BLOs) of deliberately introducing errors in the SIR process to defame it, allegedly under TMC directives. They claim these errors caused unnecessary hearings and public inconvenience. BJP insists the process should continue until voter rolls are accurate.",
+      "detailed_summary": "• BJP alleges BLOs are intentionally submitting incorrect data in SIR process\n• Claims this is a TMC-backed plot to create harassment and defame SIR\n• Errors reportedly led to unnecessary hearings and public inconvenience\n• BJP states BLOs, AEROs, and EROs are state employees under CM’s control\n• BJP supports extended SIR process to clean voter rolls of fake, dead, duplicate entries",
+      "why_it_matters": "If your name vanishes from the voter list because someone goofed—or worse, goofed on purpose—you might end up voting for your chaiwala instead of your candidate. Accuracy matters, folks.",
+      "context": "Booth Level Officers (BLOs) & SIR  \n   • Booth Level Officers (BLOs) are grassroots-level officials responsible for maintaining and updating voter lists in their assigned polling areas. They play a crucial role in ensuring accurate electoral rolls.  \n   • As mentioned earlier, the Systematic Investigation of Roll (SIR) is a process to clean up voter lists by identifying discrepancies. It involves public scrutiny and corrections to ensure electoral integrity.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/intentional-blo-errors-part-of-plot-to-defame-sir-bjp-netas/articleshow/127498035.cms"
+    },
+    {
+      "headline": "Four films focus on Bangladesh at Kolkata People's Film Festival",
+      "summary": "The 12th Kolkata People's Film Festival, which began on January 23, 2026, features four films focusing on Bangladesh out of 39 total screenings. Three are directed by Bangladeshi-origin filmmakers and one by an Indian filmmaker based in Delhi. The spotlight comes amid diplomatic tensions, highlighting regional storytelling and cross-border artistic collaboration.",
+      "detailed_summary": "• Festival started January 23, 2026, showcasing 39 films\n• Four films focus on Bangladesh—three by Bangladeshi-origin directors, one by an Indian filmmaker in Delhi\n• The focus is notable amid India’s “non-family” diplomatic stance toward Bangladesh\n• Festival emphasizes regional storytelling and cross-border collaboration\n• It’s the 12th edition of the Kolkata People's Film Festival",
+      "why_it_matters": "For cinephiles in Kolkata, this is your chance to binge-watch Bangladesh without a visa. Plus, when art crosses borders, sometimes politics takes a backseat—refreshing, right?",
+      "context": "Kolkata People's Film Festival  \n   • The Kolkata People's Film Festival is an annual event that showcases independent, regional, and international films with a focus on social issues, cultural narratives, and artistic expression. It aims to provide a platform for voices often overlooked by mainstream cinema.  \n   • The festival fosters cultural exchange and dialogue through film, encouraging filmmakers and audiences to engage with diverse perspectives and regional stories.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/four-films-focus-on-bangladesh-at-kolkata-peoples-film-festival/articleshow/127521789.cms"
+    }
+  ]
+}

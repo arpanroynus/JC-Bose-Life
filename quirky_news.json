@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-26T11:33:00.546263",
+    "query": "weird, bizarre, funny, quirky, and unusual news stories from India in the last week",
+    "location": "Global",
+    "total_articles": 5,
+    "news_type": "quirky"
+  },
+  "articles": [
+    {
+      "headline": "Nose biometrics for cows",
+      "summary": "Ahmedabad authorities are implementing a novel system to curb stray cattle on roads by using nose-pattern biometrics—like cow fingerprints—to identify and track them. The initiative has amused and bewildered netizens alike.",
+      "detailed_summary": "• Each cow’s unique nose pattern is scanned and stored in a database\n• The system aims to identify repeat offenders wandering into traffic or markets\n• Owners can be traced and held responsible for their cattle’s mischief\n• Citizens joked that cows now have better biometric coverage than humans\n• The idea stems from failed traditional methods like collars or ear tags",
+      "why_it_matters": "Because in India, even cows are getting smarter—and more trackable—than some of us. Who knew bovine biometrics would be the next big thing?",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-nose-biometrics-for-cows/cid/2144318"
+    },
+    {
+      "headline": "‘Manoranjan’ Bank of India notes surface on roads",
+      "summary": "Fake Rs 20 notes bearing the name “Manoranjan Bank of India” instead of the RBI have been found circulating in Bengal. The comical counterfeit bills read “Full of Fun” and have sparked amusement among locals.",
+      "detailed_summary": "• Residents in Bhimpur, Tarakeshwar, Bengal spotted Rs 20 notes labeled “Manoranjan Bank of India”\n• The Hindi text read “Bis Number” instead of the correct denomination\n• The bills cheekily declared themselves “Full of Fun”\n• One youth used two such notes to buy a bidi and matches before suspicions arose\n• The prank notes quickly became a local talking point",
+      "why_it_matters": "Because sometimes money really does grow on roads—just not the legal kind. Proof that even counterfeiters have a sense of humor.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-manoranjan-bank-of-india/cid/2144318"
+    },
+    {
+      "headline": "Chairs fly at blood donation camp turned WWE audition",
+      "summary": "A blood donation camp in Rajarhat descended into chaos when political workers began hurling chairs and trading blows instead of donating blood. The melee ended only after police intervention.",
+      "detailed_summary": "• The event was meant to be a peaceful blood donation camp in Rajarhat’s Laskarhati\n• Political supporters began arguing, then escalated to throwing plastic chairs\n• A full-blown brawl broke out, resembling a WWE match more than a charity drive\n• The leader on stage tried to calm the crowd but was ignored\n• Police from Techno station eventually restored order",
+      "why_it_matters": "Because nothing says “donate blood” like a side of chair-chucking. Sometimes the real donation is a show of chaos.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-chairs-fly-blood-camp-nearly-turns-into-bloodbath/cid/2121740"
+    },
+    {
+      "headline": "Gurugram commuters carry scooter over shoulders amid traffic jam",
+      "summary": "In a traffic standstill on the Gurugram-Delhi highway, two men hoisted a scooter onto their shoulders and walked past the jammed vehicles—turning the gridlock into a makeshift gym session.",
+      "detailed_summary": "• Heavy rain caused massive traffic congestion on the Gurugram-Delhi highway\n• Two men lifted a scooter and carried it on their shoulders past the stalled traffic\n• The video was shared on X and quickly went viral\n• Netizens dubbed it “Deadlift final boss” and “Baahubali in town”\n• The clip became a humorous emblem of commuter endurance",
+      "why_it_matters": "Because when traffic hits a wall, you just lift your ride and walk. Who needs horsepower when you’ve got shoulder power?",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-gurugram-gym-routine/cid/2121740"
+    },
+    {
+      "headline": "‘Missing’ husband found via Instagram reel after 8 years",
+      "summary": "A man declared missing for eight years was discovered alive when his wife spotted him in an Instagram reel. He had been living with another woman, and the reel reopened the missing person case.",
+      "detailed_summary": "• Jitendra, from Hardoi, was presumed missing for eight years by his family\n• His wife, Sheelu, recognized him in a random Instagram reel\n• The reel showed him living with another woman—revealing he’d faked his disappearance\n• The police have reopened the missing person case and launched an investigation\n• The revelation stunned the family and social media alike",
+      "why_it_matters": "Because sometimes the best detective is your feed. Who knew Instagram reels could solve an eight-year mystery?",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-missing-husband-found-in-reels/cid/2121740"
+    }
+  ]
+}
