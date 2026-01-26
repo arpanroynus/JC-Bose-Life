@@ -1,2 +1,1 @@
-# JC-Bose-Life
-JC Bose Life
+# News Simplified
