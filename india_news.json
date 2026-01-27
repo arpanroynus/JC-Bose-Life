@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T10:27:29.126205",
+    "query": "top news stories from India today",
+    "location": "Global",
+    "total_articles": 5,
+    "news_type": "serious"
+  },
+  "articles": [
+    {
+      "headline": "IMD Forecasts Widespread Rain, Snow and Cold Wave Across North India",
+      "summary": "The India Meteorological Department (IMD) has issued alerts for widespread rainfall and snowfall in the western Himalayas starting January 27. Cold wave conditions are expected in the plains, accompanied by thunderstorms, gusty winds, and dense fog. Another western disturbance is forecast to hit by January 30.",
+      "detailed_summary": "• A new western disturbance will bring widespread rain and snow to the western Himalayan region starting January 27\n• Northern plains are expected to experience cold wave and cold day conditions\n• Forecast includes thunderstorms, lightning, gusty winds, and dense fog in isolated areas\n• Squally winds are predicted over nearby seas\n• A second bout of unsettled weather is expected with another western disturbance around January 30",
+      "why_it_matters": "If you’re planning to step out of your cozy blanket today, the weather’s decided to stage a coup. For folks in Kolkata and across India, this means your morning commute might become a foggy thriller, your weekend treks could turn into snowball fights, and your electricity bills might get a chilly surprise.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/life-style/travel/news/whats-the-weather-today-imd-forecasts-widespread-rain-and-snow-in-western-himalayas-cold-wave-in-plains/articleshow/127588200.cms"
+    },
+    {
+      "headline": "Traffic Restrictions Ahead of Beating Retreat Ceremony in Delhi",
+      "summary": "Delhi Traffic Police have imposed traffic restrictions from 4 PM to 6 PM on January 27 around Vijay Chowk and nearby roads due to Full Dress Rehearsals for the Beating Retreat ceremony. Commuters are advised to use alternative routes and check real-time updates.",
+      "detailed_summary": "• Vijay Chowk will be completely closed to general traffic from 4 PM to 6 PM on January 27\n• Key access roads like Raisina Road, Dara Shikoh Road, Krishna Menon Marg, Sunehri Masjid, and Kartavya Path up to Rafi Marg will also be inaccessible\n• Suggested alternative routes include Ring Road, Ridge Road, Aurobindo Marg, Safdarjung Road–Kamal Ataturk Marg, Rani Jhansi Road, and Minto Road\n• Real-time traffic updates available via Delhi Traffic Police’s website, social media, and helpline\n• Restrictions are in place to ensure smooth conduct of the Beating Retreat Full Dress Rehearsal",
+      "why_it_matters": "If you thought Delhi’s traffic jams were bad, wait till you try navigating around a national ceremony. For anyone in the 20–50 age group commuting through the capital, this means planning ahead—or risk turning your ride into an impromptu sightseeing tour of barricades.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/delhi/traffic-restrictions-ahead-of-beating-retreat-ceremony/articleshow/127562399.cms"
+    },
+    {
+      "headline": "India-EU Summit Likely to Seal Trade and Defence Pacts Today",
+      "summary": "The India-EU summit on January 27 is expected to conclude with a free trade agreement (FTA), a strategic defence partnership, and a framework to enhance employment opportunities for Indian workers in Europe. Simultaneously, a bank strike by the United Forum of Bank Unions (UFBU) may disrupt services in public sector banks.",
+      "detailed_summary": "• India and the EU are expected to finalize a free trade agreement during the summit\n• A strategic security and defence partnership is also likely to be formalized\n• A framework agreement may be signed to boost employment opportunities for Indian workers in Europe\n• The United Forum of Bank Unions has called a strike affecting public sector bank operations today\n• Banking services may be disrupted, though essential services are expected to continue",
+      "why_it_matters": "If you’re dreaming of snagging a job in Europe or importing those fancy gadgets without a customs headache, this summit could be your golden ticket. But don’t get too excited—your bank might be on strike today, so maybe postpone that money transfer or loan application unless you enjoy living on the edge.",
+      "context": null,
+      "sentiment": "Mixed",
+      "source": "https://www.timesnowhindi.com/india/aaj-ki-taza-khabar-27-january-2026-hindi-news-latest-breaking-news-pm-modi-trump-india-eu-summit-fta-aaj-ka-mausam-today-weather-bank-shutdown-bank-closed-ugc-bill-row-liveblog-153511093"
+    },
+    {
+      "headline": "Amazon May Lay Off Around 16,000 Employees, India Teams Severely Affected",
+      "summary": "Amazon is reportedly planning a major round of layoffs, potentially affecting around 16,000 employees globally. India-based teams are expected to be significantly impacted in this workforce reduction.",
+      "detailed_summary": "• Amazon is preparing a fresh round of layoffs affecting approximately 16,000 employees\n• India-based teams are likely to bear a substantial portion of the cuts\n• The layoffs are part of a broader global restructuring effort\n• No specific departments or roles have been confirmed yet\n• The move reflects ongoing cost-cutting measures by the tech giant",
+      "why_it_matters": "If you work in tech or know someone who does, this could be the corporate equivalent of a cold shower—unexpected and unwelcome. For India’s tech-savvy workforce, it’s a reminder that even giants like Amazon can trip, and that job security might just be a buzzword.",
+      "context": null,
+      "sentiment": "Negative",
+      "source": "https://www.indiatoday.in/technology/news/story/amazon-may-layoff-around-16000-employees-on-january-27-india-teams-likely-to-be-hit-severely-2858031-2026-01-26"
+    },
+    {
+      "headline": "Tata Group Becomes India’s Most Valuable Brand, Surpasses $30 Billion",
+      "summary": "According to the Brand Finance Global 500 report, Tata Group has become the first Indian brand to exceed $30 billion in brand value, reaching $31.6 billion. It ranks 60th globally and leads India in sustainability perception value. Infosys, HDFC, LIC, and Taj Hotels also feature prominently.",
+      "detailed_summary": "• Tata Group’s brand value rose 10% year-on-year to $31.6 billion\n• It is the first Indian brand to cross the $30 billion threshold and ranks 60th globally\n• Tata leads India in Sustainability Perceptions Value (SPV), valued at $4.3 billion\n• Infosys is India’s second most valuable brand at $16.3 billion and ranks 132nd globally\n• HDFC Group ($14.2 billion), LIC (fastest-growing at $13.3 billion), and Taj Hotels (strongest brand with AAA+ rating) round out the top Indian brands",
+      "why_it_matters": "If you’ve ever bought a Tata car, stayed at a Taj hotel, or paid your LIC premium, you’re part of a brand story that’s now worth more than some small countries. For young professionals in India, it’s proof that homegrown brands can flex serious financial muscle—and maybe even inspire your next career move.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.drishtiias.com/statepcs/27-01-2026/uttar-pradesh"
+    }
+  ]
+}

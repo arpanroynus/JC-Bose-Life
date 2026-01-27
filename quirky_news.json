@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T10:27:42.721082",
+    "query": "weird, bizarre, funny, quirky, and unusual news stories from India in the last week",
+    "location": "Global",
+    "total_articles": 6,
+    "news_type": "quirky"
+  },
+  "articles": [
+    {
+      "headline": "Late-night break-in turns funny as thief gets stuck in exhaust fan hole",
+      "summary": "A bungling burglar in Kota, Rajasthan, attempted to break into a home via the kitchen exhaust fan—and ended up stuck halfway through. Neighbors and police spent an hour freeing him, while his accomplice escaped. The homeowner credited deity Khatu Shyam for their protection.",
+      "detailed_summary": "• Incident occurred in Borkheda police station area, Kota, Rajasthan\n• Two thieves attempted the break-in believing the house was empty\n• One thief got lodged halfway through the kitchen wall’s exhaust fan opening\n• Neighbors and police collaborated for about one hour to free him\n• The trapped burglar was arrested; his accomplice remains at large",
+      "why_it_matters": "Because sometimes crime doesn’t pay—but it does give us a priceless viral moment.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://economictimes.indiatimes.com/news/new-updates/watch-late-night-break-in-turns-funny-as-thief-gets-stuck-in-exhaust-fan-hole/articleshow/126370529.cms"
+    },
+    {
+      "headline": "Sunny Leone loses her cool on Splitsvilla X6: “It’s not funny, stop smiling”",
+      "summary": "In a dramatic promo for *Splitsvilla X6*, host Sunny Leone snapped at a contestant mid-dome session, demanding seriousness and telling them to stop smiling. Co-host Karan Kundrra stepped in to discipline the contestants, ramping up the reality-show tension.",
+      "detailed_summary": "• Promo aired around January 22, 2026\n• Sunny Leone visibly lost her composure during a dome session\n• She sternly told a contestant “It’s not funny, stop smiling”\n• Karan Kundrra intervened to instruct and discipline the contestants\n• The show continues to blend drama, conflict, and entertainment",
+      "why_it_matters": "Because even in reality TV, smiling can be a crime—especially when drama demands a straight face.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/tv/news/hindi/splitsvilla-x6-sunny-leone-loses-her-cool-at-a-contestant-says-its-not-funny-stop-smiling/articleshow/127095473.cms"
+    },
+    {
+      "headline": "Student paraglides to exam centre",
+      "summary": "A student in India took \"jugaad\" to new heights—literally—by paragliding to his exam center. The daring arrival turned heads and went viral, blending academic pressure with aerial flair.",
+      "detailed_summary": "• Happened within the last week (as per Telegraph India’s “Great Indian Bizarre” weekly roundup)\n• Student used a paraglider to reach the exam venue\n• The stunt was captured on video and went viral online\n• The act was seen as a creative, if extreme, solution to travel woes\n• No injuries reported; the student made it in time for the exam",
+      "why_it_matters": "Because when traffic jams meet exam stress, sometimes you just fly over the problem.",
+      "context": null,
+      "sentiment": "Positive"
+    },
+    {
+      "headline": "Jhansi auto defies physics with 19 passengers",
+      "summary": "A video from Jhansi, Uttar Pradesh, showed an auto-rickshaw squeezing in 19 passengers—one after another—like a bottomless capsule. The clip went viral, prompting police action and widespread amusement.",
+      "detailed_summary": "• Occurred in Jhansi, Uttar Pradesh\n• 19 people were seen emerging from a single auto-rickshaw during a police check\n• The video circulated widely on social media\n• Jhansi Police confirmed the driver was caught and action taken\n• Netizens joked about the auto being a “mobile hostel” or school bus",
+      "why_it_matters": "Because when life gives you cramped autos, you pack in more—jugaad level: expert.",
+      "context": null,
+      "sentiment": "Positive"
+    },
+    {
+      "headline": "UP man ‘dead’ in stampede returns alive",
+      "summary": "In a bizarre twist, a man in Uttar Pradesh who was presumed dead in a stampede turned out to be alive—and very much walking around. The mix-up added a surreal footnote to an already chaotic event.",
+      "detailed_summary": "• Reported in a recent “Great Indian Bizarre” roundup\n• Man was declared dead following a stampede in UP\n• He later reappeared alive, shocking authorities and locals\n• The incident highlighted confusion during chaotic crowd situations\n• No further details on his condition or how the error occurred",
+      "why_it_matters": "Because sometimes the real-life plot twists are stranger—and more uplifting—than fiction.",
+      "context": null,
+      "sentiment": "Positive"
+    },
+    {
+      "headline": "Kerala man files court case against rooster for waking him at 3 AM",
+      "summary": "A sleep-deprived man in Kerala took legal action against his neighbor’s rooster for its early-morning crowing. The court case over a feathery alarm clock added a comical chapter to noise complaints.",
+      "detailed_summary": "• Occurred in Kerala, as featured in “Great Indian Bizarre”\n• Man named Radhakrishna Kurup filed a complaint against a rooster\n• The bird’s 3 AM crowing disrupted his sleep regularly\n• He sought legal remedy for the disturbance caused by the rooster\n• The case drew attention for its unusual plaintiff and defendant",
+      "why_it_matters": "Because when your alarm clock is a rooster, sometimes the only recourse is the courts.",
+      "context": null,
+      "sentiment": "Positive"
+    }
+  ]
+}

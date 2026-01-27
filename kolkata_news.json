@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T10:27:11.641414",
+    "query": "top news stories from Kolkata and Bengal today",
+    "location": "Kolkata",
+    "total_articles": 5,
+    "news_type": "serious"
+  },
+  "articles": [
+    {
+      "headline": "Rare pair of black leopards spotted, clicked: Melanistic duo in Kurseong forest",
+      "summary": "A rare pair of melanistic (black) leopards was sighted and photographed in the Kurseong forest division, marking an unprecedented wildlife event in the region. Forest officials confirmed the sighting, which has excited conservationists and wildlife enthusiasts alike.",
+      "detailed_summary": "• Two melanistic leopards were spotted in the Kurseong forest division—an extremely rare occurrence\n• The divisional forest officer confirmed that such a sighting is unprecedented in Kurseong\n• Photographs of the pair have been captured and circulated among wildlife researchers\n• The sighting has drawn attention to the biodiversity of the region and the need for habitat protection\n• Local conservation groups are calling for increased monitoring and protection measures in the area",
+      "why_it_matters": "If you’re between 20 and 50 in Bengal, this is your cue to feel both proud and slightly jealous—proud that our forests are still home to such elusive beauties, and jealous that you didn’t get the shot first. It’s also a nudge to support conservation, because these rare creatures don’t come with a “finders keepers” clause.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/west-bengal/rare-pair-of-black-leopards-spotted-clicked-melanistic-duo-in-kurseong-forest-prnt/cid/2144400"
+    },
+    {
+      "headline": "Four films focus on Bangladesh at Kolkata People's Film Festival",
+      "summary": "At the 12th Kolkata People's Film Festival, which began on January 23, four out of 39 films spotlight Bangladesh, including three by Bangladeshi-origin filmmakers and one by an India-based director. The cultural showcase comes amid diplomatic tensions between India and Bangladesh.",
+      "detailed_summary": "• The 12th edition of the Kolkata People's Film Festival started on January 23, 2026\n• Out of 39 films screened, four focus on Bangladesh—three by filmmakers of Bangladeshi origin, one by an Indian filmmaker based in Delhi\n• The festival’s programming choice comes at a time when India has labeled Bangladesh a “non-family” diplomatic posting\n• The films highlight regional storytelling and cross-border artistic collaboration\n• The festival continues to foster cultural exchange despite political undercurrents",
+      "why_it_matters": "For the culturally curious among us, this is like discovering your neighbour’s playlist and finding a killer track. It’s a reminder that art doesn’t respect borders—even when diplomacy is giving us the cold shoulder. Plus, it’s a great excuse to catch a film and feel worldly.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/four-films-focus-on-bangladesh-at-kolkata-peoples-film-festival/articleshow/127521789.cms"
+    },
+    {
+      "headline": "Final Madhyamik enrolment between Jan 27 & 28",
+      "summary": "The West Bengal Board of Secondary Education is offering a final opportunity for students to enrol for the Madhyamik exam between January 27 and 28. This last window is crucial for those who missed earlier deadlines.",
+      "detailed_summary": "• The final enrolment window for the Madhyamik exam is open from January 27 to 28\n• The board is providing this last chance for students who missed previous registration periods\n• No extension beyond January 28 has been announced\n• Students must complete all formalities within this two-day window to be eligible\n• The Madhyamik exam is a key milestone for secondary school students in West Bengal",
+      "why_it_matters": "If you’re a student or have one in the family, this is your “last call” before the train leaves the station. Miss it, and you’re stuck waiting another year—like showing up at a party after the cake’s gone. So, hustle up.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/final-madhyamik-enrolment-between-jan-27-28/articleshow/127413760.cms"
+    },
+    {
+      "headline": "Nitin Nabin to visit Bengal on Tue",
+      "summary": "BJP’s newly appointed national president, Nitin Nabin, will make his first state visit to West Bengal on January 27–28, focusing on the Asansol-Durgapur-Raniganj region. He will not visit Kolkata during this trip.",
+      "detailed_summary": "• Nitin Nabin, BJP’s new national president, begins his first visit to West Bengal on January 27, 2026\n• The two-day trip focuses on the Asansol-Durgapur-Raniganj industrial belt\n• He will engage with party leaders and workers in the region\n• Kolkata is not on his itinerary for this visit\n• The visit follows his initial meeting with Bengal BJP leaders on January 20, shortly before his appointment",
+      "why_it_matters": "For politically aware folks in their 20s to 50s, this is like the BJP sending a scout to size up the terrain before the big game. If you live in or near Asansol-Durgapur, expect some political buzz—maybe even a selfie or two.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/nitin-nabin-to-visit-bengal-on-tue/articleshow/127420418.cms"
+    },
+    {
+      "headline": "Eastern Command holds joint operations conference",
+      "summary": "The Indian Army's Eastern Command hosted a joint operations conference in Kolkata, bringing together officers from various units to discuss strategic coordination and operational readiness. The event underscores the military’s focus on preparedness in the eastern sector.",
+      "detailed_summary": "• The Indian Army’s Eastern Command held a joint operations conference in Kolkata\n• Officers from multiple units participated to discuss strategic coordination\n• The focus was on enhancing operational readiness in the eastern sector\n• The conference included briefings and planning sessions (exact numbers not specified)\n• The event highlights the military’s emphasis on preparedness amid regional security dynamics",
+      "why_it_matters": "For the average Kolkatan, this might sound like soldiers playing Risk—but it’s actually about keeping the eastern front secure. So, unless you’re planning to invade Bhutan, maybe just appreciate that the army is staying sharp so you can sleep easy.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://brighterkashmir.com/eastern-command-holds-joint-operations-conference"
+    }
+  ]
+}
