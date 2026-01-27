@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T11:47:11.766696",
+    "query": "weird, bizarre, funny, quirky, and unusual news stories from India in the last week",
+    "location": "Global",
+    "total_articles": 3,
+    "news_type": "quirky"
+  },
+  "articles": [
+    {
+      "headline": "Devotees Drink AC Water Thinking It’s Holy ‘Charan Amrit’ at Vrindavan Temple",
+      "summary": "At the Banke Bihari Temple in Vrindavan, devotees were seen drinking water dripping from an elephant-shaped spout, believing it to be sacred ‘Charan Amrit’. In reality, the water was merely AC discharge. Despite clarification, many continued to drink and splash it, turning the scene into a viral spectacle.",
+      "detailed_summary": "• The incident took place at the Banke Bihari Temple in Vrindavan, Uttar Pradesh.\n• Water was dripping from an elephant-shaped spout integrated into the temple’s architecture.\n• Devotees cupped and drank the water, believing it to be holy ‘Charan Amrit’.\n• It was later revealed that the water was actually air-conditioning discharge.\n• Even after clarification, many devotees continued to consume and splash the water.",
+      "why_it_matters": "Because when life gives you AC drip, some folks will bless it anyway. It’s a quirky reminder that faith and plumbing can sometimes mix in the most unexpected ways.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.mid-day.com/news/offbeat-news/articles/devotees-drink-ac-water-believing-its-charan-amrit-at-banke-bihari-temple-23332830"
+    },
+    {
+      "headline": "Jhansi Auto Rickshaw Unleashes a Human Stream—19 Passengers Squeeze Out",
+      "summary": "A viral video from Jhansi, Uttar Pradesh, captured the moment when 19 people emerged one after another from a single auto-rickshaw during a police check. The sight left netizens in stitches, while police confirmed the driver was caught and action taken.",
+      "detailed_summary": "• The video surfaced from Jhansi, Uttar Pradesh, during a routine police check.\n• A single auto-rickshaw appeared to disgorge 19 passengers in succession.\n• The scene resembled a bottomless vehicle, baffling onlookers.\n• Social media users joked about the auto being a “school bus” in disguise.\n• Jhansi Police confirmed the driver was apprehended and appropriate action was taken.",
+      "why_it_matters": "Because when your ride turns into a people conveyor belt, you know India’s jugaad spirit is alive and well. Who needs a bus when you’ve got an auto with infinite capacity?",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-student-paraglides-to-exam-centre-up-man-dead-in-stampede-returns-alive-man-attacks-aurangzeb-in-gujarats-bharuch-photogallery-prnt/cid/2085220"
+    },
+    {
+      "headline": "Man Drinks IV Fluid Because He Couldn't Find Water in Bihar",
+      "summary": "In a bizarre viral clip from Bihar, a man was seen using IV fluid as a substitute for water when he couldn’t find any. The audacious act sparked a flurry of reactions online, with netizens both amused and alarmed by his unconventional hydration hack.",
+      "detailed_summary": "• The video emerged from Bihar, where liquor is banned, adding to the oddity.\n• The man claimed he couldn’t find water, so he resorted to IV fluid.\n• He poured the medical solution into a glass and drank it.\n• Social media users speculated about his access to IV fluid and potential medical consequences.\n• Reactions ranged from marveling at his creativity to warning about the dangers of such a stunt.",
+      "why_it_matters": "Because when life gives you IV fluid, some folks will treat it like a fancy water bottle. It’s a hydration hack gone wildly off-script—and medically questionable.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.telegraphindia.com/gallery/the-great-indian-bizarre-student-paraglides-to-exam-centre-up-man-dead-in-stampede-returns-alive-man-attacks-aurangzeb-in-gujarats-bharuch-photogallery-prnt/cid/2085220"
+    }
+  ]
+}

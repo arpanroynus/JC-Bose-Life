@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T11:46:40.110443",
+    "query": "top news stories from Kolkata and Bengal today",
+    "location": "Kolkata",
+    "total_articles": 10,
+    "news_type": "serious"
+  },
+  "articles": [
+    {
+      "headline": "Nationwide Public Sector Bank Strike Disrupts Services on January 27",
+      "summary": "Public sector bank employees across India, including in West Bengal, are on strike today demanding a five-day work week. The strike follows failed negotiations and may result in a three-day disruption of in-branch services. Essential services like ATMs and online banking are expected to continue functioning.",
+      "detailed_summary": "• The United Forum of Bank Unions (UFBU) has called a nationwide strike on January 27.\n• Major public sector banks like SBI, PNB, and Bank of Baroda may remain closed or offer limited services.\n• The strike is aimed at securing a five-day work week for bank employees.\n• Over-the-counter transactions, check clearances, and in-branch services are likely affected.\n• Online banking, ATMs, and digital transactions are expected to remain operational.",
+      "why_it_matters": "If you're planning to deposit cash or clear a cheque today, you might find yourself in a queue longer than the one for the latest iPhone. But hey, at least your UPI still works—thankfully.",
+      "context": null,
+      "sentiment": "Negative",
+      "source": "https://m.economictimes.com/news/new-updates/bank-strike-today-which-banks-are-closed-what-services-are-affected-and-why-employees-are-protesting/articleshow/127592158.cms"
+    },
+    {
+      "headline": "Protesters Blockade Burdwan Railway Station Over Voter Roll Revision Harassment",
+      "summary": "Residents of East Burdwan’s Ward No. 3 staged a protest at Burdwan railway station over alleged harassment during the Special Intensive Revision (SIR) of voter rolls. Around 1,000 people participated, causing delays to Howrah–Burdwan local trains. Police intervened to disperse the crowd.",
+      "detailed_summary": "• Protesters blocked tracks at Burdwan railway station, delaying local train services.\n• The protest was sparked by perceived unfair targeting during the SIR voter roll revision.\n• Approximately 1,000 residents participated, laying on tracks near platform two.\n• An e-rickshaw was reportedly brought into the station before being stopped by police.\n• Railway Protection Force personnel intervened to disperse the demonstrators.",
+      "why_it_matters": "If your morning commute involves the Burdwan line, today’s protest might have turned your train ride into an impromptu picnic on the tracks—minus the sandwiches.",
+      "context": "Special Intensive Revision (SIR): A process conducted by the Election Commission to update and verify voter rolls, often involving door-to-door verification and public notices. It aims to ensure electoral accuracy but can lead to public frustration if perceived as intrusive or unfair. Historically, such exercises have sparked protests when citizens feel targeted or inadequately informed.",
+      "sentiment": "Negative",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/rail-blockade-in-burdwan-over-sir-harassment/articleshow/127423786.cms"
+    },
+    {
+      "headline": "Airtel Enhances Mobile Connectivity on Vidyasagar Setu",
+      "summary": "Bharti Airtel has upgraded mobile network infrastructure on Vidyasagar Setu by laying 1.3 km of fiber optic cable and installing antennas on six poles. This aims to ensure seamless connectivity for commuters and emergency services. The initiative is part of a broader rollout of over 5,250 new network sites across Bengal in the past three years.",
+      "detailed_summary": "• 1.3 kilometers of fiber optic cable laid along Vidyasagar Setu.\n• Network antennas installed on six poles across the bridge.\n• Initiative aims to improve mobile connectivity for daily commuters and emergency responders.\n• Collaboration involved PWD, West Bengal Police Traffic Department, and HRBC.\n• Airtel has installed over 5,250 new network sites across Bengal in the last three years.",
+      "why_it_matters": "Now you can finally post that bridge selfie without the dreaded “No Service” bubble—plus emergency calls won’t get lost in the ether.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/bharti-airtel-boosts-network-connectivity-on-vidyasagar-setu/articleshow/127038229.cms"
+    },
+    {
+      "headline": "400 Students Receive Scholarships at Jagadis Bose National Science Talent Search",
+      "summary": "At the 66th Jagadis Bose National Science Talent Search awards in Kolkata, 400 students from West Bengal received scholarships and book grants. Selected from over 15,000 aspirants, the top 10 boys and girls also received laptops. The initiative aims to encourage science education amid declining enrollment.",
+      "detailed_summary": "• 400 students awarded scholarships and book grants at Presidency University.\n• Over 15,000 students competed via Senior and Junior Talent Search Tests and Bigyani Kanya Medha Britti.\n• Top 10 boys and girls received laptops in addition to scholarships.\n• Event held at Derozio Hall, Presidency University, with Minister Ujjal Biswas in attendance.\n• Notable schools included DPS Ruby Park, Aligunj Rishi Rajnarayan Balika Vidyalaya, South Point, and Bardhaman Municipal High.",
+      "why_it_matters": "If your kid just declared “I want to be a scientist,” this is the kind of recognition that might just turn that dream into reality—plus, who doesn’t love a free laptop?",
+      "context": "Jagadis Bose National Science Talent Search (JBNSTS): A prestigious West Bengal-based program established to identify and nurture young scientific talent through competitive exams and scholarships. Named after Sir Jagadish Chandra Bose, a pioneering Indian scientist, it has a long history of promoting STEM education in the region.",
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/jagadis-bose-natl-talent-search-scholarships-for-400-students/articleshow/127406515.cms"
+    },
+    {
+      "headline": "ECI Orders Smooth SIR Hearings, Warns of Strict Action in West Bengal",
+      "summary": "Following a Supreme Court directive, the Election Commission of India (ECI) has instructed top West Bengal officials to ensure orderly conduct at SIR hearing centers. Strict action has been warned against any disruptions during the voter roll revision process.",
+      "detailed_summary": "• ECI issued directives to Chief Secretary, DGP, Police Commissioner, SPs, and DMs in West Bengal.\n• Instructions aim to maintain law and order and smooth proceedings at SIR hearing centers.\n• Warning of strict action against non-compliance or disturbances.\n• The move follows a Supreme Court order emphasizing fair electoral processes.\n• The focus is on preventing disruption during the Special Intensive Revision of voter rolls.",
+      "why_it_matters": "If you're trying to get your name on the voter list without turning it into a soap opera, this is good news—orderly hearings mean less drama and fewer long waits.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://m.economictimes.com/news/elections/assembly-elections/west-bengal/bengal-sir-eci-warns-strict-action-orders-smooth-hearings-after-sc-directive/articleshow/127021542.cms"
+    },
+    {
+      "headline": "Bengal Scores Last-Minute Win in Santosh Trophy Group Stage",
+      "summary": "Bengal secured a dramatic 1–0 win over Uttarakhand in the Santosh Trophy group stage, thanks to a 97th-minute goal by substitute Narohari Shrestha. This marks their second consecutive victory, placing them second in the group with 6 points.",
+      "detailed_summary": "• Bengal beat Uttarakhand 1–0 with a goal in the 97th minute.\n• Substitute Narohari Shrestha scored with a chest-down and right-footed shot.\n• This is Bengal’s second straight win in the group stage.\n• Bengal now has 6 points, tied with Rajasthan but behind on goal difference.\n• Assam drew 3–3 with Nagaland in another match of the day.",
+      "why_it_matters": "If you're a football fan, this is the kind of last-minute thrill that makes you forget all about your office email pile—well, almost.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/city/kolkata/narohari-saves-the-day-for-bengal/articleshow/127321838.cms"
+    },
+    {
+      "headline": "Public Display of 'Unmapped' and Discrepancy Voter Lists Begins in West Bengal",
+      "summary": "West Bengal’s Chief Electoral Officer announced that lists of 'unmapped' and 'logical discrepancy' voters are now publicly accessible. The lists cover 80,681 booths and include around 1.36 crore voters in the discrepancy category, with a 10-day window for document submission.",
+      "detailed_summary": "• CEO Manoj Kumar Agarwal confirmed public display of unmapped and discrepancy voter lists.\n• The lists cover 80,681 polling booths across the state.\n• Approximately 1.36 crore voters fall under the 'logical discrepancy' category.\n• Booth Level Officers have begun downloading and displaying the lists.\n• A 10-day window is provided for voters to submit documents post-display.",
+      "why_it_matters": "If you’ve been wondering whether your name made the cut, now’s your chance to check—and maybe avoid that awkward “not on the list” moment at the polling booth.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://m.economictimes.com/news/politics-and-nation/unmapped-voter-lists-being-made-public-west-bengal-ceo-manoj-kumar-agarwal/articleshow/127494099.cms"
+    },
+    {
+      "headline": "TMC War Rooms Activated as BJP President Nitin Nabin Visits Bengal",
+      "summary": "Ahead of the 2026 Assembly elections, TMC’s Abhishek Banerjee has instructed MPs and MLAs to activate election war rooms from January 27. Meanwhile, BJP President Nitin Nabin is visiting West Bengal today and tomorrow, holding key organisational meetings in Durgapur and Raniganj.",
+      "detailed_summary": "• Abhishek Banerjee directed activation of TMC election war rooms from January 27.\n• Booth Raksha Committees are to be formed at every polling booth.\n• BJP President Nitin Nabin is visiting West Bengal on January 27–28.\n• On January 27, he will chair a state core team meeting in Durgapur.\n• On January 28, he will attend worker conferences in Burdwan division and Asansol.",
+      "why_it_matters": "If you thought politics slowed down after the holidays, think again—today is the kind of political chessboard shuffle that might just decide your next power cut schedule.",
+      "context": "Booth Raksha Committee: A grassroots-level TMC initiative aimed at safeguarding voter rights and preventing manipulation during electoral roll revisions. These committees are part of the party’s broader strategy to mobilize support and monitor polling booths ahead of elections.",
+      "sentiment": "Mixed",
+      "source": "https://www.indiatoday.in/elections/story/election-2026-live-updates-24-january-west-bengal-modi-mamata-kerala-tamil-ndu-puducherry-assam-2857065-2026-01-24"
+    },
+    {
+      "headline": "ECI Suspends West Bengal Officials Over Electoral Roll Irregularities",
+      "summary": "The Election Commission has suspended Samitra Pratim Prodhan, AERO, and BDO of Baurhat-II for their involvement in electoral roll irregularities. They have also been removed from duties related to roll revision. Meanwhile, TMC and BJP supporters clashed in Sakherbazar, Kolkata, over a microphone dispute, resulting in a makeshift stage being set on fire.",
+      "detailed_summary": "• ECI suspended three officials—Samitra Pratim Prodhan, AERO, and BDO of Baurhat-II—for electoral roll irregularities.\n• The officials have been removed from voter roll revision duties.\n• In Sakherbazar, TMC and BJP supporters clashed over loudspeaker usage.\n• A makeshift stage used earlier by Biplab Deb was set on fire during the clash.\n• The incident occurred on the southwestern outskirts of Kolkata on January 25.",
+      "why_it_matters": "If you thought voter list drama was confined to dusty offices, think again—today’s headlines prove it can spill onto the streets, complete with fiery stages and suspended officials.",
+      "context": null,
+      "sentiment": "Negative",
+      "source": "https://www.indiatoday.in/elections/assembly/story/election-2026-live-updates-january-25-kerala-west-bengal-tamil-nadu-puducherry-assam-news-2857431-2026-01-25"
+    },
+    {
+      "headline": "Mamata Banerjee Heads to Delhi, Political Blueprint Taking Shape",
+      "summary": "West Bengal CM Mamata Banerjee is preparing for a Delhi visit, with dates yet to be finalized. She is expected to meet with party MPs and discuss central issues and political strategy. Later today, she will attend the ‘Kamal Mela’ in Durgapur and hold a crucial meeting with BJP core committee members at night.",
+      "detailed_summary": "• Mamata Banerjee is planning a Delhi visit; dates are not yet confirmed.\n• She will meet with TMC MPs to strategize on central issues and political positioning.\n• This evening, she will attend the ‘Kamal Mela’ in Durgapur.\n• Later tonight, she will hold a meeting with BJP core committee members in Durgapur.\n• Tomorrow, she has multiple engagements planned in Durgapur and Raniganj.",
+      "why_it_matters": "If you thought politics in Bengal was slowing down, think again—today’s itinerary reads like a political relay race, with stops in Delhi, Durgapur, and your living room (via TV).",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://bengali.indianexpress.com/west-bengal/kolkata-live-news-updates-january-27-2026-mamata-delhi-visit-weather-11032623"
+    }
+  ]
+}

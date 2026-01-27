@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "fetch_date": "2026-01-27T11:47:01.545118",
+    "query": "top news stories from India today",
+    "location": "Global",
+    "total_articles": 10,
+    "news_type": "serious"
+  },
+  "articles": [
+    {
+      "headline": "IMD forecasts widespread rain and snow in western Himalayas, cold wave in plains",
+      "summary": "The India Meteorological Department (IMD) has issued a weather alert for January 27, forecasting widespread rain and snowfall in the western Himalayas, along with cold wave conditions in the plains. Thunderstorms, lightning, gusty winds, and dense fog are expected across north, northwest, and central India. Another western disturbance is anticipated to hit northwest India by January 30.",
+      "detailed_summary": "• Western Himalayan regions to see widespread rainfall and snowfall starting January 27\n• Plains across northern India to experience cold wave and cold day conditions\n• Forecast includes thunderstorms, lightning, gusty winds, and isolated dense fog\n• Squally winds expected over adjacent seas\n• A new western disturbance is projected to affect northwest India around January 30",
+      "why_it_matters": "If you’re planning to step out in Kolkata, bundle up—though you might not need snow boots, the chill creeping in could make your morning chai feel like a warm hug. For those with travel plans or outdoor work, this is your cue to check the forecast before stepping out.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/life-style/travel/news/whats-the-weather-today-imd-forecasts-widespread-rain-and-snow-in-western-himalayas-cold-wave-in-plains/articleshow/127588200.cms"
+    },
+    {
+      "headline": "SEBI approves PhonePe IPO, aiming to raise ₹12,000 crore via OFS",
+      "summary": "The Securities and Exchange Board of India (SEBI) has approved PhonePe’s IPO, which aims to raise ₹12,000 crore through an Offer for Sale (OFS), with no fresh capital infusion. Existing investors like Walmart, Tiger Global, and Microsoft will participate, with the latter two expected to fully exit. The IPO is backed by major banks and comes amid a revival in India’s tech IPO market.",
+      "detailed_summary": "• SEBI approval granted for PhonePe’s IPO targeting ₹12,000 crore via OFS\n• No fresh capital; existing investors—Walmart (9% stake), Tiger Global, Microsoft—will sell shares\n• Tiger Global and Microsoft expected to fully exit their holdings\n• IPO managed by Kotak Mahindra Capital, Citi, Morgan Stanley, JP Morgan, Axis Capital, Goldman Sachs\n• PhonePe holds ~45% UPI volume market share; Google Pay trails at ~35%\n• UPI processed ₹27.97 trillion in December 2025; PhonePe is free cash flow positive with ₹7,115 crore revenue in FY25",
+      "why_it_matters": "If you’ve ever tapped your phone to pay for pani puri or pay your landlord, you’re part of PhonePe’s empire. This IPO could mean new investment, innovation, and maybe even a few more cashback offers—so keep your eyes peeled.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://guidely.in/current-affairs/daily-current-affairs-27-january-2026"
+    },
+    {
+      "headline": "Juspay becomes India’s first homegrown unicorn of 2026 after $50 million Series D funding",
+      "summary": "Bengaluru-based payments infrastructure firm Juspay has become India’s first homegrown unicorn of 2026, raising $50 million in a Series D funding round led by WestBridge Capital. The funding marks a significant milestone for the fintech ecosystem.",
+      "detailed_summary": "• Juspay raised $50 million in a Series D follow-on funding round\n• Led by WestBridge Capital\n• Achieved unicorn status (valuation ≥ $1 billion)\n• First Indian-born unicorn of 2026\n• Strengthens India’s fintech infrastructure sector",
+      "why_it_matters": "For anyone who’s ever cursed when your payment fails mid-transaction, Juspay’s rise means smoother checkouts ahead. Plus, it’s a win for India’s tech talent—proof that Bengaluru’s not just about startups, it’s about scale-ups.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://guidely.in/current-affairs/daily-current-affairs-27-january-2026"
+    },
+    {
+      "headline": "India ranked 6th in Asia Manufacturing Index 2026",
+      "summary": "India has secured the 6th position among 11 Asian countries in the Asia Manufacturing Index 2026, reflecting moderate progress but also highlighting competitiveness gaps. The index evaluates countries across eight pillars including infrastructure, workforce, and innovation.",
+      "detailed_summary": "• India ranked 6th out of 11 Asian countries in the 2026 Asia Manufacturing Index\n• Evaluated on eight pillars: economy, political risk, business environment, trade, tax policy, infrastructure, workforce, innovation\n• The index includes 43 sub‑parameters for detailed assessment\n• India’s strengths: large domestic market, improving infrastructure, growing workforce\n• Ranking indicates need for deeper manufacturing reforms to boost competitiveness",
+      "why_it_matters": "If you’re wondering why your Made‑in‑India gadget isn’t yet flying off global shelves, this ranking explains it—India’s manufacturing engine is revving, but still needs a few more gears. Better infrastructure and innovation could mean more jobs and cheaper goods for you.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://guidely.in/current-affairs/daily-current-affairs-27-january-2026"
+    },
+    {
+      "headline": "Indian Army partners with IISc to develop indigenous AI defence system",
+      "summary": "The Indian Army has signed an MoU with the Indian Institute of Science (IISc), Bengaluru, to jointly develop an indigenous AI system tailored for modern warfare and digital information challenges. This initiative aligns with India’s Atmanirbhar Bharat vision.",
+      "detailed_summary": "• MoU signed on January 23 between Indian Army and IISc, Bengaluru\n• Aim: develop a fully indigenous AI system for defence applications\n• Combines Army’s operational experience with IISc’s academic expertise and industry support\n• Focus on research, innovation, and field‑oriented testing\n• Reinforces commitment to self‑reliance in defence technology",
+      "why_it_matters": "If you’ve ever thought AI was just for sci‑fi, think again—this is AI helping keep borders secure. And if you’re tech‑savvy, it’s a sign that India’s next big leap might come from homegrown brains, not imports.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://affairscloud.com/current-affairs-25-26-27-january-2026/"
+    },
+    {
+      "headline": "NHAI and Konkan Railway sign MoU for integrated infrastructure development",
+      "summary": "The National Highways Authority of India (NHAI) and Konkan Railway Corporation Limited (KRCL) have signed a five‑year MoU to jointly plan and develop integrated road and rail infrastructure, including tunnels, bridges, and logistics hubs. A Joint Working Group will oversee feasibility studies and execution.",
+      "detailed_summary": "• MoU signed in January 2026 between NHAI and KRCL\n• Valid for five years\n• Establishes a Joint Working Group for project monitoring and feasibility studies\n• Focus on integrated development of roads, railways, tunnels, bridges, logistics hubs\n• Includes technical collaboration in project management, engineering design, environmental management",
+      "why_it_matters": "If you’ve ever sat in traffic while a train zooms by, this is good news—better coordination could mean smoother travel, fewer delays, and maybe even faster weekend getaways.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.drishtiias.com/statepcs/27-01-2026/uttar-pradesh"
+    },
+    {
+      "headline": "Traffic restrictions ahead of Beating Retreat ceremony",
+      "summary": "Delhi Traffic Police have imposed traffic restrictions from 4 PM to 6 PM on January 27 around Vijay Chowk ahead of the Beating Retreat ceremony rehearsals. Key roads including Vijay Chowk, Raisina Road, and Kartavya Path will be closed, with alternative routes suggested.",
+      "detailed_summary": "• Restrictions in effect from 4 PM to 6 PM on January 27\n• Vijay Chowk fully closed to general traffic\n• Approaches like Raisina Road, Dara Shikoh Road, Krishna Menon Marg, Sunehri Masjid, Kartavya Path up to Rafi Marg inaccessible\n• Alternative routes: Ring Road, Ridge Road, Aurobindo Marg, Safdarjung Road, Rani Jhansi Road, Minto Road\n• Real‑time updates available via Delhi Traffic Police website, social media, and helpline",
+      "why_it_matters": "If your Delhi‑Kolkata train’s delayed, at least your road trip won’t be—unless you’re driving through central Delhi today. Best to detour unless you fancy a ceremonial traffic jam.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://timesofindia.indiatimes.com/city/delhi/traffic-restrictions-ahead-of-beating-retreat-ceremony/articleshow/127562399.cms"
+    },
+    {
+      "headline": "Top stocks in news: Kotak Bank, HCL Tech, Axis Bank, Hindustan Copper, Urban Company, BPCL",
+      "summary": "Several major Indian stocks are in focus today, including Kotak Bank, HCL Technologies, Axis Bank, Hindustan Copper, Urban Company, and BPCL. Fintech firm Pine Labs has entered a strategic partnership with UAE’s Wio Bank to modernise digital financial services.",
+      "detailed_summary": "• Stocks drawing attention: Kotak Bank, HCL Tech, Axis Bank, Hindustan Copper, Urban Company, BPCL\n• Pine Labs forms strategic partnership with UAE’s Wio Bank\n• Aim: modernise digital financial platform services\n• Partnership expected to influence fintech and banking sectors\n• Highlights growing India‑UAE financial collaboration",
+      "why_it_matters": "If you’ve ever wondered where your mutual fund manager’s caffeine comes from, here’s a clue—these stocks are buzzing, and fintech tie‑ups like Pine Labs and Wio Bank could mean slicker payments and maybe even better returns.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://www.businesstoday.in/markets/stocks/story/top-stocks-in-news-kotak-bank-hcl-tech-axis-bank-hindustan-copper-urban-company-bpcl-512898-2026-01-27"
+    },
+    {
+      "headline": "Rampant Aryna Sabalenka sweeps past Jovic into Australian Open semi‑finals",
+      "summary": "Top seed Aryna Sabalenka defeated American teenager Iva Jovic to reach the semi‑finals of the Australian Open. Her dominant performance continues as she advances in the Grand Slam tournament.",
+      "detailed_summary": "• Aryna Sabalenka, the top seed, beat Iva Jovic to reach the semi‑finals\n• Match held at the Australian Open\n• Sabalenka’s performance described as relentless and powerful\n• Jovic is an American teenager, highlighting the experience gap\n• Sabalenka continues her strong run in the tournament",
+      "why_it_matters": "If you’ve ever tried smashing a shuttlecock and missed, Sabalenka’s power serves as a reminder that practice pays off—plus, it’s nice to see someone else dominating their day so you feel better about your own.",
+      "context": null,
+      "sentiment": "Positive",
+      "source": "https://timesofindia.indiatimes.com/sports/tennis/top-stories/rampant-aryna-sabalenka-sweeps-past-jovic-into-australian-open-semi-finals/articleshow/127590138.cms"
+    },
+    {
+      "headline": "Today’s news LIVE: Carney calls Trump’s tariff threats bluster",
+      "summary": "In live updates, Mark Carney dismisses former President Trump’s tariff threats as bluster. The coverage includes trending news from India and around the world.",
+      "detailed_summary": "• Mark Carney comments on Trump’s tariff threats, calling them bluster\n• News roundup includes India and global updates\n• Format is live news coverage\n• Emphasis on trending and important stories of the day\n• Offers a one‑stop update for diverse topics",
+      "why_it_matters": "If global trade drama is your morning coffee, Carney’s take is the cream—bluster, not bust. And for the rest of us, it’s a handy news buffet to stay informed without scrolling endlessly.",
+      "context": null,
+      "sentiment": "Neutral",
+      "source": "https://thefederal.com/category/news/latest-news-india-world-sports-business-entertainment-227082"
+    }
+  ]
+}
